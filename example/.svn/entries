@@ -1,0 +1,43 @@
+10
+
+dir
+19
+svn+ssh://gbecq@scm.forge.imag.fr/var/lib/gforge/chroot/scmrepos/svn/pycics/trunk/presentationPython/example
+svn+ssh://gbecq@scm.forge.imag.fr/var/lib/gforge/chroot/scmrepos/svn/pycics
+
+
+
+2013-06-27T15:44:22.514477Z
+17
+gbecq
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ca8e7d66-c8fd-4291-8c4a-ab5a1a38b755
+
+txt
+dir
+
+ide
+dir
+
+module
+dir
+
+doc
+dir
+
+shell
+dir
+

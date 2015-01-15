@@ -1,0 +1,1849 @@
+%===============================================================================
+\section{Description du Langage}
+%_______________________________________________________________________________
+\subsection{Type de données}
+%...............................................................................
+\begin{frame}
+\frametitle{Type de base}
+\framesubtitle{}
+\begin{itemize}
+\item {\bfseries Nombres} : entiers (int, long), réels (float), complex (complex), booléens (bool). 
+\item {\bfseries Séquences} : Chaînes de caractères (str), listes (list), tuples (tuple), dictionnaires (dict), ensembles (set)
+\end{itemize}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Nombres}
+\framesubtitle{Entiers}
+\begin{itemize}
+ \item Attention à la division entière en 2.7. 
+\end{itemize}
+\begin{pythonConsole}
+>>> a = 1  
+>>> b = 2
+>>> c = a / b
+>>> print(c)
+0
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Nombres}
+\framesubtitle{Réels}
+\begin{itemize}
+ \item Utilisation du point pour passer en réels. 
+\end{itemize}
+\begin{pythonConsole}
+>>> a = 1.0
+>>> b = 2.
+>>> c = a / b
+>>> print(c)
+0.5
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Nombres}
+\framesubtitle{Entiers long vs court}
+\begin{itemize}
+ \item Suffixe 'L' pour indiquer un passage en entier long. 
+ \item 'type()' indique le type d'une variable. 
+\end{itemize}
+\begin{pythonConsole}
+>>> a = 2 ** 30
+>>> b = 2 ** 31
+>>> a
+1073741824
+>>> b
+2147483648L
+>>> print(b)
+2147483648
+>>> type(a)
+<type 'int'>
+>>> type(b)
+<type 'long'>
+>>> c = 12345L
+>>> type(c)
+<type 'long'>
+\end{pythonConsole}
+% \only<2>{\it remarque : représentation simplifiée (str(a)) vs representation brutes (repr(a)) dans la console.}  
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Nombres}
+\framesubtitle{Réels notations scientifiques}
+\begin{itemize}
+ \item Notation scientifique de type mantisse et exposant. 
+\end{itemize}
+\begin{pythonConsole}
+>>> a = 1.234e100
+>>> a
+1.234e+100
+>>> type(a)
+<type 'float'>
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Nombres}
+\framesubtitle{Complexes}
+\begin{itemize}
+ \item z = x + yj (complex)
+ \item Attention à la syntaxe. 
+ \item Génère une erreur (\emph{exception}) de type "NameError". 
+ \item '\_' variable courante (cf. \emph{ans} matlab) 
+\end{itemize}
+\begin{pythonConsole}
+>>> a = 1 + 2j
+>>> type(a)
+<type 'complex'>
+>>> a = 1 + j
+Traceback (most recent call last):
+  File " <stdin>", line 1, in <module>
+NameError: name 'j' is not defined
+>>> 123.456j
+123.456j
+>>> type(_)
+<type 'complex'>
+>>> a = 1 + 1j
+>>> b = 2 + 3j
+>>> c = a + b
+>>> print(c)
+(3+4j)
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Nombres}
+\framesubtitle{Booléens}
+\begin{itemize}
+ \item True, False (bool)
+ \item Attention aux résultats des opérations sur les booléens.
+ \item + donne un int
+ \item Opérateurs booléens spécifiques.   
+\end{itemize}
+\begin{pythonConsole}
+>>> a = True
+>>> type(a)
+<type 'bool'>
+>>> b = False
+>>> c = a + b
+>>> print(c)
+1
+>>> type(c)
+<type 'int'>
+>>> c = a * b
+>>> print(c)
+0
+>>> c = a & b  
+>>> print(c)
+False
+>>> c = a | b
+>>> print(c)
+True
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{Nombres}
+\framesubtitle{Opérateurs}
+\begin{itemize}
+ \item Redéfinition des opérateurs selon les types. 
+ \item Pour les règles de priorités, cf 'language reference'.
+ \item Bitwise operations on integer, cf 'language reference'. 
+\end{itemize}
+
+\begin{tabular}{l|ll|ll}
+{\bfseries entiers} & + & addition & - & substraction \\
+ &  * & multiplication & / & division \\
+ & \% & modulo & // & floor division \\
+ & ** & power  & & \\
+ & << & shifting left & >> & shifting right \\
+{\bfseries réels} & \multicolumn{4}{l}{idem entiers hors shifting et bitwise op.}\\
+{\bfseries complexes} & \multicolumn{4}{l}{idem réels}\\
+{\bfseries booléens} & \&, and & and & |, or & or \\
+ & \^\/ & xor & not & not 
+\end{tabular}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Nombres}
+\framesubtitle{Opérateurs de comparaisons}
+\begin{tabular}{ll}
+{\bfseries Comparaisons} & > , < , >=, <=, == \\
+ & <>, != (mieux, version C) \\
+ & in, not in (sequence) \\
+ & is, is not (objet) 
+\end{tabular}
+\begin{pythonConsole}
+>>> a = 1 
+>>> a in [0, 1, 2]
+True
+>>> b = 2
+>>> a is b
+False
+>>> a is 1
+True
+>>> c = a
+>>> a is c
+True
+>>> 0 < a <= 2
+True
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Nombres}
+\framesubtitle{Typage explicite, conversion de type}
+\begin{itemize}
+ \item possibilité de typer explicitement avec la fonction associée au type voulue : int(), float() \dots
+ \item conversion, implicite pour certaines opérations. 
+\end{itemize}
+\begin{pythonConsole}
+>>> a = float(9)
+>>> type(a)
+<type 'float'>
+>>> c = 1 / a
+>>> print(c)
+0.111111111111
+>>> b = 9
+>>> c = 1 / float(b)
+>>> print(c)
+0.111111111111
+>>> d = complex(1, 2)
+>>> print(d)
+(1+2j)
+>>> print(str(d))
+(1+2j)
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Nombres et Caractères}
+\framesubtitle{Binary, Hexadecimal, Octal, Character, Unicode Character}
+\begin{itemize}
+ \item binary (0b) (bin), hexadecimal (0x) (hex), octal (0c) (oct) 
+ \item character (chr) (< 0xFF) ou unicode (unichr) (< 0xFFFF)
+\end{itemize}
+\begin{pythonConsole}
+>>> a = 0x597d
+>>> print(a)
+22909
+>>> a = 0b0101
+>>> print(a)
+5
+>>> a = chr(42)
+>>> print(a)
+*
+>>> b = unichr(0x597D)
+>>> print(b)
+chinese symbol ni
+>>> a = bin(65447)
+>>> print(a)
+0b101100101111101
+>>> type(a)
+<type 'str'>
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Séquences}
+\framesubtitle{Chaînes de caractères}
+\begin{itemize}
+ \item Texte délimité par ' ' ou " " (str) 
+ \item La chaîne de caractère a une longueur (len)
+\end{itemize}
+\begin{pythonConsole}
+>>> a = 'abc'
+>>> type(a)
+<type 'str'>
+>>> b = "def"
+>>> c = a + b
+>>> c
+'abcdef'
+>>> len(c)
+6
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Séquences}
+\framesubtitle{Chaînes de caractères}
+\begin{itemize}
+ \item Alternance des single/double quote. 
+ \item Caractères spéciaux à la C.
+\end{itemize}
+\begin{pythonConsole}
+>>> a = "1. Bisque de pigeonneaux\n\t Prenez vos pigeonneaux apres qu'ils
+seront bien nettoyez\n\t&'Troussez', faites les blanchir, \n\t& Les " + 
+'"empottez" avec un petit brin de fines herbes'
+>>> print(a)
+1. Bisque de pigeonneaux
+    Prenez vos pigeonneaux apres qu£'£ils seront bien nettoyez
+    & £'£Troussez£'£, faites les blanchir, 
+    & Les £"£empottez£"£ avec un petit brin de fines herbes
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Séquences}
+\framesubtitle{Chaînes de caractères}
+\begin{itemize}
+ \item forme mutliligne """ """ ou '\,'\,' '\,'\,' (! caractères spéciaux).  
+ \item Représentation (repr) différente de (str). 
+\end{itemize}
+\begin{pythonConsole}
+>>> a = """1. Bisque de pigeonneaux\n
+... \tPrenez vos pigeonneaux apres qu'ils seront bien nettoyez\n
+...     & 'Troussez', faites les blanchir, 
+...     & Les "empottez" avec un petit brun de fines herbes
+... """
+>>> print(a)
+1. Bisque de pigeonneaux
+
+    Prenez vos pigeonneaux apres qu£'£ils seront bien nettoyez 
+
+    & £'£Troussez£'£, faites les blanchir,
+    & Les £"£empottez£"£ avec un petit brun de fines herbes
+>>> repr(a)
+£'£\£'£1. Bisque de pigeonneaux\\n\\n\\t\\tPrenez vos pigeonneaux apres qu\\\£'£
+ils seront bien nettoyez\\n\\n\\t& \\\£'£Troussez\\\£'£, faites les blanchir,\
+\n\\t& Les £"£empottez£"£ avec un petit brun de fines herbes\\n\£'££'£
+>>> str(a)
+"1. Bisque de pigeonneaux\n\n\tPrenez vos pigeonneaux apres qu'ils seront bien 
+nettoyez\n\n    & 'Troussez', faites les blanchir, \n    & Les £"£empottez£"£ avec
+un petit brun de fines herbes"
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Séquences}
+\framesubtitle{Chaînes de caractères}
+\begin{itemize}
+ \item forme brute (r" " ou r' ' ou r""" """ ou r'\,'\,' '\,'\,')
+ \item forme unicode (u" " ou u' ' ou u""" """ ou u'\,'\,' '\,'\,')
+\end{itemize}
+\begin{pythonConsole}
+>>> a = r"Potage de sant£\color{magenta}{é}£\n\tLe potage de sant£\color{magenta}{é}£ se fait de chapons..."
+>>> print(a)
+Potage de sant£é£\n\tLe potage de sant£é£ se fait de chapons...
+>>> repr(a)
+"'Potage de sant\\xc3\\xa9\\\\n\\\\tLe potage de sant\\xc3\\xa9 se fait 
+de chapons...'"
+>>> a = u"Potage de sant£\color{magenta}{é}£\n\tLe potage de sant£\color{magenta}{é}£ se fait de chapons..."
+>>> print(a)
+Potage de sant£é£
+    Le potage de sant£é£ se fait de chapons...
+>>> repr(a)
+"u'Potage de sant\\xe9\\n\\tLe potage de sant\\xe9 se fait de chapons...
+'"
+>>> print(u"\u4F60\u597D")
+\end{pythonConsole}
+% 你好
+\end{frame}
+%...............................................................................
+
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Séquences}
+\framesubtitle{Listes}
+\begin{itemize}
+ \item Listes d'éléments ([\ , \ ], list)
+ \item Longueur $n$ (len)
+ \item Accès aux élément : indice de \color{red}{0 à $n-1$}
+\end{itemize}
+\begin{pythonConsole}
+>>> a = [1, 2, 3]
+>>> type(a)
+<type £'£list£'£>
+>>> len(a)
+3
+>>> b = ['abc', 'de', 'fghij']
+>>> len(b)
+3
+>>> c = a + b
+>>> print(c)
+[1, 2, 3, 'abc', 'de', 'fghij']
+>>> c[0]
+1
+>>> c[5]
+'fghij'
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Séquences}
+\framesubtitle{Listes}
+\begin{itemize}
+ \item découpage, slicing (:, i:, :j, i:j, i:j:k, slice(i,j,k))
+ \item Indices négatifs de -1 à $-n$ permettent de parcourir en partant par la fin. 
+\end{itemize}
+\begin{pythonConsole}
+>>> a = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> a[:]
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> a[3:]
+[4, 5, 6, 7, 8, 9]
+>>> a[:3]
+[1, 2, 3]
+>>> a[2:2+4] # a[2:6]
+[3, 4, 5, 6]
+>>> a[2:6:2]
+[3, 5]
+>>> s = slice(2, 6, 2)
+>>> a[s]
+[3, 5]
+>>> a[-1]
+9 
+>>> a[-9]
+1 
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Séquences}
+\framesubtitle{Listes}
+\begin{itemize}
+ \item Imbrications, nested.
+ \item Attention aux erreurs d'indexation, les listes Python ne sont pas de matrices à la Matlab. 
+\end{itemize}
+\begin{pythonConsole}
+>>> a = [[1, 2, 3], [4, 5, 6]]
+>>> a
+[[1, 2, 3], [4, 5, 6]]
+>>> len(a)
+2
+>>> a[0]
+[1, 2, 3]
+>>> a[0][0]
+1
+>>> a[0, 0]
+Traceback (most recent call last):
+  File £"£<stdin>£"£, line 1, £in£ <module>
+TypeError: list indices must be integers, £not£ tuple
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Séquences}
+\framesubtitle{Tuples}
+\begin{itemize}
+ \item Couple, triplet, n-uplet, plus généralement tuple ((\ , \ ), tuple)
+ \item Ce sont des séquences (de même que les types str, unicode, list, tuple, buffer, xrange) : même indexation que les listes.
+\end{itemize}
+\begin{pythonConsole}
+>>> couple = ('papa', 'maman')
+>>> type(couple)
+<type 'tuple'>
+>>> couple[0]
+'papa'
+>>> a = ('bob', 'alice')
+>>> b = ('pierre', 'paul')
+>>> c = a + b
+>>> print(c)
+('bob', 'alice', 'pierre', 'paul')
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Séquences}
+\framesubtitle{Tuples}
+\begin{itemize}
+ \item Taille fixe immuable (immutable en anglais). 
+ \item Pratique pour le passage de paramètres de taille fixe. 
+ \item Affectation multiple implicite. 
+ \item On ne peut pas changer les valeurs des tuples. 
+\end{itemize}
+\begin{pythonConsole}
+>>> papa = 'bob'
+>>> maman = 'alice'
+>>> couple = (papa, maman)
+>>> print(couple)
+'bob', 'alice'
+>>> couple = (papa, maman) = ('bob', 'alice')
+>>> couple = papa, maman = 'bob', 'alice'
+>>> couple[0] = 'robert'
+Traceback (most recent call last):
+  File £"£<stdin>£"£, line 1, £in£ <module>
+TypeError: 'tuple' object does £not£ support item assignment
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Séquences}
+\framesubtitle{Tuples}
+\begin{itemize}
+ \item Attention : couples immuables, listes muables 
+\end{itemize}
+\begin{pythonConsole}
+>>> address = '0001'
+>>> instr = '011'
+>>> code1 = (instr, address)
+>>> code2 = ('100', '0010')
+>>> code3 = ('110', '0011')
+>>> code4 = ('010', '0001')
+>>> prog = [code1, code2, code3]
+>>> prog.append(code4)
+>>> print(progr)
+[('011', '0001'), ('100', '0010'), ('110', '0011'), ('010', '0001')]
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Séquences}
+\framesubtitle{Tuples}
+\begin{itemize}
+ \item Exemple de liste de couples. 
+\end{itemize}
+\begin{pythonConsole}
+>>> name = 'abc'
+>>> value = 123
+>>> entry1 = (name, value)
+>>> entry2 = ('def', 234)
+>>> dictionary = [entry1, entry2]
+>>> dictionary.append(('efg', 345))
+>>> print(dictionary)
+[('abc', 123), ('def', 234), ('efg', 345)]
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Séquences}
+\framesubtitle{Dictionnaires}
+\begin{itemize}
+ \item Dictionnaires (dict) 
+ \item key (str): value 
+\end{itemize}
+\begin{pythonConsole}
+>>> d = {'abc': 123, 'def': 234}
+>>> type(d)
+<type 'dict'>
+>>> print(d)
+{'abc': 123, 'def': 234}
+>>> d['abc']
+123
+>>> for key in d: 
+...  print((key, d[key]))
+... 
+('abc', 123)
+('def', 234)
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Séquences}
+\framesubtitle{Ensemble}
+\begin{itemize}
+ \item Ensemble (\{\ ,\ \}, set) 
+ \item Collections d'éléments uniques non ordonnés.
+ \item Opération ensemblistes (add, discard, union, intersect, \dots)
+\end{itemize}
+\begin{pythonConsole}
+>>> E = {1, 2, 3}
+>>> type(E)
+<type 'set'>
+>>> print(E)
+set([1, 2, 3])
+>>> E[0]
+Traceback (most recent call last):
+  File £"£<stdin>£"£, line 1, £in£ <module>
+TypeError: £'set'£ object does £not£ support indexing
+>>> F = {1, 2, 3, 2, 1, 4, 1, -1}
+>>> F
+set([1, 2, 3, 4, -1])
+>>> a = 1
+>>> a in F
+True
+>>> G = E + F
+Traceback (most recent call last):
+  File £"£<stdin>£"£, line 1, £in£ <module>
+TypeError: unsupported operand type(s) £for£ +: £'set'£ £and£ £'set'£
+>>> E.intersection(F)
+set([1, 2, 3]) 
+>>> E.add(-10)
+>>> print(E)
+set([1, 2, 3, -10])
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsection{Syntaxe}
+%...............................................................................
+\begin{frame}
+\frametitle{Syntaxe}
+\framesubtitle{}
+\begin{itemize}
+ \item Fonctions prédéfinies, 'Builtin' Functions  
+ \item Structures de contrôles 
+ \item Fonctions
+ \item Objets et Classes
+\end{itemize}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{Syntaxe}
+\framesubtitle{Fonctions prédéfinies}
+\begin{itemize}
+\item Built-in Functions : fonctions de base du langage. 
+\end{itemize}
+{\tiny%
+\begin{tabular}{lllll}
+abs() & divmod() & input() &  open() & staticmethod() \\
+all() & enumerate() &  int() & ord() & str() \\
+any() & eval() & isinstance() & pow() & sum() \\
+basestring() &  execfile() &  issubclass() &  print() &  super() \\
+bin() &  file() & iter() & property() &  tuple() \\
+bool() & filter() & len() &  range() &  type() \\
+bytearray() &  float() &  list() &  raw\_input() &  unichr() \\
+callable() & format() &  locals() &  reduce() &  unicode() \\
+chr() &  frozenset() & long() & reload() & vars() \\
+classmethod() & getattr() & map() & repr() &  xrange() \\
+cmp() & globals() & max() & reversed() & zip() \\
+compile() &  hasattr() & memoryview() & round() &  \_\_import\_\_()\\
+complex() & hash() & min() & set() &  apply() \\
+delattr() &  help() & next() & setattr() &  buffer() \\
+dict() & hex() & object() & slice() & coerce() \\
+dir() & id() & oct() &  sorted() &  intern() 
+\end{tabular}
+}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{Syntaxe}
+\framesubtitle{Fonctions prédéfinies}
+\begin{itemize}
+ \item Built-in Functions : fonctions de base du langage. 
+\end{itemize}
+{\tiny%
+\begin{tabular}{lllll}
+abs() & divmod() & input() &  open() & staticmethod() \\
+all() & enumerate() &  \color{red}{int()} & ord() & \color{red}{str()} \\
+any() & eval() & isinstance() & pow() & sum() \\
+basestring() &  execfile() &  issubclass() &  \color{red}{print()} &  super() \\
+\color{red}{bin()} &  file() & iter() & property() &  \color{red}{tuple()} \\
+\color{red}{bool()} & filter() & \color{red}{len()} &  range() &  \color{red}{type()} \\
+bytearray() &  \color{red}{float()} &  \color{red}{list()} &  raw\_input() &  \color{red}{unichr()} \\
+callable() & format() &  locals() &  reduce() &  \color{red}{unicode()} \\
+chr() &  frozenset() & \color{red}{long()} & reload() & vars() \\
+classmethod() & getattr() & map() & \color{red}{repr()} &  xrange() \\
+cmp() & globals() & max() & reversed() & zip() \\
+compile() &  hasattr() & memoryview() & round() &  \_\_import\_\_()\\
+\color{red}{complex()} & hash() & min() & \color{red}{set()} &  apply() \\
+delattr() &  \color{red}{help()} & next() & setattr() &  buffer() \\
+\color{red}{dict()} & \color{red}{hex()} & object() & \color{red}{slice()} & coerce() \\
+\color{red}{dir()} & id() & \color{red}{oct()} &  sorted() &  intern() 
+\end{tabular}
+}
+
+\color{red}{déjà rencontrées}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{Syntaxe}
+\framesubtitle{Fonctions prédéfinies}
+\begin{itemize}
+ \item Built-in Functions : fonctions de base du langage. 
+\end{itemize}
+{\tiny%
+\begin{tabular}{lllll}
+\color{blue}{abs()} & \color{blue}{divmod()} & \color{blue}{input()} &  \color{blue}{open()} & staticmethod() \\
+\color{blue}{all()} & \color{blue}{enumerate()} &  int() & \color{blue}{ord()} & str() \\
+\color{blue}{any()} & eval() & isinstance() & \color{blue}{pow()} & \color{blue}{sum()} \\
+basestring() &  execfile() &  issubclass() &  print() &  super() \\
+bin() &  \color{blue}{file()} & \color{blue}{iter()} & property() &  tuple() \\
+bool() & filter() & len() &  \color{blue}{range()} &  type() \\
+bytearray() &  float() &  list() &  raw\_input() &  unichr() \\
+callable() & format() &  locals() &  reduce() &  unicode() \\
+\color{blue}{chr()} &  frozenset() & long() & reload() & \color{blue}{vars()} \\
+classmethod() & getattr() & map() & repr() &  \color{blue}{xrange()} \\
+cmp() & globals() & \color{blue}{max()} & reversed() & \color{blue}{zip()} \\
+compile() &  hasattr() & memoryview() & \color{blue}{round()} &  \color{blue}{\_\_import\_\_()}\\
+complex() & hash() & \color{blue}{min()} & set() &  apply() \\
+delattr() &  help() & \color{blue}{next()} & setattr() &  buffer() \\
+dict() & hex() & object() & slice() & coerce() \\
+dir() & \color{blue}{id()} & oct() &  sorted() &  intern() 
+\end{tabular}
+}
+
+\color{blue}{abordées tôt ou tard}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Structure de contrôle}
+\begin{itemize}
+\item {\bfseries blocs conditionnels} : if else
+\item {\bfseries boucles conditionnelles} : while
+\item {\bfseries boucles} : for in
+\item {\bfseries gestion d'exceptions} : try except 
+\end{itemize}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Structure de contrôle - if else}
+\begin{itemize}
+\item blocs conditionnels : if else
+\item ':' et indentation suivie d'un bloc d'instruction.  
+\end{itemize}
+\begin{pythonConsole}
+>>> a = 1
+>>> if (a == 1): 
+...     print("a vaut 1")
+... else: 
+...     print("a ne vaut pas 1")
+...
+a vaut 1
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Indentation}
+\begin{itemize}
+\item Pour l'indentation dans un fichier, il est conseillé d'utiliser 4 espaces plutôt qu'une tabulation. 
+\item Possibilité de régler ce paramètres dans les éditeurs de texte : tabulation souple émulée avec des espaces ('soft tab' with 4 spaces vs 'hard tab'). 
+\end{itemize}
+\begin{python}
+if (a == 1): 
+    print("a vaut 1")
+else: 
+    print("a ne vaut pas 1")
+\end{python}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Structure de contrôle - if elif else}
+\begin{itemize}
+\item blocs conditionnels : if elif else
+\end{itemize}
+\begin{pythonConsole}
+>>> a = 2
+>>> if (a == 1): 
+...     print("a vaut 1")
+... elif a == 2: 
+...     print("a vaut 2")
+... elif a == 3: 
+...     print("a vaut 3")
+... else: 
+...     print("a ne vaut ni 1 ni 2 ni 3")
+...
+a vaut 2
+\end{pythonConsole}
+cf matlab (if elseif else end, switch case otherwise end) 
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Structure de contrôle - if elif else}
+\begin{itemize}
+\item blocs conditionnels : if elif else
+\end{itemize}
+\begin{pythonConsole}
+>>> a = "green"
+>>> if (a is "green"): 
+...     print("00FF00")
+... elif (a == "red"): 
+...     print("FF0000")
+... elif (a is "blue"): 
+...     print("0000FF")
+... else: 
+...     print("Unknown color")
+...
+00FF00
+\end{pythonConsole}
+cf matlab (if elseif else end, switch case otherwise end) 
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Structure de contrôle - while}
+\begin{itemize}
+\item boucles conditionnelles : while
+\end{itemize}
+\begin{pythonConsole}
+>>> question = "Voulez-vous continuer ? (o, oui, O, OUI) "
+>>> cond = True
+>>> reponseOK = {"o", "O", "oui", "OUI"}
+>>> i = 0
+>>> while cond:
+...    i += 1
+...    print(str(i) + " fois")
+...    answer = input(question)
+...    if (answer in reponseOK): 
+...        cond = True
+...    else: 
+...        cond = False
+...
+1 fois 
+Voulez-vous continuer ? (o, oui, O, OUI) 'o'
+2 fois 
+Voulez-vous continuer ? (o, oui, O, OUI) 'oui'
+3 fois
+Voulez-vous continuer ? (o, oui, O, OUI) 'non'
+>>> 
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Structure de contrôle - for}
+\begin{itemize}
+\item boucles : for \ in \ :
+\item Dans 'language reference' : \lstinline{for_stmt ::= "for" target_list "in" expression_list ":" suite}
+[”else” ”:” suite]
+\end{itemize}
+\begin{pythonConsole}
+>>> for i in [0, 1, 2, 3]: 
+...     print(i)
+... 
+0
+1
+2
+3
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Structure de contrôle - for}
+\begin{itemize}
+\item {[0, 1, 2, 3]} : range(i,j,k) 
+\end{itemize}
+\begin{pythonConsole}
+>>> for i in range(4): 
+...     print(i)
+... 
+0
+1
+2
+3
+\end{pythonConsole}
+\begin{pythonConsole}
+>>> x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> x[range(1, 5, 2)]
+Traceback (most recent call last):
+  File £"£<stdin>£"£, line 1, in <module>
+TypeError: list indices must be integers, not list
+>>> x[slice(1, 5, 2)]
+[1, 3]
+>>> range(1, 5, 2)
+[1, 3]
+>>> slice(1, 5, 2)
+slice(1, 5, 2)
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Structure de contrôle - for}
+\begin{itemize}
+\item boucles : for 
+\end{itemize}
+\begin{pythonConsole}
+>>> for (i, j) in [(1, 2), (2, 3), (3, 4)]: 
+...   print((i,j))
+... 
+(1, 2)
+(2, 3)
+(3, 4)
+\end{pythonConsole}
+\begin{pythonConsole}
+>>> for [i, j] in [[1, 2], [2, 3], [3, 4]]: 
+...   print([i, j])
+... 
+[1, 2]
+[2, 3]
+[3, 4]
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Structure de contrôle - break, continue}
+\begin{itemize}
+\item possibilité de break et continue. 
+\end{itemize}
+\begin{pythonConsole}
+>>> for i in range(10):
+...   if (i £\%£ 2 == 0): 
+...     continue
+...   if (i == 9): 
+...     break
+...   print(i)
+...
+1
+3
+5
+7
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Structure de contrôle - try except}
+\begin{itemize}
+\item Gestion des erreurs ou exceptions : try except 
+\end{itemize}
+\begin{pythonConsole}
+>>> a = "abc"
+>>> a += 1
+Traceback (most recent call last):
+  File £"£<stdin>£"£, line 1, £in£ <module>
+TypeError: cannot concatenate £'£str£'£ £and£ £'£int£'£ objects
+\end{pythonConsole}
+\begin{pythonConsole}
+>>> a = 'abc'
+>>> try: 
+...     a += 1
+... except : 
+...     print("problem" )
+... 
+problem
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Structure de contrôle - try except else finally}
+\begin{itemize}
+\item Gestion des erreurs ou exceptions : try except else finally 
+\end{itemize}
+\begin{pythonConsole}
+>>> a = 'abc'
+>>> try: 
+...     a += 1
+... except IOError as e :
+...     print("problem entr£{\color{magenta}é}£es sorties : " + str(e))
+... except TypeError as e :
+...     print("problem de types : " + str(e))
+... finally:
+...     print("Avec ou sans erreurs, on continue")
+... 
+problem de types : cannot concatenate £'str'£ £and£ £'int'£ objects
+Avec ou sans erreurs, on £continue£
+\end{pythonConsole}
+\begin{pythonConsole}
+>>> a = 1
+>>> try: 
+...     a += 1
+... except IOError as e :
+...     print("problem entr£{\color{magenta}é}£es sorties : " + str(e))
+... except TypeError as e :
+...     print("problem de types : " + str(e))
+... else: 
+...     print("a = " + str(a))
+... finally:
+...     print("Avec ou sans erreurs, on continue")
+...
+a = 2
+Avec ou sans erreurs, on £continue£
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Fonctions - Définition de la fonction}
+\begin{itemize}
+\item définition d'une fonction : "def" funcname "(" [parameter\_list] ")" ":" suite
+\item indentation nécessaire pour le bloc d'instructions. 
+\end{itemize}
+\begin{pythonConsole}
+>>> def sayHello(): 
+...    print("Hello")
+...
+>>> sayHello()
+Hello
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Fonctions - passage de paramètres obligatoires}
+\begin{itemize}
+\item Les arguments (dit args) sont définis entre parenthèse. 
+\item args : obligatoires et ordonnés
+\end{itemize}
+\begin{pythonConsole}
+>>> def sayHello(titre, prenom, nom): 
+...    print("Hello " + str(titre) + " " + str(prenom) + " " + str(nom))
+...
+>>> sayHello("d£{\color{magenta}é}£tective priv£{\color{magenta}é}£ de classe R", "John", "Difool")
+Hello d£é£tective priv£é£ de classe R John Difool
+\end{pythonConsole}
+\begin{pythonConsole}
+>>> sayHello()
+Traceback (most recent call last):
+  File £"£<stdin>£"£, line 1, £in£ <module>
+TypeError: sayHello() takes exactly 3 arguments (0 given)
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Fonctions - passage de paramètres optionnels}
+\begin{itemize}
+\item arguments mots clés (keywords arguments dits kwargs) non obligatoires. 
+\item args avant les kwargs
+\item kwargs : optionnels et non ordonnés
+\end{itemize}
+\begin{pythonConsole}
+>>> def sayHello(titre, prenom="", nom=""): 
+...    print("Hello " + str(titre) + " " + str(prenom) + " " + str(nom))
+...
+>>> sayHello("old")
+Hello old
+>>> sayHello("old", prenom="Nick")
+Hello old Nick
+>>> sayHello("old", "Tom", "Bombadil")
+Hello old Tom Bombadil
+>>> sayHello("old", nom="Bombadil", prenom="Tom")
+Hello old Tom Bombadil
+>>> sayHello(nom="Bombadil")
+Traceback (most recent call last):
+  File £"£<stdin>£"£, line 1, in <module>
+TypeError: sayHello() takes at least 1 argument (1 given)
+>>> sayHello("old", nom="Bombadil", "Tom")
+  File £"£<stdin>£"£, line 1
+SyntaxError: non-keyword arg after keyword arg
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Fonctions - renvoi de valeurs}
+\begin{itemize}
+\item renvoi de valeurs : return
+\end{itemize}
+\begin{pythonConsole}
+>>> def fun(x): 
+...    y = 2 * x
+...    return y
+...
+>>> fun(3)
+6
+\end{pythonConsole}
+\begin{pythonConsole}
+>>> def fun(x): 
+...    y1 = x
+...    y2 = 2 * x
+...    y3 = 3 * x
+...    name = "1, 2, 3 * " + str(x) + " = "
+...    return name, y1, y2, y3 # the tuple (name, y1, y2, y3)
+...
+>>> fun(3)
+('1, 2, 3 * 3 = ', 3, 6, 9)
+>>> (name, y1, y2, y3) = fun(3)
+>>> name, y1, y2, y3 = fun(3)
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Fonctions - autres spécificités}
+\begin{itemize}
+\item bloc vide : pass 
+\item None values
+\item variables de fonctions 
+\end{itemize}
+\begin{pythonConsole}
+>>> def fonctionQuiNeFaitRienEtQuiAUnNomHorribleMaisDescriptif(x): 
+...    pass
+...
+>>> def fonctionQuiNeFaitRienEtQuiAUnNomHorribleMaisDescriptif(x): 
+...    return
+...
+>>> def fonctionQuiNeFaitRienEtQuiAUnNomHorribleMaisDescriptif(x): 
+...    return None
+...
+>>> a = fonctionQuiNeFaitRienEtQuiAUnNomHorribleMaisDescriptif(3)
+>>> a == None
+True
+>>> pfff = fonctionQuiNeFaitRienEtQuiAUnNomHorribleMaisDescriptif
+>>> pfff(1)
+>>> pfff("abc")
+>>> pfff
+<function fonctionQuiNeFaitRienEtQuiAUnNomHorribleMaisDescriptif at 0x2d49b0>
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Objets - Notion de programmation orientée objet}
+\begin{itemize}
+\item Un objet possède : 
+ \begin{itemize}
+  \item des propriétés ou attributs, variables spécifiques à l'objet. 
+  \item des méthodes, fonctions qui permettent de communiquer entre objets ou avec l'extérieur. 
+ \end{itemize}
+\item Un objet appartient à une classe: {\em Un objet est une instance de classe. }
+\item Les propriétés et méthodes sont définies dans la classe. 
+\end{itemize}
+
+\begin{pythonConsole}
+3 canards : riri, fifi, loulou
+
+classe Canard : 
+propri£é£t£é£s, attributs : 2 pattes, 2 ailes, £é£tat d£'£activit£é£
+m£é£thodes : manger, chanter, ne rien faire.  
+
+Canard : 
+ £à£ 2 pattes
+ £à£ 2 ailes
+ status par d£é£faut : ne fais rien
+ 
+ mange(aliments)
+  v£é£rification aliments : herbivore, carnivore occasionnel 
+ 
+ chante()
+  g£é£n£è£re un son qui fait "couin couin"  
+
+ ne fait rien()
+  
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Objets : définition en Python}
+\begin{itemize}
+ \item Définition d'une nouvelle : "class" classname ":" suite
+ \item propriétés : variables avec une valeur par défaut. 
+ \item méthodes : fonctions avec le premier argument l'objet lui même par convention 'self'
+\end{itemize}
+\begin{pythonConsole}
+>>> class Canard: 
+...    pattes = 2
+...    ailes = 2
+...    status = "en attente"
+...    def mange(self, aliment):
+...       self.status = "mange"
+...       if aliment in {"grain", "feuille", "fleur", "tige", "racine"}: 
+...          print("miam")
+...       elif aliment in {"ver", "insecte", "friture"}: 
+...          print("j'avais faim")
+...       else : 
+...          print("non merci")
+...    def chante(self): 
+...       self.status = "chante"
+...       print("couin couin")
+...    def espere(self): 
+...       self.status = "en attente"
+...       return 0 
+...
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Objets : définition en Python}
+\begin{itemize}
+ \item \_\_init\_\_ : création lors de l'instanciation. Il est conseillé d'initialiser les attributs dans ce bloc. 
+\end{itemize}
+\begin{pythonConsole}
+>>> class Canard: 
+...    def __init__(self): 
+...       self.pattes = 2
+...       self.ailes = 2
+...       self.status = "en attente"
+...
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Objets : instanciation et usage}
+\begin{itemize}
+ \item instanciation : objet = Classname()
+ \item propriétés obtenues par : objet.property (cf structure en C)
+ \item méthodes obtenues par : objet.method(argument)
+\end{itemize}
+\begin{pythonConsole}
+>>> riri = Canard()
+>>> riri
+<__main__.Canard instance at 0x2c8760>
+>>> fifi = Canard()
+>>> loulou = Canard()
+>>> riri.ailes
+2
+>>> riri.status
+en attente
+>>> riri.chante()
+couin couin
+>>> loulou.mange("grain")
+miam
+>>> riri.status, loulou.status, fifi.status
+('chante', 'mange', 'en attente')
+>>> fifi.espere()
+0
+>>> dir(riri)
+['__doc__', '__module__', 'ailes', 'chante', 'espere', 'mange', 'pattes',
+'status']
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Objets : exemple avec des nombres}
+\begin{itemize}
+\item En python toutes les variables sont des objets. 
+\end{itemize}
+\begin{pythonConsole}
+>>> a = 123
+>>> dir(a)
+['__abs__', '__add__', '__and__', '__class__', '__cmp__', '__coerce__',
+'__delattr__', '__div__', '__divmod__', '__doc__', '__float__', '__floordiv__',
+'__format__', '__getattribute__', '__getnewargs__', '__hash__', '__hex__',
+'__index__', '__init__', '__int__', '__invert__', '__long__', '__lshift__',
+'__mod__', '__mul__', '__neg__', '__new__', '__nonzero__', '__oct__', '__or__',
+'__pos__', '__pow__', '__radd__', '__rand__', '__rdiv__', '__rdivmod__',
+'__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__',
+'__rmod__', '__rmul__', '__ror__', '__rpow__', '__rrshift__', '__rshift__',
+'__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__',
+'__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__',
+'bit_length', 'conjugate', 'denominator', 'imag', 'numerator', 'real']
+>>> type(a)
+<type 'int'>
+>>> a.real
+123
+>>> a.bit_length()
+7
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Objets : exemple avec les listes et les tuples}
+\begin{pythonConsole}
+>>> a = [1, 2, 3, 1, 2]
+>>> dir(a)
+[..., 'append', 'count', 'extend', 'index', 'insert', 'pop', 
+'remove', 'reverse', 'sort']
+>>> type(a)
+<type 'list'>
+>>> a.append(3)
+>>> a 
+[1, 2, 3, 1, 2, 3]
+>>> a.pop()
+>>> a 
+[1, 2, 3, 1, 2]
+\end{pythonConsole}
+\begin{pythonConsole}
+>>> a = (1, 2, 3, 1, 2)
+>>> dir(a)
+[..., 'count', 'index']
+>>> type(a)
+<type 'tuple'>
+>>> a.count(1)
+2
+>>> a.index(1)
+0
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Objets : exemple avec les chaînes de caractères}
+\begin{pythonConsole}
+>>> a = "abc.def"
+>>> dir(a)
+[..., 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 
+'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit',
+'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip',
+'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit',
+'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title',
+'translate', 'upper', 'zfill']
+>>> a.upper()
+ABC.DEF
+>>> a.index('.')
+3
+>>> (head, sep, tail) = a.partition('.')
+('abc', '.', 'def')
+>>> (head, sep, tail) = a.partition('.')
+>>> head
+'abc'
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Fichiers}
+\begin{itemize}
+ \item un fichier est considéré comme un objet de classe 'file'. 
+\end{itemize}
+\begin{pythonConsole}
+>>> f = file("cuisinierFrancois.txt", 'r')
+>>> f
+<open file 'cuisinierFrancois.txt', mode 'r' at 0x2a2390>
+>>> dir(f)
+dir(f)
+[..., 'close', 'closed', 'encoding', 'errors', 'fileno', 'flush', 
+'isatty', 'mode', 'name', 'newlines', 'next', 'read', 'readinto', 
+'readline', 'readlines', 'seek', 'softspace', 'tell', 'truncate', 
+'write', 'writelines', 'xreadlines']
+>>> f.readlines()
+['LE CUISINIER FRANCOIS, \n', '\n', 'ENSEIGNANT LA MANIERE\n', 'de 
+bien apprester & assaisonner\n', 'toutes sortes de Viandes grasses
+\n', '& maigres, Legumes, Patisseries, \n', '& autres mets qui se 
+servent tant\n', 'sur les Tables des Grands que des\n', 'particuli
+ers. \n', '\n', '\n']
+>>> f.seek(0)
+>>> for line in f: 
+...     print(line)
+...
+LE CUISINIER FRANCOIS, 
+
+ENSEIGNANT LA MANIERE
+de bien apprester & assaisonner
+toutes sortes de Viandes grasses
+& maigres, Legumes, Patisseries, 
+& autres mets qui se servent tant
+sur les Tables des Grands que des
+particuliers. 
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsection{Portées, modules et paquets}
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Module}
+\framesubtitle{Exécution dans le shell}
+\begin{itemize}
+\item Enregistrement du code dans un fichier module1.py
+\item Contient des définitions des classes ou de fonctions, des scripts, une documentation (docstring).  
+\item Exécution du code dans le shell : python module1.py
+\end{itemize}
+\begin{python}
+def f1(x):
+    y = 10 * x
+    return y
+def f2(x):
+    y = 100 * x
+    return y
+x = 3
+y1 = f1(x)
+y2 = f2(x)
+print("(x, y1, y2) : " + str((x, y1, y2)))
+\end{python}
+
+\begin{shell}
+~/python/example/module> python module1.py
+(x, y1, y2) : (3, 30, 300)
+\end{shell}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Module}
+\framesubtitle{Importation de code : import}
+\begin{itemize}
+\item Importation du code dans la console ou dans un autre module : import  
+\item Variante en modifiant l'espace de nom (namespace) : import \dots\ as fun
+\end{itemize}
+\begin{python}
+import module1
+x = 4
+y1 = module1.f1(x)
+y2 = module1.f2(x)
+print("module -> (x, y1, y2) : " + (x, y1, y2))
+\end{python}
+\begin{python}
+import moduleQuiAUnNomBeaucoupTropLong as myFun
+x = 4
+y1 = myFun.f1(x)
+y2 = myFun.f2(x)
+print("module -> (x, y1, y2) : " + (x, y1, y2))
+\end{python}
+\begin{shell}
+(x, y1, y2) : (3, 30, 300)
+module -> (x, y1, y2) : (4, 40, 400)
+\end{shell}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Module}
+\framesubtitle{Importation de code : import}
+\begin{itemize}
+\item importation spécifique d'une ou plusieurs fonctions : from \dots\ import (f1, f2) ; from \dots\ import (f1 as fun1, f2 as fun2) ; from \dots\ import f1 as fun1, f2 as fun2
+\item from \dots\ import *
+\end{itemize}
+\begin{pythonConsole}
+>>> from module1 import f1 
+>>> f1(5)
+50
+\end{pythonConsole}
+\begin{pythonConsole}
+>>> from module1 import f1 as fois10 
+>>> fois10(5)
+50
+\end{pythonConsole}
+\begin{pythonConsole}
+>>> from module1 import *
+>>> dir()
+[..., 'f1', 'f2', 'x', 'y1', 'y2']
+\end{pythonConsole}
+\begin{pythonConsole}
+>>> import module1
+>>> dir()
+[..., 'module1']
+>>> type(module1)
+<type 'module'>
+>>> dir(module1)
+[..., 'f1', 'f2', 'x', 'y1', 'y2']
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Module}
+\framesubtitle{Espace : \_\_name\_\_}
+\begin{itemize}
+\item attribut système : '\_\_name\_\_'
+\end{itemize}
+\begin{python}
+print("Affichage en import ou en ex£{\color{magenta}\'e}£cution")
+print("__name__ : " + str(__name__))
+
+if ("__name__" == "__main__"): 
+    print("Que si execut£{\color{magenta}\'e}£ de l'ext£{\color{magenta}\'e}£rieur")
+\end{python}
+\begin{pythonConsole}
+>>> import moduleMain
+Affichage en import ou en ex£\'e£cution
+__name__ : moduleMain
+\end{pythonConsole}
+\begin{shell}
+~/python/example/module> python moduleMain.py
+Affichage en import ou en ex£é£cution
+__name__ : __main__
+\end{shell}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Paquet}
+% \framesubtitle{\_\_init\_\_.py}
+\begin{itemize}
+ \item Un dossier contenant : 
+ \begin{itemize} 
+  \item des modules
+  \item un fichier '\_\_init\_\_.py', vide ou non.
+ \end{itemize}
+ \item exemple : packet1/subpacket1/module1.py ; packet1/subpacket2/module2.py 
+ \item possibilité de faire des sous-paquet.  
+\end{itemize}
+\begin{pythonConsole}
+>>> from packet1.subpacket1 import module1 as mod1
+\end{pythonConsole}
+\begin{center}
+ \myFig{width=3cm}{./fig/packet}
+\end{center}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Portée}
+\begin{minipage}[c]{3cm}
+ \myFig{width=3cm}{./fig/scope}
+\end{minipage}
+\begin{minipage}[c]{6cm}
+\begin{itemize}
+ \item paquet, module, def, class : chaque niveau à sa portée (scope).
+ \item Attention à l'espace des noms (namespace) : par exemple, f1 est disponible dans module1 et module2.    
+\end{itemize}
+\begin{pythonConsole}
+>>> import paquet1
+>>> x = 10
+>>> a1 = paquet1.module1.A
+>>> a2 = paquet1.module1.A
+>>> a2.f()
+>>> resF1 = paquet1.module1.f1(x)
+>>> resF2 = paquet1.module2.f2(x)
+>>> from paquet1.module1 import * # A EVITER
+>>> resF1 = f1(x)
+\end{pythonConsole}
+\end{minipage}
+\end{frame}
+%...............................................................................
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsection{Librairies}
+%...............................................................................
+\begin{frame}
+\frametitle{Standard library}
+\begin{itemize}
+    \item Un ensemble de paquets et modules sont déjà livrés avec Python (Battery included) : math, os, sys, datetime \dots
+    \item Avant de recoder quelque chose, vérifier si cela existe dans la documentation : 'The Python Library Reference'. 
+\end{itemize}
+\end{frame}
+%...............................................................................
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsection{Exemple}
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Exemple}
+\framesubtitle{Math}
+\begin{pythonConsole}
+>>> import math
+>>> dir(math)
+['__doc__', '__file__', '__name__', '__package__', 'acos', 'acosh', 
+'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 'copysign', 'cos', 'cosh', 
+'degrees', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 
+'fmod', 'frexp', 'fsum', 'gamma', 'hypot', 'isinf', 'isnan', 'ldexp', 
+'lgamma', 'log', 'log10', 'log1p', 'modf', 'pi', 'pow', 'radians', 'sin', 
+'sinh', 'sqrt', 'tan', 'tanh', 'trunc'] 
+>>> math.cos(math.pi/3)
+0.5000000000000001
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Exemple}
+\framesubtitle{Graphical User Interface / GUI}
+\begin{itemize}
+\item interface graphique pour Tk (Tkinter), GTK (PyGTK), wxWidgets (wxPython), Qt (PyQt).  
+\end{itemize}
+\begin{pythonConsole}
+>>> import Tkinter
+>>> from Tkconstants import *
+>>> tk = Tkinter.Tk()
+>>> tk.title("My App - Hello World !")
+>>> frame = Tkinter.Frame(tk, relief=RIDGE, borderwidth=2)
+>>> frame.pack(fill=BOTH,expand=1)
+>>> label = Tkinter.Label(frame, text="Hello, World")
+>>> label.pack(fill=X, expand=1)
+>>> button = Tkinter.Button(frame,text="Exit",command=tk.destroy)
+>>> button.pack(side=BOTTOM)
+>>> tk.mainloop()
+\end{pythonConsole}
+\begin{center}
+\myFig{width=5cm}{./fig/Tkinter.png}
+\end{center}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Exemple}
+\framesubtitle{Graphical User Interface / GUI}
+\begin{pythonConsole}
+>>> import turtle
+>>> for i in range(30): 
+...     turtle.forward(200)
+...     turtle.rt(20)
+...     turtle.forward(200)
+...     turtle.rt(160)
+...     turtle.forward(200)
+...     turtle.rt(20)
+...     turtle.forward(200)
+...     turtle.rt(172)
+... 
+\end{pythonConsole}
+\begin{center}
+\myFig{width=5cm}{./fig/turtle.png}
+\end{center}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Exemple}
+\framesubtitle{Base de données}
+\begin{pythonConsole}
+>>> import sqlite3
+>>> db = sqlite3.connect("myDB.sq3")
+>>> cur = db.cursor()
+>>> cur = cur.execute("CREATE TABLE membres 
+    (nom TEXT, prenom TEXT, institut TEXT)")
+>>> cur = cur.execute("INSERT INTO membres(nom,prenom,institut) 
+    VALUES('Michel','Olivier','INPG')")
+>>> cur = cur.execute("INSERT INTO membres(nom,prenom,institut)
+    VALUES('Brossier','Jean-Marc','UJF')")
+>>> cur = cur.execute("INSERT INTO membres(nom,prenom,institut)
+    VALUES('Amblard','Pierre-Olivier','CNRS')")
+>>> db.commit()
+>>> cur = cur.execute("SELECT * FROM membres WHERE institut = 'CNRS'")
+>>> list(cur)
+[(u'Amblard', u'Pierre-Olivier', u'CNRS')]
+>>> db.close()
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsection{Documentation du code}
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Documentation}
+\framesubtitle{docstrings}
+\begin{itemize}
+ \item Commentaires : ligne qui commence par \#
+ \item Texte de documentation (Docstring): {\em Une chaîne de caractère qui apparaît comme première expression dans un module, une fonction ou une classe}. 
+ \item """ """ recommandé (see PEP257 : \url{http://www.python.org/dev/peps/pep-0257/})
+\end{itemize}
+
+\begin{python}
+def times(x, y): 
+    """
+    Multiply x by y
+    
+    Compute z = x * y
+
+    Input parameters
+    x and y, any numbers
+
+    Output parameters
+    z 
+    
+    Copyright 2013 G. Becq, Gipsa-lab, UMR 5216, CNRS.
+    """
+    return x * y
+\end{python}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Documentation}
+\framesubtitle{docstrings -- exemple}
+\begin{itemize}
+ \item Première ligne est un résumé suivi d'une ligne vide. 
+ \item Première ligne vide et indentation seront effacées. 
+ % \item Parfois notations de type markup liées au package Sphinx. 
+\end{itemize}
+\begin{python}
+# -*- encoding:utf-8 -*-
+"""
+Module pour tester les docstrings.
+
+Contient deux fonctions et une classe. 
+Ne fait rien.
+
+Copyright 2013 G. Becq, Gipsa-lab, UMR 5216, CNRS.
+"""
+
+def fun1(): 
+    """
+    fun1 c'est bien. 
+    
+    Fonction sans parametres
+    Ne fait rien. 
+    """
+    print("blah blah")
+    """
+    Ce texte ne sera pas visible
+    """
+    print("blah blah")
+    "Ce texte non plus, les declarations vides non plus"
+    1
+    print("blah blah")
+    # Ca c'est un vrai commentaire delimite par un hash
+    return
+\end{python}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Documentation}
+\framesubtitle{docstrings -- exemple}
+\begin{python}
+def fun2(): 
+    """
+    fun2 c'est mieux. 
+    
+    Sans parametres
+    Ne fait rien
+    """
+    return
+
+class A(): 
+    """
+    A est une classe. 
+   
+    C'est une classe vide qui ne contient qu'un docstring.
+    """
+
+\end{python}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{Documentation}
+\framesubtitle{help}
+\begin{minipage}[c]{3cm}
+\begin{itemize}
+ \item Génération automatique de documentation : help(nomDuModule)
+\end{itemize}
+\end{minipage}
+\hfill%
+\begin{minipage}[c]{6cm}
+\begin{center}
+\myFig{width=6cm}{./fig/help.png}
+\end{center}
+\end{minipage}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{Documentation}
+\framesubtitle{pydoc}
+\begin{minipage}[c]{4cm}
+\begin{itemize}
+\item Dans le shell 'pydoc -g', lance un serveur de documentation accessible via un navigateur. 
+\item 'pydoc' génère aussi d'autres sorties. 
+\end{itemize}
+\end{minipage}
+\hfill%
+\begin{minipage}[c]{6cm}
+\begin{center}
+\myFig{width=6cm}{./fig/pydoc.png}
+\end{center}
+\end{minipage}
+\end{frame}
+%...............................................................................
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsection{Distribution des paquets}
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Packaging}
+\begin{itemize}
+ \item Repose sur \emph{distutils} de la bibliothèque standard.
+ \item Créer un fichier 'setup.py' qui contient des metadonnées. 
+\end{itemize}
+\begin{python}
+from distutils.core import setup
+setup(name="distrib1", 
+    description="une distribution de d£{\color{magenta}é}£mos", 
+    version="1.0", 
+    author="Guillaume Becq", 
+    author_email="guillaume.becq@gipsa-lab.grenoble-inp.fr", 
+    url="http://example.iana.org",
+    py£\_£modules=["module1", "module2"], 
+    )
+\end{python}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Packaging}
+\begin{itemize}
+ \item Distribution : fichier compressé de type 'zip' ou '.tar.gz' 
+ \item Exécuter dans un terminal "python setup.py sdist"
+ \item Génère : 
+ \begin{itemize}
+  \item un dossier 'dist' : contenant la distribution.  
+  \item un fichier MANIFEST : liste des fichiers inclus dans le paquet. 
+ \end{itemize}
+ \item possibilité d'utiliser MANIFEST.in pour dire quels fichiers à inclure.
+ \item Faire un README.txt sinon warning.
+\end{itemize}
+\begin{shell}
+~/myPackage> python setup.py sdist
+writing manifest file 'MANIFEST'
+creating packet1-1.0
+making hard links in packet1-1.0...
+hard linking setup.py -> packet1-1.0
+creating dist
+Creating tar archive
+removing 'packet1-1.0' (and everything under it)
+~/myPackage> cd dist
+~/myPackage/dist> ls
+packet1-1.0.tar.gz
+\end{shell}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Installation des paquets}
+\begin{itemize}
+\item Décompresser le paquet : il existe une bibliothèque 'tarfile' dans la librairie standard de Python qui permet de décompresser les fichiers 'tar'. 
+\item Exécuter dans un terminal : "python setup.py"
+\item L'installation se fait dans "PYTHONHOME/site-packages".
+\end{itemize}
+\begin{shell}
+~/tempdir/packageToInstall> python setup.py install
+\end{shell}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{Python Package Index}
+\frameCC{%
+\begin{itemize}
+\item Python Package Index : PyPI \url{https://pypi.python.org/pypi}
+\item Base de données de paquets disponibles.
+\end{itemize}
+}{%
+\myFig{width=7cm}{./fig/PyPI.png}
+}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{Installation des paquets}
+\begin{itemize}
+\item A la base {\bfseries distutils}, ne gère pas les dépendances : python setup.py  
+\item {\bfseries setuptools} : introduit la commande 'easy\_install' qui opère sur de fichers 'egg': easy\_install example.egg
+\item setuptools a généré {\bfseries distribute} qui gère les dépendances. 
+\item {\bfseries pip} : remplace 'easy\_install' : "pip install paquetExample" 
+\end{itemize}
+\end{frame}
+%...............................................................................
+%_______________________________________________________________________________
+%===============================================================================

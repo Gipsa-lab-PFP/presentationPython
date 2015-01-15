@@ -1,0 +1,328 @@
+%===============================================================================
+\section{Introduction}
+%_______________________________________________________________________________
+\subsection{Historique}
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Historique}
+\framesubtitle{Python}
+\frameLR{7cm}{3cm}
+{%
+\begin{itemize}
+\item 1989--1995 : Hollande
+\only<2>{%
+\small
+\begin{itemize}
+ \item Centrum voor Wiskunde en Informatica (CWI). 
+ \item \emph{Guido von Rossum}, fan des Monty Python, travaille sur : 
+ \begin{itemize}
+  \item ABC : langage de script, syntaxe et indentation. 
+  \item Modula-3 : gestion des exceptions, orienté objet. 
+  \item langage C, Unix.
+  \item OS distribué Amoeba: accès difficile en shell.
+ \end{itemize}
+ \item Créée le langage Python :
+ \begin{itemize}
+  \item 1991/02 : versions 0.9.06 déposée sur un newsgroup de Usenet
+  \item 1995 : dépôt de la version 1.2
+ \end{itemize}
+\end{itemize}}
+\item 1995--1999 : USA 
+\only<3>{%
+\small
+\begin{itemize}
+ \item Corporation for National Research Initiatives (CNRI), non profit organisation, Reston, USA.
+ \item Grail7 : navigateur internet utilisant Tk. 
+ \item 1999 : projet \emph{Computer Programming for Everybody} (CP4E) (CNRI, DARPA Defense Advanced Research Projects Agency) :
+ \begin{itemize}
+  \item Python comme langage d'enseignement de la programmation. 
+  \item Création de l'IDLE (Integrated DeveLopment Environment)
+ \end{itemize}
+ \item 1999 : Python 1.6
+\end{itemize}}
+\item 1999+ : Worldwide open source
+\only<4>{%
+\small
+\begin{itemize}
+ \item BeOpen.com :
+ \begin{itemize} 
+  \item compatibilité GPL (General Public Licence)
+  \item création de la branche pythonLabs
+ \end{itemize}
+ \item 2000 : Python Software Foundation 
+ \begin{itemize} 
+  \item Python 2.1 : changement licence, dérivée de Apache Software Foundation (OO, svn, commons plutôt java) (\url{http://www.apache.org}). 
+ \end{itemize} 
+ \item 2008: Python 3.0 
+\end{itemize}}
+\end{itemize}
+{\tiny sources : \url{http://www.wikipedia.org}, \url{http://www.python.org}}%
+}
+{%
+\only<2>{\myFig{width=2cm}{./fig/MontyPythonFoot.png} \\ \myFig{width=3cm}{./fig/ordi1990.jpg}}%
+\only<3>{\myFig{width=3cm}{./fig/grail.png}}%
+\only<4>{\myFig{width=3cm}{./fig/python-logo.png}}%
+}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{Historique}
+\framesubtitle{Guido van Rossum}
+\frameLR{7cm}{3cm}{%
+\begin{itemize}
+ \item Guido van Rossum : 
+ \begin{itemize}
+  \item 31 janvier 1956 (57 ans)
+  \item Développeur néerlandais
+  \item 1982 : M. Sc  
+  \item Développeur ABC. 
+ \end{itemize} 
+ \item Créateur Python : \emph{Benevolent Dictator For Life (BDFL)}
+ \begin{itemize}
+  \item 1991 : Python 0.9.06
+  \item 1999 : Grail
+ \end{itemize}
+ \item 2002 : Prix pour le développement du logiciel libre 2001 décerné par la \emph{Free Software Foundation}
+ \item 2005--2012 : Google (python) 
+ \item 2013 : Dropbox
+\end{itemize}
+{\tiny sources : \url{http://www.wikipedia.org}, \url{http://www.python.org}}%
+}
+{%
+\myFig{width=3cm}{./fig/guido.jpg} \\ 
+{\tiny 2006, source wikipedia}%
+}
+\end{frame}
+
+%...............................................................................
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsection{Spécificités}
+%...............................................................................
+\begin{frame}
+\frametitle{Spécificités}
+\framesubtitle{}
+\url{http://www.python.org/about/}
+\begin{itemize}
+ \item Fortement typé.  
+ \item Objet.
+ \item Script, séquentiel, interprété : fichier génère du byte code.
+ \item Comparé à Tcl, Perl, Ruby, Scheme, Java.
+\end{itemize}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Spécificités}
+\framesubtitle{Exemple 1er programme}
+Dans le fichier "hello.py" : 
+\begin{python}
+print("Bonjour monde")
+\end{python}
+
+Exécution dans une interface système (terminal, shell) : 
+\begin{shell}
+~/python/example> python hello.py
+Bonjour monde
+\end{shell}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Spécificités}
+\framesubtitle{Exemple shell scripting}
+Exemple copies des fichiers '.txt' et '.tex' du répertoire 'a' vers 'b'.
+\lstinputlisting[style=myPython]{./example/shell/shellScript.py}
+\end{frame}
+%...............................................................................
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsection{Utilisation}
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Utilisations}
+\framesubtitle{A partir du shell}
+\begin{itemize}
+\item Fichiers "*.py" contient des scripts et des définitions de fonctions.
+Ils sont exécutés dans le shell avec la commande "python". 
+
+Exemple : "python hello.py" 
+
+\item La commande "python" ouvre une console utilisateur (\emph{interpreter}) avec une invite de commande (prompt) caractéristique "> > > "
+\end{itemize}
+
+\begin{python}
+Enthought Canopy Python 2.7.3 | 64-bit | (default, Jun 14 2013, 18:17:36) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+\end{python}
+
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Utilisations}
+\framesubtitle{Utilisation de l'interpréteur}
+\begin{itemize}
+\item Association d'une valeur à une variable : a = 'abc'
+\item Affichage de la valeur : print()
+\item Liste des noms, attributs, fonctions disponibles : dir()
+\end{itemize}
+
+\begin{python}
+>>> a = "abc"
+>>> print(a)
+abc
+>>> dir()
+['__builtins__', '__doc__', '__name__', '__package__', 'a']
+
+>>> dir(a)
+['__add__', '__class__', '__contains__', '__delattr__', '__doc__', 
+'__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__',
+'__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', 
+'__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', 
+'__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', 
+'__setattr__', '__sizeof__', '__str__', '__subclasshook__', 
+'_formatter_field_name_split', '_formatter_parser', 'capitalize', 
+'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find',
+'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace',
+'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition',
+'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip',
+'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 
+'translate', 'upper', 'zfill']
+\end{python}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Utilisations}
+\framesubtitle{Utilisation de l'interpréteur}
+\begin{itemize}
+ \item Besoin d'aide : help()
+\end{itemize}
+\begin{pythonConsole}
+>>> help(a.find)
+
+Help on built-in function find:
+
+find(...)
+    S.find(sub [,start [,end]]) -> int
+    
+    Return the lowest index in S where substring sub is found,
+    such that sub is contained within S[start:end].  Optional
+    arguments start and end are interpreted as in slice notation.
+    
+    Return -1 on failure.
+(END) 
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsection{Site web}
+%...............................................................................
+\begin{frame}
+\frametitle{Site Web}
+\framesubtitle{www.python.org}
+\frameC{\myFig{width=10cm}{./fig/sitePython.png}}
+\end{frame}
+%...............................................................................
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsection{Documentation}
+%...............................................................................
+\begin{frame}
+\frametitle{Documentation}
+\framesubtitle{Trouver la documentation}
+\frameC{\myFig{width=10cm}{./fig/sitePythonDoc.png}}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{Documentation}
+\framesubtitle{Lire la documentation - Tutorial}
+\frameC{\myFig{width=10cm}{./fig/PDFTutorial.png}}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{Documentation}
+\framesubtitle{Lire la documentation - Library reference}
+\frameC{\myFig{width=10cm}{./fig/PDFLibrary.png}}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{Documentation}
+\framesubtitle{Lire la documentation - Library reference}
+\frameC{\myFig{width=10cm}{./fig/PDFLibraryOS.png}}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{Documentation}
+\framesubtitle{Lire la documentation - Language reference}
+\frameC{\myFig{width=10cm}{./fig/PDFReference.png}}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{Python Enhancements Proposals}
+\framesubtitle{PEPs}
+\frameCC{% 
+Propositions et conseils pour l'utilisation et l'amélioration du langage.}
+{\myFig{width=9cm}{./fig/sitePythonPEPs.png}}
+\end{frame}
+%...............................................................................
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsection{Installation}
+%...............................................................................
+\begin{frame}
+\frametitle{Installation}
+\framesubtitle{}
+\begin{itemize}
+ \item Téléchargement sous \urlPython\ pour les OS courants : Windows, Linux, Mac. 
+ \item 32 bits vs 64 bits : 
+  \begin{itemize}
+   \small
+   \item Performances vs compatibilités bibliothèques (paquets) 
+   \item Problèmes de configuration des compilateurs (gcc).
+   \item Actuellement, peut générer des problèmes. 
+  \end{itemize}
+ \item Autres distributions : Enthought Canopy, pythonXY, WinPython, \dots 
+ \item Implémentations alternatives : 
+ \begin{itemize}
+  \small
+  \item Langage identique mais implémentation différentes permet par exemple : d'interfacer du java facilement (Jython), d'être plus performant pour les calculs avec un compilateur JIT (Pypy)\dots
+ \end{itemize}
+\end{itemize}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{Installation}
+\framesubtitle{Python 2.7 vs 3.x}
+
+\begin{itemize}
+\item 2.7 : figée.
+\item 3.x : présent et futur : 
+\begin{itemize}
+ \item {\it better Unicode support}
+ \item Quelques inconsistences du langage (ex print 'a' vs print('a')).  
+ \item Résultats de la division des entiers (1/2 : 2.x, = 0 ; 3.x, = 0.5). 
+ \item \dots
+\end{itemize}
+\item Peut poser des problèmes :
+\begin{itemize}
+ \item Paquets portées sur 3.x ?
+ \item Compatibilité 64 bits ? 
+\end{itemize}
+\end{itemize}
+\end{frame}
+%...............................................................................
+%_______________________________________________________________________________
+%===============================================================================
+

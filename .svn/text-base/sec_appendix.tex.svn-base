@@ -1,0 +1,76 @@
+\section{classe et variable 'self'}
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Classe exemples avec self}
+\begin{itemize}
+ \item Dans le corps de la classe, 'self' n'est pas défini. 
+\end{itemize}
+\begin{pythonConsole}
+class Canard(): 
+...     self.a = 10
+... 
+Traceback (most recent call last):
+ File £"£<stdin>£"£, line 1, £in£ <module>
+ File £"£<stdin>£"£, line 2, £in£ Canard
+NameError: name £'self'£ £is not£ defined
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Classe exemples avec self}
+\begin{itemize}
+ \item Dans une méthode seul self.nomAttribut est accessible. 
+\end{itemize}
+\begin{pythonConsole}
+class Canard(): 
+...     a = 10
+...     def __init__(self): 
+...             self.b = 100
+...             print(self.a)
+...             print(b)
+... 
+riri = Canard()
+10
+Traceback (most recent call last):
+ File £"£<stdin>£"£, line 1, £in£ <module>
+ File £"£<stdin>£"£, line 6, £in£ __init__
+NameError: £global£ name £'b'£ £is not£ defined
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Classe exemples avec self}
+\begin{itemize}
+ \item 'self' est conventionnel. 
+ \item Le premier paramètre d'une méthode est considéré comme l'objet lui même. 
+\end{itemize}
+\begin{pythonConsole}
+class Canard(): 
+...     def __init__(obj): 
+...             obj.a = 10
+...             print(obj.a)
+... 
+riri = Canard()
+10
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Classe exemples avec self}
+\begin{itemize}
+ \item Possibilité de rajouter des arguments optionnels lors de l'instanciation d'un objet. 
+\end{itemize}
+\begin{pythonConsole}
+class Canard(): 
+...     def __init__(self, patte=2):
+...             self.a = patte
+...             print(self.a)
+... 
+riri = Canard(patte=3)
+3
+\end{pythonConsole}
+\end{frame}
+%...............................................................................

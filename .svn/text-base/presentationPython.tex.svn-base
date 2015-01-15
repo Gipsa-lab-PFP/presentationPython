@@ -1,0 +1,28 @@
+\documentclass[]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+\usepackage{listings}
+%============================================================================
+\author{G.~Becq, N.~Le~Bihan}
+\title{Une pas si courte introduction au langage de programmation Python comme alternative à Matlab pour réaliser des calculs scientifiques ou d'autres applications.}
+\date{02/07/2013}
+%============================================================================
+\input{command}
+\AtBeginSection{\framePlanCurrentSection}
+%============================================================================
+\begin{document}
+%____________________________________________________________________________
+\maketitle
+\framePlan
+\input{sec_introduction}
+\input{sec_language}
+\input{sec_scientific}
+\input{sec_environment}
+\input{sec_conclusion}
+\appendix
+\input{sec_appendix}
+%____________________________________________________________________________
+\end{document}
+%============================================================================
+
