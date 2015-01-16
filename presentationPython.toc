@@ -1,11 +1,11 @@
 \beamer@endinputifotherversion {3.20pt}
 \beamer@sectionintoc {1}{Description des paquets scientifiques}{4}{0}{1}
 \beamer@subsectionintoc {1}{1}{Numpy}{6}{0}{1}
-\beamer@subsectionintoc {1}{2}{Matplotlib}{25}{0}{1}
-\beamer@subsectionintoc {1}{3}{Pylab}{28}{0}{1}
-\beamer@subsectionintoc {1}{4}{Scipy}{29}{0}{1}
-\beamer@subsectionintoc {1}{5}{Mayavi}{30}{0}{1}
-\beamer@subsectionintoc {1}{6}{Autres ressources : exemple C}{32}{0}{1}
+\beamer@subsectionintoc {1}{2}{Matplotlib}{40}{0}{1}
+\beamer@subsectionintoc {1}{3}{Pylab}{43}{0}{1}
+\beamer@subsectionintoc {1}{4}{Scipy}{44}{0}{1}
+\beamer@subsectionintoc {1}{5}{Mayavi}{45}{0}{1}
+\beamer@subsectionintoc {1}{6}{Autres ressources : exemple C}{47}{0}{1}
 \beamer@sectionintoc {2}{Distributions et Environnements de travail}{31}{0}{2}
 \beamer@subsectionintoc {2}{1}{Python Software Foundation}{32}{0}{2}
 \beamer@subsectionintoc {2}{2}{IPython}{34}{0}{2}
