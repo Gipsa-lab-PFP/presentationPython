@@ -23,8 +23,8 @@
  \item \emph{NumPy is the fundamental package for scientific computing with Python}
 \end{itemize}
 \begin{pythonConsole}
->>> import numpy as np
->>> help(np)
+>>> import numpy
+>>> help(numpy)
 
 Help on package numpy:
 
@@ -150,7 +150,7 @@ array([[ 1.,   2.,  11.,  12.]])
 \frametitle{N-dimensional array Object}
 \framesubtitle{Copie de tableaux}
 \begin{itemize}
- \item Les éléments pointés sont liés, seule la forme change.  
+ \item Les éléments de B sont les mêmes que ceux de A, seule la forme change. 
  \item Si on veut une copie (copy)
 \end{itemize}
 \begin{pythonConsole}
@@ -401,6 +401,91 @@ array([2, 3, 0, 1, 2, 3])
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 \begin{frame}[fragile]
+\frametitle{N-dimensional array Object}
+\framesubtitle{Concaténations}
+\begin{itemize}
+ \item Concaténation horizontale (hstack)
+ \item Concaténation verticale (vstack)
+ \item Réduction (squeeze)
+\end{itemize}
+\begin{pythonConsole}
+>>> A = numpy.array([[1, 2], [11, 12]])
+>>> B = numpy.array([[3, 4], [13, 14]])
+>>> C = numpy.hstack((A, B))
+>>> print(C)
+[[ 1  2  3  4]
+ [11 12 13 14]]
+>>> D = numpy.array([[[21, 22], [31, 32]], [[41, 42], [51, 52]]])
+>>> print(B)
+[[False False  True  True]
+ [ True  True  True  True]]
+>>> print(A[B])
+[ 3  4 11 12 13 14]
+>>> indices = numpy.where(B)
+>>> print(indices[0])
+array([0, 0, 1, 1, 1, 1])
+>>> print(indices[1])
+array([2, 3, 0, 1, 2, 3])
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Arrays}
+\framesubtitle{}
+\begin{itemize}
+ \item Possibilité de mettre des éléments de types différents.  
+ \item Possibilité de tableaux structurés \dots
+\end{itemize}
+\begin{pythonConsole}
+>>> A = numpy.array([["a", 1], ["b", 2]], dtype="object")
+>>> print(A)
+[['a' 1]
+ ['b' 2]]
+>>> print(A.dtype)
+object
+>>> A = numpy.array([(1, "abc"), (2, "def")], dtype=[("index", "int"), ("name", "S8")])
+>>> print(A)
+[(1, 'abc') (2, 'def')]
+>>> A["index"]
+array([1, 2])
+>>> A["name"]
+array(['abc', 'def'], 
+      dtype='|S8')
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Sauvegarde et lecture de données}
+\framesubtitle{}
+\begin{itemize}
+ \item n
+\end{itemize}
+\begin{pythonConsole}
+>>> A = numpy.array([[1, 2], [11, 12]])
+>>> numpy.save("save_A", A)
+>>> del(A)
+>>> A = numpy.load("saveA.npy")
+>>> print(A)
+[[ 1  2]
+ [11 12]]
+>>> A = numpy.array([[1, 2], [11, 12]])
+>>> B = numpy.array([[21, 22], [31, 32]])
+>>> numpy.savez("save_AB", tab1=A, B=B)
+>>> del(A, B)
+>>> data = numpy.load("save_AB.npz")
+>>> print(data["tab1"])
+[[ 1  2]
+ [11 12]]
+>>> print(data["B"])
+[[21 22]
+ [31 32]]
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
 \frametitle{Matrix}
 \framesubtitle{}
 \begin{itemize}
@@ -411,10 +496,10 @@ array([2, 3, 0, 1, 2, 3])
 class matrix(numpy.ndarray)
  |  matrix(data, dtype=None, copy=True)
  |  
- |  Returns a matrix from an array-like object, or from a string of data.
- |  A matrix is a specialized 2-D array that retains its 2-D nature
+ |  Returns a matrix £from£ an array-like object, £or from£ a string of data.
+ |  A matrix £is£ a specialized 2-D array that retains its 2-D nature
  |  through operations.  It has certain special operators, such as £`££`£*£`££`£
- |  (matrix multiplication) and £`££`£**£`££`£ (matrix power).
+ |  (matrix multiplication) £and£ £`££`£**£`££`£ (matrix power).
 ...
 
 >>> A = numpy.matrix([[1, 2], [11, 12]])
@@ -504,6 +589,211 @@ print(A.I)
 \end{pythonConsole}
 \end{frame}
 %_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Sous paquet linalg}
+\framesubtitle{Algèbre Linéaire}
+\begin{itemize}
+ \item Interface vers Lapack (numpy.linalg)
+\end{itemize}
+\begin{pythonConsole}
+>>> help(numpy.linalg)
+...
+    Linear algebra basics:
+    
+    - norm            Vector or matrix norm
+    - inv             Inverse of a square matrix
+    - solve           Solve a linear system of equations
+    - det             Determinant of a square matrix
+    - lstsq           Solve linear least-squares problem
+    - pinv            Pseudo-inverse (Moore-Penrose)...
+    - matrix_power    Integer power of a square matrix
+    
+    Eigenvalues and decompositions:
+    
+    - eig             Eigenvalues and vectors of a square matrix
+    - eigh            Eigenvalues and eigenvectors of a Hermitian matrix
+    - eigvals         Eigenvalues of a square matrix
+    - eigvalsh        Eigenvalues of a Hermitian matrix
+    - qr              QR decomposition of a matrix
+    - svd             Singular value decomposition of a matrix
+    - cholesky        Cholesky decomposition of a matrix
+    
+    Tensor operations:
+    
+    - tensorsolve     Solve a linear tensor equation
+    - tensorinv       Calculate an inverse of a tensor
+...
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Autres paquets de numpy}
+\framesubtitle{}
+\begin{itemize}
+ \item 
+ \item numpy.random
+\end{itemize}
+\begin{pythonConsole}
+>>> help(numpy)
+...
+   doc
+        Topical documentation on broadcasting, indexing, etc.
+    lib
+        Basic functions used by several sub-packages.
+    random
+        Core Random Tools
+    linalg
+        Core Linear Algebra Tools
+    fft
+        Core FFT routines
+    polynomial
+        Polynomial tools
+    testing
+        Numpy testing tools
+    f2py
+        Fortran to Python Interface Generator.
+    distutils
+        Enhancements to distutils with support for
+        Fortran compilers support and more.
+...
+>>> A = numpy.random.seed(0)
+>>> A = numpy.random.randn(2, 3, 4)
+>>> print(A)
+[[[ 1.76405235  0.40015721  0.97873798  2.2408932 ]
+  [ 1.86755799 -0.97727788  0.95008842 -0.15135721]
+  [-0.10321885  0.4105985   0.14404357  1.45427351]]
+
+ [[ 0.76103773  0.12167502  0.44386323  0.33367433]
+  [ 1.49407907 -0.20515826  0.3130677  -0.85409574]
+  [-2.55298982  0.6536186   0.8644362  -0.74216502]]]
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Sauvegarde et lecture de données}
+\framesubtitle{}
+\begin{itemize}
+ \item Un tableau (save) : ".npy"
+ \item Plusieurs tableaux (savez) : ".npz"
+ \item Fichier texte (loadtxt, savetxt)
+\end{itemize}
+\begin{pythonConsole}
+>>> A = numpy.array([[1, 2], [11, 12]])
+>>> numpy.save("save_A", A)
+>>> del(A)
+>>> A = numpy.load("saveA.npy")
+>>> print(A)
+[[ 1  2]
+ [11 12]]
+>>> A = numpy.array([[1, 2], [11, 12]])
+>>> B = numpy.array([[21, 22], [31, 32]])
+>>> numpy.savez("save_AB", tab1=A, B=B)
+>>> del(A, B)
+>>> data = numpy.load("save_AB.npz")
+>>> print(data["tab1"])
+[[ 1  2]
+ [11 12]]
+>>> print(data["B"])
+[[21 22]
+ [31 32]]
+>>> A = numpy.loadtxt("data.txt")
+>>> A
+array([[  1.,   2.,   3.,   4.,   5.],
+       [ 11.,  12.,  13.,  14.,  15.],
+       [ 21.,  22.,  23.,  24.,  25.]])
+>>> numpy.savetxt("data.txt", A)
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Matplotlib}
+\framesubtitle{}
+\begin{itemize}
+ \item \myFig{height=0.5cm}{./fig/matplotlib-logo.png} : \url{http://www.matplotlib.org}
+ \item \emph{matplotlib is a python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms. }
+ \item Programmation orientée objets avec différents backends pour différents graphical user interfaces (GUI) : agg, gtk, qt, svg, ps, pdf\dots
+\end{itemize}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Matplotlib}
+\framesubtitle{pyplot}
+\begin{itemize}
+ \item Fonctions procédurales dans le sous-paquet pyplot (matplotlib.pyplot)
+\end{itemize}
+\begin{minipage}[c]{5cm}
+
+\end{minipage}
+\begin{pythonConsole}
+>>> import matplotlib.pyplot
+>>> t = numpy.arange(0, 10, 0.01)
+>>> x = numpy.sin(2 * numpy.pi * 3 * t)
+>>> matplotlib.pyplot.plot(t, x)
+>>> matplotlib.pyplot.xlabel("time (s)")
+>>> matplotlib.pyplot.ylabel("x ($\mu V$)")
+>>> matplotlib.pyplot.show()
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Matplotlib}
+\framesubtitle{}
+\begin{itemize}
+ \item Fonctions à la Matlab dans le sous-paquet pylab (matplotlib.pylab)
+ \item Beaucoup de fonctions sous formes abbrégées \dots
+\end{itemize}
+\begin{minipage}[c]{5cm}
+
+\end{minipage}
+\begin{pythonConsole}
+>>> from matplotlib.pylab import *
+>>> len(dir(mpl))
+955
+>>> x = sin(2 * numpy.pi * 3 * t)
+>>> plot(t, x)
+>>> xlabel("time (s)")
+>>> ylabel("x ($\mu V$)")
+>>> show()
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Matplotlib}
+\framesubtitle{}
+\begin{itemize}
+ \item \myFig{height=0.5cm}{./fig/matplotlib-logo.png} : \url{http://www.matplotlib.org}
+ \item \emph{matplotlib is a python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms. }
+ \item fonction procédurale dans le sous-paquet pyplot
+ \item programmation orientée objets avec différents backends pour différents graphical user interfaces (GUI) : agg, gtk, qt, svg, ps, pdf\dots
+\end{itemize}
+\begin{minipage}[c]{6cm}
+\begin{pythonConsole}
+>>> import matplotlib.pyplot
+>>> t = numpy.arange(0, 2, 0.01)
+>>> x = numpy.sin(2 * numpy.pi * 2 * t)
+>>> matplotlib.pyplot.plot(t, x)
+>>> matplotlib.pyplot.xlabel("time (s)")
+>>> matplotlib.pyplot.ylabel("x ($\mu V$)")
+>>> matplotlib.pyplot.show()
+\end{pythonConsole}
+\end{minipage}
+\begin{minipage}[c]{5cm}
+\includegraphics[width=5cm]{./fig/matplotlibSinus.pdf}
+\end{minipage}
+\end{frame}
+%_______________________________________________________________________________
+
+
+% import scipy.io
+% mat = scipy.io.loadmat('file.mat')
 %_______________________________________________________________________________
 % 
 % frame
