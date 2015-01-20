@@ -202,7 +202,63 @@ True
 %...............................................................................
 %...............................................................................
 \begin{frame}[fragile]
-\frametitle{Types de données}
+\frametitle{Nombres}
+\framesubtitle{Typage explicite, conversion de type}
+\begin{itemize}
+ \item possibilité de typer explicitement avec la fonction associée au type voulue : int(), float() \dots
+ \item conversion, implicite pour certaines opérations. 
+\end{itemize}
+\begin{pythonConsole}
+>>> a = float(9)
+>>> type(a)
+<type 'float'>
+>>> c = 1 / a
+>>> print(c)
+0.111111111111
+>>> b = 9
+>>> c = 1 / float(b)
+>>> print(c)
+0.111111111111
+>>> d = complex(1, 2)
+>>> print(d)
+(1+2j)
+>>> print(str(d))
+(1+2j)
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Nombres et Caractères}
+\framesubtitle{Binary, Hexadecimal, Octal, Character, Unicode Character}
+\begin{itemize}
+ \item binary (0b) (bin), hexadecimal (0x) (hex), octal (0c) (oct) 
+ \item character (chr) (< 0xFF) ou unicode (unichr) (< 0xFFFF)
+\end{itemize}
+\begin{pythonConsole}
+>>> a = 0x597d
+>>> print(a)
+22909
+>>> a = 0b0101
+>>> print(a)
+5
+>>> a = chr(42)
+>>> print(a)
+*
+>>> b = unichr(0x597D)
+>>> print(b)
+chinese symbol ni
+>>> a = bin(65447)
+>>> print(a)
+0b101100101111101
+>>> type(a)
+<type 'str'>
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Séquences}
 \framesubtitle{Chaînes de caractères}
 \begin{itemize}
  \item Texte délimité par ' ' ou " " (str) 
@@ -223,7 +279,7 @@ True
 %...............................................................................
 %...............................................................................
 \begin{frame}[fragile]
-\frametitle{Types de données}
+\frametitle{Séquences}
 \framesubtitle{Chaînes de caractères}
 \begin{itemize}
  \item Alternance des single/double quote. 
@@ -243,10 +299,10 @@ seront bien nettoyez\n\t&'Troussez', faites les blanchir, \n\t& Les " +
 %...............................................................................
 %...............................................................................
 \begin{frame}[fragile]
-\frametitle{Types de données}
+\frametitle{Séquences}
 \framesubtitle{Chaînes de caractères}
 \begin{itemize}
- \item forme mutliligne """ """ ou ''' ''' (! caractères spéciaux).  
+ \item forme mutliligne """ """ ou '\,'\,' '\,'\,' (! caractères spéciaux).  
  \item Représentation (repr) différente de (str). 
 \end{itemize}
 \begin{pythonConsole}
@@ -267,17 +323,19 @@ seront bien nettoyez\n\t&'Troussez', faites les blanchir, \n\t& Les " +
 ils seront bien nettoyez\\n\\n\\t& \\\£'£Troussez\\\£'£, faites les blanchir,\
 \n\\t& Les £"£empottez£"£ avec un petit brun de fines herbes\\n\£'££'£
 >>> str(a)
-"1. Bisque de pigeonneaux\n\n\tPrenez vos pigeonneaux apres qu'ils seront bien nettoyez\n\n    & 'Troussez', faites les blanchir, \n    & Les "empottez" avec un petit brun de fines herbes"
+"1. Bisque de pigeonneaux\n\n\tPrenez vos pigeonneaux apres qu'ils seront bien 
+nettoyez\n\n    & 'Troussez', faites les blanchir, \n    & Les £"£empottez£"£ avec
+un petit brun de fines herbes"
 \end{pythonConsole}
 \end{frame}
 %...............................................................................
 %...............................................................................
 \begin{frame}[fragile]
-\frametitle{Types de données}
+\frametitle{Séquences}
 \framesubtitle{Chaînes de caractères}
 \begin{itemize}
- \item forme brute (r" " ou r' ' ou r""" """ ou r''' ''')
- \item forme unicode (u" " ou \dots).
+ \item forme brute (r" " ou r' ' ou r""" """ ou r'\,'\,' '\,'\,')
+ \item forme unicode (u" " ou u' ' ou u""" """ ou u'\,'\,' '\,'\,')
 \end{itemize}
 \begin{pythonConsole}
 >>> a = r"Potage de sant£\color{magenta}{é}£\n\tLe potage de sant£\color{magenta}{é}£ se fait de chapons..."
@@ -293,13 +351,15 @@ Potage de sant£é£
 >>> repr(a)
 "u'Potage de sant\\xe9\\n\\tLe potage de sant\\xe9 se fait de chapons...
 '"
+>>> print(u"\u4F60\u597D")
 \end{pythonConsole}
+% 你好
 \end{frame}
 %...............................................................................
 
 %...............................................................................
 \begin{frame}[fragile]
-\frametitle{Types de données}
+\frametitle{Séquences}
 \framesubtitle{Listes}
 \begin{itemize}
  \item Listes d'éléments ([\ , \ ], list)
@@ -327,11 +387,11 @@ Potage de sant£é£
 %...............................................................................
 %...............................................................................
 \begin{frame}[fragile]
-\frametitle{Types de données}
+\frametitle{Séquences}
 \framesubtitle{Listes}
 \begin{itemize}
  \item découpage, slicing (:, i:, :j, i:j, i:j:k, slice(i,j,k))
- \item Indices négatifs de -1 à $-n$ peremttent de parcourir en partant par la fin. 
+ \item Indices négatifs de -1 à $-n$ permettent de parcourir en partant par la fin. 
 \end{itemize}
 \begin{pythonConsole}
 >>> a = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -341,12 +401,12 @@ Potage de sant£é£
 [4, 5, 6, 7, 8, 9]
 >>> a[:3]
 [1, 2, 3]
->>> a[2:6]
+>>> a[2:2+4] # a[2:6]
 [3, 4, 5, 6]
 >>> a[2:6:2]
 [3, 5]
->>> i = slice(2, 6, 2)
->>> a[i]
+>>> s = slice(2, 6, 2)
+>>> a[s]
 [3, 5]
 >>> a[-1]
 9 
@@ -357,7 +417,7 @@ Potage de sant£é£
 %...............................................................................
 %...............................................................................
 \begin{frame}[fragile]
-\frametitle{Types de données}
+\frametitle{Séquences}
 \framesubtitle{Listes}
 \begin{itemize}
  \item Imbrications, nested.
@@ -382,7 +442,7 @@ TypeError: list indices must be integers, £not£ tuple
 %...............................................................................
 %...............................................................................
 \begin{frame}[fragile]
-\frametitle{Types de données}
+\frametitle{Séquences}
 \framesubtitle{Tuples}
 \begin{itemize}
  \item Couple, triplet, n-uplet, plus généralement tuple ((\ , \ ), tuple)
@@ -404,7 +464,7 @@ TypeError: list indices must be integers, £not£ tuple
 %...............................................................................
 %...............................................................................
 \begin{frame}[fragile]
-\frametitle{Types de données}
+\frametitle{Séquences}
 \framesubtitle{Tuples}
 \begin{itemize}
  \item Taille fixe immuable (immutable en anglais). 
@@ -429,7 +489,7 @@ TypeError: 'tuple' object does £not£ support item assignment
 %...............................................................................
 %...............................................................................
 \begin{frame}[fragile]
-\frametitle{Types de données}
+\frametitle{Séquences}
 \framesubtitle{Tuples}
 \begin{itemize}
  \item Attention : couples immuables, listes muables 
@@ -450,7 +510,7 @@ TypeError: 'tuple' object does £not£ support item assignment
 %...............................................................................
 %...............................................................................
 \begin{frame}[fragile]
-\frametitle{Types de données}
+\frametitle{Séquences}
 \framesubtitle{Tuples}
 \begin{itemize}
  \item Exemple de liste de couples. 
@@ -469,7 +529,7 @@ TypeError: 'tuple' object does £not£ support item assignment
 %...............................................................................
 %...............................................................................
 \begin{frame}[fragile]
-\frametitle{Types de données}
+\frametitle{Séquences}
 \framesubtitle{Dictionnaires}
 \begin{itemize}
  \item Dictionnaires (dict) 
@@ -493,7 +553,7 @@ TypeError: 'tuple' object does £not£ support item assignment
 %...............................................................................
 %...............................................................................
 \begin{frame}[fragile]
-\frametitle{Types de données}
+\frametitle{Séquences}
 \framesubtitle{Ensemble}
 \begin{itemize}
  \item Ensemble (\{\ ,\ \}, set) 
@@ -534,9 +594,9 @@ set([1, 2, 3, -10])
 %...............................................................................
 \begin{frame}
 \frametitle{Syntaxe}
-\framesubtitle{Résumé}
+\framesubtitle{}
 \begin{itemize}
- \item 'Builtin' Fonctions 
+ \item Fonctions prédéfinies, 'Builtin' Functions  
  \item Structures de contrôles 
  \item Fonctions
  \item Objets et Classes
@@ -585,9 +645,9 @@ abs() & divmod() & input() &  open() & staticmethod() \\
 all() & enumerate() &  \color{red}{int()} & ord() & \color{red}{str()} \\
 any() & eval() & isinstance() & pow() & sum() \\
 basestring() &  execfile() &  issubclass() &  \color{red}{print()} &  super() \\
-bin() &  file() & iter() & property() &  \color{red}{tuple()} \\
+\color{red}{bin()} &  file() & iter() & property() &  \color{red}{tuple()} \\
 \color{red}{bool()} & filter() & \color{red}{len()} &  range() &  \color{red}{type()} \\
-bytearray() &  \color{red}{float()} &  \color{red}{list()} &  raw\_input() &  unichr() \\
+bytearray() &  \color{red}{float()} &  \color{red}{list()} &  raw\_input() &  \color{red}{unichr()} \\
 callable() & format() &  locals() &  reduce() &  \color{red}{unicode()} \\
 chr() &  frozenset() & \color{red}{long()} & reload() & vars() \\
 classmethod() & getattr() & map() & \color{red}{repr()} &  xrange() \\
@@ -595,8 +655,8 @@ cmp() & globals() & max() & reversed() & zip() \\
 compile() &  hasattr() & memoryview() & round() &  \_\_import\_\_()\\
 \color{red}{complex()} & hash() & min() & \color{red}{set()} &  apply() \\
 delattr() &  \color{red}{help()} & next() & setattr() &  buffer() \\
-\color{red}{dict()} & hex() & object() & \color{red}{slice()} & coerce() \\
-\color{red}{dir()} & id() & oct() &  sorted() &  intern() 
+\color{red}{dict()} & \color{red}{hex()} & object() & \color{red}{slice()} & coerce() \\
+\color{red}{dir()} & id() & \color{red}{oct()} &  sorted() &  intern() 
 \end{tabular}
 }
 
@@ -652,7 +712,7 @@ dir() & \color{blue}{id()} & oct() &  sorted() &  intern()
 \framesubtitle{Structure de contrôle - if else}
 \begin{itemize}
 \item blocs conditionnels : if else
-\item ':' et indentation suivis d'un bloc d'instruction.  
+\item ':' et indentation suivie d'un bloc d'instruction.  
 \end{itemize}
 \begin{pythonConsole}
 >>> a = 1
@@ -1095,7 +1155,7 @@ Canard :
 \begin{itemize}
  \item Définition d'une nouvelle : "class" classname ":" suite
  \item propriétés : variables avec une valeur par défaut. 
- \item méthodes : fonction avec le premier argument l'objet lui même par convention 'self'
+ \item méthodes : fonctions avec le premier argument l'objet lui même par convention 'self'
 \end{itemize}
 \begin{pythonConsole}
 >>> class Canard: 
@@ -1142,9 +1202,9 @@ Canard :
 \frametitle{Syntaxe}
 \framesubtitle{Objets : instanciation et usage}
 \begin{itemize}
- \item instanciation : objet = classname()
+ \item instanciation : objet = Classname()
  \item propriétés obtenues par : objet.property (cf structure en C)
- \item méthode obtenues par : objet.method(argument)
+ \item méthodes obtenues par : objet.method(argument)
 \end{itemize}
 \begin{pythonConsole}
 >>> riri = Canard()
@@ -1258,7 +1318,7 @@ ABC.DEF
 %...............................................................................
 %...............................................................................
 \begin{frame}[fragile]
-\frametitle{Exemple}
+\frametitle{Syntaxe}
 \framesubtitle{Fichiers}
 \begin{itemize}
  \item un fichier est considéré comme un objet de classe 'file'. 
@@ -1757,7 +1817,7 @@ packet1-1.0.tar.gz
 \item L'installation se fait dans "PYTHONHOME/site-packages".
 \end{itemize}
 \begin{shell}
-~/tempdir/packageToInstall> python setup.py
+~/tempdir/packageToInstall> python setup.py install
 \end{shell}
 \end{frame}
 %...............................................................................

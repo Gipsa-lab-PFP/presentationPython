@@ -6,11 +6,20 @@
 \frametitle{Quelques Paquets et Outils Scientifiques}
 \begin{itemize}
  \item SciPy : scientific python 
+ \begin{itemize}
+  \item Numpy
+  \item SciPy library
+  \item Matplotlib
+  \item IPython
+ \end{itemize}
  \item Mayavi : objets 3D avancés
  \item Scikit-learn : machine learning.
  \item \dots
 \end{itemize}
 \end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsection{SciPy}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 \begin{frame}[fragile]
@@ -59,6 +68,9 @@ DESCRIPTION
 ...
 \end{pythonConsole}
 \end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsubsection{ndarray}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 \begin{frame}[fragile]
@@ -457,8 +469,8 @@ array([2, 3, 0, 1, 2, 3])
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 \begin{frame}[fragile]
-\frametitle{Arrays}
-\framesubtitle{}
+\frametitle{N-dimensional array Object}
+\framesubtitle{Structured Arrays}
 \begin{itemize}
  \item Possibilité de mettre des éléments de types différents.  
  \item Possibilité de tableaux structurés \dots
@@ -482,6 +494,9 @@ array(['abc', 'def'],
       dtype='|S8')
 \end{pythonConsole}
 \end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsubsection{save/load}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 \begin{frame}[fragile]
@@ -515,7 +530,7 @@ array(['abc', 'def'],
  [31 32]]
 \end{pythonConsole}
 \end{minipage}
-\begin{minipage}{5cm}
+\begin{minipage}{4cm}
 \begin{pythonConsole}
 >>> A = numpy.loadtxt("data.txt")
 >>> A
@@ -526,6 +541,9 @@ array([[  1.,   2.,   3.,   4.,   5.],
 \end{pythonConsole}
 \end{minipage}
 \end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsubsection{matrix}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 \begin{frame}[fragile]
@@ -621,6 +639,9 @@ print(A.I)
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
+\subsubsection{subpackages}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
 \begin{frame}[fragile]
 \frametitle{Sous paquet linalg}
 \framesubtitle{Algèbre Linéaire}
@@ -710,6 +731,10 @@ print(A.I)
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
+\subsection{SciPy library}
+\subsubsection{subpackages}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
 \begin{frame}[fragile]
 \frametitle{Scipy library}
 \framesubtitle{Librairie scientifique}
@@ -773,6 +798,9 @@ print(A.I)
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
+\subsubsection{load Matlab data}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
 \begin{frame}[fragile]
 \frametitle{Scipy}
 \framesubtitle{lecture de fichiers Matlab}
@@ -781,13 +809,14 @@ print(A.I)
 \end{itemize}
 
 \begin{pythonConsole}
->>> help(scipy)
 >>> import scipy.io
 >>> data = scipy.io.loadmat('file.mat')
 \end{pythonConsole}
 \end{frame}
 %_______________________________________________________________________________
-
+%_______________________________________________________________________________
+\subsection{Matplotlib}
+%_______________________________________________________________________________
 %_______________________________________________________________________________
 \begin{frame}[fragile]
 \frametitle{Matplotlib}
@@ -795,9 +824,12 @@ print(A.I)
 \begin{itemize}
  \item \myFig{height=0.5cm}{./fig/matplotlib-logo.png} : \url{http://www.matplotlib.org}
  \item \emph{matplotlib is a python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms. }
- \item Programmation orientée objets avec différents backends pour différents graphical user interfaces (GUI) : agg, gtk, qt, svg, ps, pdf\dots
+ \item Programmation orientée objets avec différents backends pour différentes interfaces graphiques, graphical user interfaces (GUI) : agg, gtk, qt, svg, ps, pdf\dots
 \end{itemize}
 \end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsubsection{pyplot}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 \begin{frame}[fragile]
@@ -806,7 +838,6 @@ print(A.I)
 \begin{itemize}
  \item Fonctions procédurales dans le sous-paquet pyplot (matplotlib.pyplot)
 \end{itemize}
-\begin{minipage}[c]{6cm}
 \begin{pythonConsole}
 >>> import matplotlib.pyplot
 >>> t = numpy.arange(0, 10, 0.01)
@@ -816,13 +847,13 @@ print(A.I)
 >>> matplotlib.pyplot.ylabel("x ($\mu V$)")
 >>> matplotlib.pyplot.show()
 \end{pythonConsole}
-\end{minipage}
-\begin{minipage}[c]{5cm}
 \begin{center}
- \includegraphics[width=5cm]{./fig/matplotlibSinus.pdf}
+ \includegraphics[width=6cm]{./fig/matplotlibSinus.pdf}
 \end{center}
-\end{minipage}
 \end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsubsection{savefig}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 \begin{frame}[fragile]
@@ -846,12 +877,15 @@ print(A.I)
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
+\subsubsection{pylab}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
 \begin{frame}[fragile]
 \frametitle{Matplotlib}
 \framesubtitle{Pylab}
 \begin{itemize}
  \item Fonctions à la Matlab dans le sous-paquet pylab (matplotlib.pylab)
- \item Beaucoup de fonctions sous formes abbrégées \dots
+ \item Beaucoup de fonctions sous formes abrégées \dots
 \end{itemize}
 \begin{minipage}[c]{5cm}
 \begin{pythonConsole}
@@ -913,6 +947,9 @@ print(A.I)
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
+\subsection{IPython}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
 \begin{frame}[fragile]
 \frametitle{IPython}
 \framesubtitle{}
@@ -921,24 +958,72 @@ print(A.I)
  \item \emph{Enhanced python console}
  \item Attention, ce n'est pas un paquet mais une console améliorée !
  \item Accessible à partir d'un terminal (ipython) 
+ \item Complétion automatique avec la touche tab
+ \item Fonctions magiques (magic)
 \end{itemize}
 
 \begin{shell}
-ipython 
-\end{shell}
+$ ipython /* $ */
+\end{shell} 
 
 \begin{pythonConsole}
 Python 2.7.3 | 64-bit | (default, Jun 14 2013, 18:17:36) 
-Type "copyright", "credits" or "license" for more information.
+Type "copyright", "credits" £or£ "license" £for£ more information.
 
 IPython 2.2.0 -- An enhanced Interactive Python.
-?         -> Introduction and overview of IPython's features.
+?         -> Introduction £and£ overview of IPython£'£s features.
 %quickref -> Quick reference.
-help      -> Python's own help system.
-object?   -> Details about 'object', use 'object??' for extra details.
+help      -> Python£'£s own help system.
+object?   -> Details about 'object', use 'object??' £for£ extra details.
 
-In [1]: 
+In [1]: %pylab
+Using matplotlib backend: MacOSX
+Populating the interactive namespace £from£ numpy £and£ matplotlib
+
+
+In [2]: 
 \end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsubsection{ipython notebook}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{IPython}
+\framesubtitle{ipython notebook}
+\begin{itemize}
+ \item Accessible à partir d'un terminal (ipython notebook) 
+ \item Ouverture et création de notebooks (*.pynb)
+\end{itemize}
+\begin{center}
+ \myFig{width=8cm}{./fig/ipython_notebook_server.png}
+\end{center}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{IPython}
+\framesubtitle{ipython notebook}
+\begin{itemize}
+ \item Cellules exécute du code ou formatent du texte (HTML, LaTeX, etc.)
+ \item Chargement des fonctions pylab avec affichage dans le notebook : \%pylab inline 
+\end{itemize}
+\begin{center}
+ \myFig{width=8cm}{./fig/ipython_notebook_p1.png}
+\end{center}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{IPython}
+\framesubtitle{ipython notebook}
+\begin{itemize}
+ \item Les cellules exécutent du code ou formatent du texte (HTML, LaTeX, etc.)
+\end{itemize}
+\begin{center}
+ \myFig{width=8cm}{./fig/ipython_notebook_p2.png}
+\end{center}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -950,10 +1035,12 @@ In [1]:
 \framesubtitle{}
 \frameCC{%
 \begin{itemize}
+ \item \url{https://github.com/enthought/mayavi}
  \item Manipulation des objets 3D améliorée. 
+ \item need vtk
 \end{itemize}
 }
-{\myFig{width=9cm}{./fig/Mayavi.png}}
+{\myFig{width=8cm}{./fig/Mayavi.png}}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -964,7 +1051,6 @@ In [1]:
  \item Dans une console Python : import mayavi. \dots
 \end{itemize}
 \begin{pythonConsole}
->>> from numpy import array
 >>> from mayavi.api import Engine
 >>> engine = Engine()
 >>> engine.start()
@@ -980,23 +1066,24 @@ In [1]:
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
+\subsection{scikit-learn}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}
+\frametitle{Scikit-learn}
+\framesubtitle{}
+pas vu encore
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
 \subsection{Autres ressources : exemple C}
-%...............................................................................
+%_______________________________________________________________________________
 \begin{frame}[fragile]
-\frametitle{Importation de bibliothèques de fonction écrites en C}
+\frametitle{Importation de bibliothèques de fonctions écrites en C}
 \framesubtitle{Exemple using module ctypes}
 \begin{python}
 import ctypes
-
-myLib = ctypes.LoadLibray('myLib.lib')
-fun_c = myLib.fun 
-fun_c.argtypes = [ctypes.c_double, ctypes.c_int]
-fun_c.restype = ctypes.c_int (default)
-
-n = len(s)
-pathFile = os.path.dirname(__file__)
-libName = os.path.join(pathFile, 'clz.lib')
-print('libName + ' + libName)
+libName = './clz.lib'
 libCLZ = ctypes.CDLL(libName)
 clz_c = libCLZ.clz
 clz_c.restype = ctypes.c_uint
@@ -1005,16 +1092,6 @@ clz_c.argtypes = ([sequence, ctypes.c_uint])
 # conversion of s into sequence with numpy.asarray
 c = clz_c(numpy.asarray(s, dtype='int'), n)
 \end{python}
-\end{frame}
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-\subsection{scikit-learn}
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-\begin{frame}
-\frametitle{Scikit-learn}
-\framesubtitle{}
-pas vu encore
 \end{frame}
 %_______________________________________________________________________________
 

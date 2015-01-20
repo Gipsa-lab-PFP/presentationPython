@@ -14,17 +14,18 @@
 %============================================================================
 %============================================================================
 \includeonly{%
-sec_introduction, 
-sec_language, 
+%sec_introduction, 
+%sec_language, 
 sec_scientific, 
-sec_environment, 
-sec_conclusion, 
-sec_appendix, 
+%sec_environment, 
+%sec_conclusion, 
+%sec_appendix, 
 }
 
 % \includeonlylecture{day1}
-\includeonlylecture{day2}
+%\includeonlylecture{day2}
 
+\comment{%
 \AtBeginLecture{
 \begin{itemize}
 \item S1: 
@@ -41,6 +42,7 @@ sec_appendix,
 \end{itemize}
 \end{itemize}
 }
+}% end Comment
 %============================================================================
 \begin{document}
 %____________________________________________________________________________

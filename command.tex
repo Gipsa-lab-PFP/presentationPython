@@ -94,16 +94,16 @@
 % listings
 %===============================================================================
 %_______________________________________________________________________________
-\lstdefinestyle{myPython}{language=python, keywordstyle=\color{blue}, commentstyle=\color{red}, basicstyle=\tiny \ttfamily, stringstyle=\color{magenta}\ttfamily, backgroundcolor=\color{pythonBackground}, showstringspaces=false, texcl=true, escapechar=£}
+\lstdefinestyle{myPython}{language=python, keywordstyle=\color{blue}, commentstyle=\color{red}, basicstyle=\tiny \ttfamily, stringstyle=\color{magenta}\ttfamily, backgroundcolor=\color{pythonBackground}, showstringspaces=false, texcl=true, escapechar=£, morecomment=[is]{/*}{*/}}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
-\lstdefinestyle{myPythonConsole}{language=python, keywordstyle=\color{blue}, commentstyle=\color{red}, basicstyle=\tiny \ttfamily, stringstyle=\color{magenta} \ttfamily, backgroundcolor=\color{pythonBackground}, texcl=true, escapechar=£, showstringspaces=false}
+\lstdefinestyle{myPythonConsole}{language=python, keywordstyle=\color{blue}, commentstyle=\color{red}, basicstyle=\tiny \ttfamily, stringstyle=\color{magenta} \ttfamily, backgroundcolor=\color{pythonBackground}, texcl=true, escapechar=£, showstringspaces=false, morecomment=[is]{/*}{*/}}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
-\lstdefinestyle{myMatlab}{language=matlab, keywordstyle=\color{blue}, commentstyle=\color{red}, basicstyle=\tiny \ttfamily, showstringspaces=false,  stringstyle=\color{magenta} \ttfamily, backgroundcolor=\color{matlabBackground}, escapechar=£}
+\lstdefinestyle{myMatlab}{language=matlab, keywordstyle=\color{blue}, commentstyle=\color{red}, basicstyle=\tiny \ttfamily, showstringspaces=false,  stringstyle=\color{magenta} \ttfamily, backgroundcolor=\color{matlabBackground}, escapechar=£, morecomment=[is]{/*}{*/}}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
-\lstdefinestyle{myShell}{language=bash, basicstyle=\tiny \ttfamily, backgroundcolor=\color{pythonBackground}, escapechar=£}
+\lstdefinestyle{myShell}{language=bash, basicstyle=\tiny \ttfamily, backgroundcolor=\color{pythonBackground}, escapechar=£, morecomment=[is]{/*}{*/}}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 \lstnewenvironment{python}{\lstset{style=myPython}}{}

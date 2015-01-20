@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.4.4)  19 JAN 2015 17:31
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.4.4)  20 JAN 2015 17:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -697,6 +697,9 @@ Package: beamerinnerthemedefault 2012/05/01  (rcs-revision 67c48b3b652d)
 emedefault.sty
 Package: beamerouterthemedefault 2010/06/17  (rcs-revision d02a7cf4d8ae)
 )))
+(/usr/local/texlive/2012/texmf-dist/tex/latex/cjk/texinput/CJKutf8.sty
+Package: CJKutf8 2012/05/07 4.8.3
+
 (/usr/local/texlive/2012/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks40
@@ -916,6 +919,85 @@ Now handling font encoding PD1 ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
+(/usr/local/texlive/2012/texmf-dist/tex/latex/cjk/texinput/CJK.sty
+Package: CJK 2012/05/07 4.8.3
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/cjk/texinput/mule/MULEenc.sty
+Package: MULEenc 2012/05/07 4.8.3
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/cjk/texinput/CJK.enc
+File: CJK.enc 2012/05/07 4.8.3
+Now handling font encoding C00 ...
+... no UTF-8 mapping file for font encoding C00
+Now handling font encoding C05 ...
+... no UTF-8 mapping file for font encoding C05
+Now handling font encoding C09 ...
+... no UTF-8 mapping file for font encoding C09
+Now handling font encoding C10 ...
+... no UTF-8 mapping file for font encoding C10
+Now handling font encoding C20 ...
+... no UTF-8 mapping file for font encoding C20
+Now handling font encoding C19 ...
+... no UTF-8 mapping file for font encoding C19
+Now handling font encoding C40 ...
+... no UTF-8 mapping file for font encoding C40
+Now handling font encoding C42 ...
+... no UTF-8 mapping file for font encoding C42
+Now handling font encoding C43 ...
+... no UTF-8 mapping file for font encoding C43
+Now handling font encoding C50 ...
+... no UTF-8 mapping file for font encoding C50
+Now handling font encoding C52 ...
+... no UTF-8 mapping file for font encoding C52
+Now handling font encoding C49 ...
+... no UTF-8 mapping file for font encoding C49
+Now handling font encoding C60 ...
+... no UTF-8 mapping file for font encoding C60
+Now handling font encoding C61 ...
+... no UTF-8 mapping file for font encoding C61
+Now handling font encoding C63 ...
+... no UTF-8 mapping file for font encoding C63
+Now handling font encoding C64 ...
+... no UTF-8 mapping file for font encoding C64
+Now handling font encoding C65 ...
+... no UTF-8 mapping file for font encoding C65
+Now handling font encoding C70 ...
+... no UTF-8 mapping file for font encoding C70
+Now handling font encoding C31 ...
+... no UTF-8 mapping file for font encoding C31
+Now handling font encoding C32 ...
+... no UTF-8 mapping file for font encoding C32
+Now handling font encoding C33 ...
+... no UTF-8 mapping file for font encoding C33
+Now handling font encoding C34 ...
+... no UTF-8 mapping file for font encoding C34
+Now handling font encoding C35 ...
+... no UTF-8 mapping file for font encoding C35
+Now handling font encoding C36 ...
+... no UTF-8 mapping file for font encoding C36
+Now handling font encoding C37 ...
+... no UTF-8 mapping file for font encoding C37
+Now handling font encoding C80 ...
+... no UTF-8 mapping file for font encoding C80
+Now handling font encoding C81 ...
+... no UTF-8 mapping file for font encoding C81
+Now handling font encoding C01 ...
+... no UTF-8 mapping file for font encoding C01
+Now handling font encoding C11 ...
+... no UTF-8 mapping file for font encoding C11
+Now handling font encoding C21 ...
+... no UTF-8 mapping file for font encoding C21
+Now handling font encoding C41 ...
+... no UTF-8 mapping file for font encoding C41
+Now handling font encoding C62 ...
+... no UTF-8 mapping file for font encoding C62
+)
+LaTeX Info: Redefining \selectfont on input line 755.
+\CJK@indent=\box53
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+))
 (/usr/local/texlive/2012/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
@@ -925,7 +1007,7 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
 (/usr/local/texlive/2012/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count153
-\lst@gtempboxa=\box53
+\lst@gtempboxa=\box54
 \lst@token=\toks42
 \lst@length=\count154
 \lst@currlwidth=\dimen183
@@ -941,7 +1023,7 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 \c@lstnumber=\count159
 \lst@skipnumbers=\count160
-\lst@framebox=\box54
+\lst@framebox=\box55
 )
 (/usr/local/texlive/2012/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2007/02/22 1.4 listings configuration
@@ -953,20 +1035,84 @@ Package: listings 2007/02/22 1.4 (Carsten Heinz)
 (./sec_conclusion.aux) (./sec_appendix.aux))
 \openout1 = `presentationPython.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1006,7 +1152,7 @@ LaTeX Font Info:    ... okay on input line 47.
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count161
 \scratchdimen=\dimen187
-\scratchbox=\box55
+\scratchbox=\box56
 \nofMPsegments=\count162
 \nofMParguments=\count163
 \everyMPshowfont=\toks43
@@ -1031,8 +1177,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box56
-Package hyperref Info: Link coloring OFF on input line 47.
+\AtBeginShipoutBox=\box57
+Package hyperref Info: Link coloring OFF on input line 48.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -1042,68 +1188,68 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count167
 )
-LaTeX Info: Redefining \ref on input line 47.
-LaTeX Info: Redefining \pageref on input line 47.
-LaTeX Info: Redefining \nameref on input line 47.
+LaTeX Info: Redefining \ref on input line 48.
+LaTeX Info: Redefining \pageref on input line 48.
+LaTeX Info: Redefining \nameref on input line 48.
 
 (./presentationPython.out) (./presentationPython.out)
 \@outlinefile=\write5
 \openout5 = `presentationPython.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 47.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 48.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 47.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 48.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 47.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 47.
+(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 48.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 48.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/bx/n on input line 47.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/bx/n on input line 48.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/bx/n on input line 47.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 47.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/bx/n on input line 48.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 48.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 47.
+(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 48.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 47.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 47.
+(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 48.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 48.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 47.
+(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 48.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 47.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 47.
+(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 48.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 48.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 47.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 48.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 47.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 48.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/bx/n on input line 47.
+(Font)                  T1/cmss/m/n --> T1/cmss/bx/n on input line 48.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/bx/it on input line 47.
+(Font)                  T1/cmss/m/it --> T1/cmss/bx/it on input line 48.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmr/bx/n on input line 47.
+(Font)                  OT1/cmss/bx/n --> T1/cmr/bx/n on input line 48.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/cmss/bx/n --> T1/cmss/bx/n on input line 47.
+(Font)                  T1/cmss/bx/n --> T1/cmss/bx/n on input line 48.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/bx/n on input line 47.
+(Font)                  T1/cmss/m/n --> T1/cmss/bx/n on input line 48.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/bx/it on input line 47.
+(Font)                  T1/cmss/m/it --> T1/cmss/bx/it on input line 48.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/cmtt/m/n --> T1/cmtt/bx/n on input line 47.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 47.
+(Font)                  T1/cmtt/m/n --> T1/cmtt/bx/n on input line 48.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 48.
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 47
+(Font)              `pureletters' in the math version `normal' on input line 48
 .
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 47
+(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 48
 .
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 47.
+(Font)              `pureletters' in the math version `bold' on input line 48.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  T1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 4
-7.
+8.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/beamer/translator/dicts/translato
 r-basic-dictionary/translator-basic-dictionary-English.dict
@@ -1129,13 +1275,13 @@ Dictionary: translator-numbers-dictionary, Language: English
 r-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 47.
+LaTeX Info: Redefining \includegraphics on input line 48.
 \c@lstlisting=\count168
 
 (./presentationPython.nav)
 
 LaTeX Font Warning: Font shape `T1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 51.
+(Font)              size <5> substituted on input line 52.
 
 [1
 
@@ -1143,86 +1289,107 @@ LaTeX Font Warning: Font shape `T1/cmss/m/n' in size <4> not available
 (./presentationPython.toc) [2
 
 ]
-\openout2 = `sec_scientific.aux'.
+\openout2 = `sec_introduction.aux'.
 
- (./sec_scientific.tex (./presentationPython.toc) [4
-
-
+ (./sec_introduction.tex
+(./presentationPython.toc) [3
 
 
 ]
 \openout4 = `presentationPython.vrb'.
 
  (./presentationPython.vrb
-LaTeX Font Info:    Try loading font information for U+msa on input line 3.
+LaTeX Font Info:    Try loading font information for U+msa on input line 59.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 3.
+LaTeX Font Info:    Try loading font information for U+msb on input line 59.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 3.
+line 59.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2012/04/26
-)) [5
+)
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 59.
+ (/usr/local/texlive/2012/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)) [4
 
 ]
-\openout4 = `presentationPython.vrb'.
+(./presentationPython.vrb
+<./fig/MontyPythonFoot.png, id=291, 100.375pt x 90.3375pt>
+File: ./fig/MontyPythonFoot.png Graphic file (type png)
 
- (./presentationPython.vrb
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 4.
+<use ./fig/MontyPythonFoot.png>
+Package pdftex.def Info: ./fig/MontyPythonFoot.png used on input line 59.
+(pdftex.def)             Requested size: 56.9055pt x 51.21584pt.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+<./fig/ordi1990.jpg, id=293, 657.45625pt x 702.625pt>
+File: ./fig/ordi1990.jpg Graphic file (type jpg)
+ <use ./fig/ordi1990.jpg>
+Package pdftex.def Info: ./fig/ordi1990.jpg used on input line 59.
+(pdftex.def)             Requested size: 85.35826pt x 91.21579pt.
 )
-<./fig/scipy.png, id=152, 1016.79875pt x 714.67pt>
-File: ./fig/scipy.png Graphic file (type png)
- <use ./fig/scipy.png>
-Package pdftex.def Info: ./fig/scipy.png used on input line 7.
-(pdftex.def)             Requested size: 284.52756pt x 199.98627pt.
+Overfull \vbox (0.95244pt too high) detected at line 66
+ []
+
+[5
+
+ <./fig/MontyPythonFoot.png> <./fig/ordi1990.jpg>] (./presentationPython.vrb
+<./fig/grail.png, id=328, 565.11125pt x 663.47874pt>
+File: ./fig/grail.png Graphic file (type png)
+ <use ./fig/grail.png>
+Package pdftex.def Info: ./fig/grail.png used on input line 59.
+(pdftex.def)             Requested size: 85.35826pt x 100.21605pt.
 )
+Overfull \vbox (2.95244pt too high) detected at line 66
+ []
+
 [6
 
- <./fig/scipy.png>]
+ <./fig/grail.png>] (./presentationPython.vrb
+<./fig/python-logo.png, id=359, 211.79124pt x 71.26625pt>
+File: ./fig/python-logo.png Graphic file (type png)
+
+<use ./fig/python-logo.png>
+Package pdftex.def Info: ./fig/python-logo.png used on input line 59.
+(pdftex.def)             Requested size: 85.35826pt x 28.72238pt.
+) [7
+
+ <./fig/python-logo.png>]
+<./fig/guido.jpg, id=391, 1027.84pt x 1541.76pt>
+File: ./fig/guido.jpg Graphic file (type jpg)
+ <use ./fig/guido.jpg>
+Package pdftex.def Info: ./fig/guido.jpg used on input line 96.
+(pdftex.def)             Requested size: 85.35826pt x 128.02486pt.
+ [8
+
+ <./fig/guido.jpg>] [9
+
+]
 \openout4 = `presentationPython.vrb'.
 
  (./presentationPython.vrb
-<./fig/numpy-logo.png, id=180, 180.675pt x 61.22874pt>
-File: ./fig/numpy-logo.png Graphic file (type png)
-
-<use ./fig/numpy-logo.png>
-Package pdftex.def Info: ./fig/numpy-logo.png used on input line 3.
-(pdftex.def)             Requested size: 41.97893pt x 14.22636pt.
-
 (/usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
-)) [7
-
- <./fig/numpy-logo.png>]
-\openout4 = `presentationPython.vrb'.
-
- (./presentationPython.vrb) [8
-
-]
-\openout4 = `presentationPython.vrb'.
-
- (./presentationPython.vrb)
-[9
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)) [10
 
 ]
 \openout4 = `presentationPython.vrb'.
 
- (./presentationPython.vrb) [10
 
-]
-\openout4 = `presentationPython.vrb'.
-
- (./presentationPython.vrb) [11
+(./presentationPython.vrb (./example/shell/shellScript.py)) [11
 
 ]
 \openout4 = `presentationPython.vrb'.
@@ -1242,20 +1409,629 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 (./presentationPython.vrb) [14
 
 ]
+<./fig/sitePython.png, id=586, 1087.06125pt x 985.6825pt>
+File: ./fig/sitePython.png Graphic file (type png)
+
+<use ./fig/sitePython.png>
+Package pdftex.def Info: ./fig/sitePython.png used on input line 230.
+(pdftex.def)             Requested size: 284.52756pt x 257.986pt.
+
+Overfull \vbox (37.01413pt too high) detected at line 230
+ []
+
+[15
+
+ <./fig/sitePython.png>]
+<./fig/sitePythonDoc.png, id=615, 1087.06125pt x 985.6825pt>
+File: ./fig/sitePythonDoc.png Graphic file (type png)
+
+<use ./fig/sitePythonDoc.png>
+Package pdftex.def Info: ./fig/sitePythonDoc.png used on input line 240.
+(pdftex.def)             Requested size: 284.52756pt x 257.986pt.
+
+Overfull \vbox (37.01413pt too high) detected at line 240
+ []
+
+[16
+
+ <./fig/sitePythonDoc.png>]
+<./fig/PDFTutorial.png, id=647, 906.38625pt x 636.3775pt>
+File: ./fig/PDFTutorial.png Graphic file (type png)
+
+<use ./fig/PDFTutorial.png>
+Package pdftex.def Info: ./fig/PDFTutorial.png used on input line 247.
+(pdftex.def)             Requested size: 284.52756pt x 199.76082pt.
+ [17
+
+ <./fig/PDFTutorial.png>]
+<./fig/PDFLibrary.png, id=676, 1266.7325pt x 758.835pt>
+File: ./fig/PDFLibrary.png Graphic file (type png)
+
+<use ./fig/PDFLibrary.png>
+Package pdftex.def Info: ./fig/PDFLibrary.png used on input line 254.
+(pdftex.def)             Requested size: 284.52756pt x 170.44104pt.
+ [18
+
+ <./fig/PDFLibrary.png>]
+<./fig/PDFLibraryOS.png, id=705, 1266.7325pt x 758.835pt>
+File: ./fig/PDFLibraryOS.png Graphic file (type png)
+
+<use ./fig/PDFLibraryOS.png>
+Package pdftex.def Info: ./fig/PDFLibraryOS.png used on input line 261.
+(pdftex.def)             Requested size: 284.52756pt x 170.44104pt.
+ [19
+
+ <./fig/PDFLibraryOS.png>]
+<./fig/PDFReference.png, id=735, 1266.7325pt x 758.835pt>
+File: ./fig/PDFReference.png Graphic file (type png)
+
+<use ./fig/PDFReference.png>
+Package pdftex.def Info: ./fig/PDFReference.png used on input line 268.
+(pdftex.def)             Requested size: 284.52756pt x 170.44104pt.
+ [20
+
+ <./fig/PDFReference.png>]
+<./fig/sitePythonPEPs.png, id=764, 1087.06125pt x 969.6225pt>
+File: ./fig/sitePythonPEPs.png Graphic file (type png)
+
+<use ./fig/sitePythonPEPs.png>
+Package pdftex.def Info: ./fig/sitePythonPEPs.png used on input line 279.
+(pdftex.def)             Requested size: 227.62204pt x 203.02013pt.
+
+Overfull \vbox (17.3769pt too high) detected at line 279
+ []
+
+[21
+
+ <./fig/sitePythonPEPs.png>] [22
+
+] [23
+
+])
+\openout2 = `sec_language.aux'.
+
+ (./sec_language.tex
+(./presentationPython.toc) [24
+
+
+
+] [25
+
+]
 \openout4 = `presentationPython.vrb'.
 
- (./presentationPython.vrb) [15
+ (./presentationPython.vrb) [26
 
 ]
 \openout4 = `presentationPython.vrb'.
 
 
-(./presentationPython.vrb) [16
+(./presentationPython.vrb) [27
 
 ]
 \openout4 = `presentationPython.vrb'.
 
- (./presentationPython.vrb) [17
+ (./presentationPython.vrb) [28
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [29
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [30
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [31
+
+] [32
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [33
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [34
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [35
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [36
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [37
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [38
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb
+(/usr/local/texlive/2012/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.bdg
+File: UTF8.bdg 2012/05/07 4.8.3
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
+File: UTF8.enc 2012/05/07 4.8.3
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
+File: UTF8.chr 2012/05/07 4.8.3
+)
+LaTeX Font Info:    Try loading font information for C70+gbsn on input line 24.
+
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/cjk/texinput/UTF8/c70gbsn.fd
+File: c70gbsn.fd 2012/05/07 4.8.3
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/cjk/texinput/UTF8/c70gbsn.fdx
+File: c70gbsn.fdx 2012/05/07 4.8.3
+))
+[39
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [40
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [41
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [42
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [43
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [44
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [45
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [46
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [47
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [48
+
+] [49
+
+] [50
+
+] [51
+
+] [52
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb)
+[53
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [54
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [55
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [56
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [57
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [58
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb
+Overfull \hbox (13.26395pt too wide) in paragraph at lines 5--7
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) [59
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [60
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [61
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [62
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [63
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [64
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [65
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [66
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [67
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [68
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [69
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [70
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [71
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [72
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [73
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [74
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [75
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [76
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [77
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [78
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [79
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [80
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [81
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb <./fig/packet.pdf, id=2452, 313.17pt x 398.48875pt>
+File: ./fig/packet.pdf Graphic file (type pdf)
+
+<use ./fig/packet.pdf>
+Package pdftex.def Info: ./fig/packet.pdf used on input line 16.
+(pdftex.def)             Requested size: 85.35826pt x 108.60883pt.
+) [82
+
+ <./fig/packet.pdf>]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb
+<./fig/scope.pdf, id=2486, 284.06125pt x 739.76375pt>
+File: ./fig/scope.pdf Graphic file (type pdf)
+ <use ./fig/scope.pdf>
+Package pdftex.def Info: ./fig/scope.pdf used on input line 3.
+(pdftex.def)             Requested size: 85.35826pt x 222.29204pt.
+)
+[83
+
+ <./fig/scope.pdf>] [84
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [85
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb
+<./fig/Tkinter.png, id=2578, 225.84375pt x 98.3675pt>
+File: ./fig/Tkinter.png Graphic file (type png)
+ <use ./fig/Tkinter.png>
+Package pdftex.def Info: ./fig/Tkinter.png used on input line 20.
+(pdftex.def)             Requested size: 142.26378pt x 61.96733pt.
+)
+[86
+
+ <./fig/Tkinter.png>]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb
+<./fig/turtle.png, id=2607, 963.6pt x 925.4575pt>
+File: ./fig/turtle.png Graphic file (type png)
+ <use ./fig/turtle.png>
+Package pdftex.def Info: ./fig/turtle.png used on input line 17.
+(pdftex.def)             Requested size: 142.26378pt x 136.62383pt.
+)
+Overfull \vbox (2.75198pt too high) detected at line 1604
+ []
+
+[87
+
+ <./fig/turtle.png>]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [88
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [89
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [90
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [91
+
+]
+Overfull \hbox (30.44817pt too wide) in paragraph at lines 1741--1741
+\T1/cmss/m/n/10.95 help(nomDuModule)  
+ []
+
+<./fig/help.png, id=2747, 652.4375pt x 643.40375pt>
+File: ./fig/help.png Graphic file (type png)
+ <use ./fig/help.png>
+Package pdftex.def Info: ./fig/help.png used on input line 1741.
+(pdftex.def)             Requested size: 170.71652pt x 168.35114pt.
+
+[92
+
+ <./fig/help.png>] <./fig/pydoc.png, id=2776, 657.45625pt x 712.6625pt>
+File: ./fig/pydoc.png Graphic file (type png)
+
+<use ./fig/pydoc.png>
+Package pdftex.def Info: ./fig/pydoc.png used on input line 1759.
+(pdftex.def)             Requested size: 170.71652pt x 185.04865pt.
+ [93
+
+ <./fig/pydoc.png>]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb)
+[94
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <6> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 22.
+) [95
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [96
+
+]
+<./fig/PyPI.png, id=2887, 1087.06125pt x 759.83875pt>
+File: ./fig/PyPI.png Graphic file (type png)
+ <use ./fig/PyPI.png>
+Package pdftex.def Info: ./fig/PyPI.png used on input line 1837.
+(pdftex.def)             Requested size: 199.16928pt x 139.21144pt.
+
+[97
+
+ <./fig/PyPI.png>] [98
+
+])
+\openout2 = `sec_scientific.aux'.
+
+ (./sec_scientific.tex (./presentationPython.toc)
+[99
+
+
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [100
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb
+<./fig/scipy.png, id=3004, 1016.79875pt x 714.67pt>
+File: ./fig/scipy.png Graphic file (type png)
+ <use ./fig/scipy.png>
+Package pdftex.def Info: ./fig/scipy.png used on input line 7.
+(pdftex.def)             Requested size: 284.52756pt x 199.98627pt.
+)
+[101
+
+ <./fig/scipy.png>]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb
+<./fig/numpy-logo.png, id=3033, 180.675pt x 61.22874pt>
+File: ./fig/numpy-logo.png Graphic file (type png)
+
+<use ./fig/numpy-logo.png>
+Package pdftex.def Info: ./fig/numpy-logo.png used on input line 3.
+(pdftex.def)             Requested size: 41.97893pt x 14.22636pt.
+) [102
+
+ <./fig/numpy-logo.png>]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [103
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [104
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [105
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [106
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [107
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [108
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [109
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [110
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [111
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [112
 
 ]
 \openout4 = `presentationPython.vrb'.
@@ -1276,146 +2052,152 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
  []
 
-) [18
+) [113
 
 ]
 \openout4 = `presentationPython.vrb'.
 
- (./presentationPython.vrb) [19
+ (./presentationPython.vrb) [114
 
 ]
 \openout4 = `presentationPython.vrb'.
 
- (./presentationPython.vrb) [20
+ (./presentationPython.vrb) [115
 
 ]
 \openout4 = `presentationPython.vrb'.
 
 
-(./presentationPython.vrb) [21
+(./presentationPython.vrb) [116
 
 ]
 \openout4 = `presentationPython.vrb'.
 
- (./presentationPython.vrb) [22
+ (./presentationPython.vrb) [117
 
 ]
 \openout4 = `presentationPython.vrb'.
 
 
 (./presentationPython.vrb
+Overfull \hbox (12.38417pt too wide) in paragraph at lines 33--34
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 35--36
-[][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 36--37
-[][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 37--38
-[][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][]
  []
 
-)
-Overfull \vbox (58.36507pt too high) detected at line 528
+
+Overfull \hbox (8.56007pt too wide) in paragraph at lines 38--39
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[23
+) [118
 
 ]
 \openout4 = `presentationPython.vrb'.
 
- (./presentationPython.vrb) [24
+ (./presentationPython.vrb) [119
 
 ]
 \openout4 = `presentationPython.vrb'.
 
- (./presentationPython.vrb) [25
-
-]
-\openout4 = `presentationPython.vrb'.
-
-
-(./presentationPython.vrb) [26
-
-]
-\openout4 = `presentationPython.vrb'.
-
- (./presentationPython.vrb) [27
+ (./presentationPython.vrb) [120
 
 ]
 \openout4 = `presentationPython.vrb'.
 
 
-(./presentationPython.vrb) [28
+(./presentationPython.vrb) [121
 
 ]
 \openout4 = `presentationPython.vrb'.
 
- (./presentationPython.vrb) [29
+ (./presentationPython.vrb) [122
 
 ]
 \openout4 = `presentationPython.vrb'.
 
 
-(./presentationPython.vrb) [30
+(./presentationPython.vrb) [123
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [124
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [125
 
 ]
 \openout4 = `presentationPython.vrb'.
 
  (./presentationPython.vrb
-<./fig/scipylib-logo.png, id=795, 64.24pt x 64.24pt>
+<./fig/scipylib-logo.png, id=3697, 64.24pt x 64.24pt>
 File: ./fig/scipylib-logo.png Graphic file (type png)
 
 <use ./fig/scipylib-logo.png>
 Package pdftex.def Info: ./fig/scipylib-logo.png used on input line 4.
 (pdftex.def)             Requested size: 14.22595pt x 14.22636pt.
-) [31
+) [126
 
  <./fig/scipylib-logo.png>]
 \openout4 = `presentationPython.vrb'.
 
 
-(./presentationPython.vrb) [32
+(./presentationPython.vrb) [127
 
 ]
 \openout4 = `presentationPython.vrb'.
 
- (./presentationPython.vrb) [33
+ (./presentationPython.vrb) [128
 
 ]
 \openout4 = `presentationPython.vrb'.
 
 
 (./presentationPython.vrb
-<./fig/matplotlib-logo.png, id=877, 433.62pt x 79.497pt>
+<./fig/matplotlib-logo.png, id=3787, 433.62pt x 79.497pt>
 File: ./fig/matplotlib-logo.png Graphic file (type png)
 
 <use ./fig/matplotlib-logo.png>
 Package pdftex.def Info: ./fig/matplotlib-logo.png used on input line 4.
 (pdftex.def)             Requested size: 77.5983pt x 14.22636pt.
-) [34
+) [129
 
  <./fig/matplotlib-logo.png>]
 \openout4 = `presentationPython.vrb'.
 
 
 (./presentationPython.vrb
-<./fig/matplotlibSinus.pdf, id=908, 578.16pt x 433.62pt>
+<./fig/matplotlibSinus.pdf, id=3819, 578.16pt x 433.62pt>
 File: ./fig/matplotlibSinus.pdf Graphic file (type pdf)
 
 <use ./fig/matplotlibSinus.pdf>
-Package pdftex.def Info: ./fig/matplotlibSinus.pdf used on input line 19.
-(pdftex.def)             Requested size: 142.26378pt x 106.69768pt.
-) [35
+Package pdftex.def Info: ./fig/matplotlibSinus.pdf used on input line 16.
+(pdftex.def)             Requested size: 170.71652pt x 128.03589pt.
+) [130
 
  <./fig/matplotlibSinus.pdf>]
 \openout4 = `presentationPython.vrb'.
 
 
-(./presentationPython.vrb) [36
+(./presentationPython.vrb) [131
 
 ]
 \openout4 = `presentationPython.vrb'.
@@ -1425,19 +2207,19 @@ Overfull \hbox (48.94106pt too wide) in paragraph at lines 17--18
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<./fig/specgram.png, id=987, 578.16pt x 433.62pt>
+<./fig/specgram.png, id=3905, 578.16pt x 433.62pt>
 File: ./fig/specgram.png Graphic file (type png)
  <use ./fig/specgram.png>
 Package pdftex.def Info: ./fig/specgram.png used on input line 22.
 (pdftex.def)             Requested size: 142.26378pt x 106.69768pt.
 )
-[37
+[132
 
  <./fig/specgram.png>]
 \openout4 = `presentationPython.vrb'.
 
  (./presentationPython.vrb
-<fig/fractal.png, id=1013, 586.8324pt x 442.2924pt>
+<fig/fractal.png, id=3935, 586.8324pt x 442.2924pt>
 File: fig/fractal.png Graphic file (type png)
  <use fig/fractal.png>
 Package pdftex.def Info: fig/fractal.png used on input line 20.
@@ -1447,81 +2229,323 @@ Overfull \hbox (33.5718pt too wide) in paragraph at lines 20--21
 [][] 
  []
 
-) [38
+) [133
 
  <./fig/fractal.png>]
-<fig/BrownSphere.png, id=1041, 123.3408pt x 92.9874pt>
+<fig/BrownSphere.png, id=3965, 123.3408pt x 92.9874pt>
 File: fig/BrownSphere.png Graphic file (type png)
 
 <use fig/BrownSphere.png>
-Package pdftex.def Info: fig/BrownSphere.png used on input line 913.
+Package pdftex.def Info: fig/BrownSphere.png used on input line 947.
 (pdftex.def)             Requested size: 184.9599pt x 156.49443pt.
 
-Overfull \hbox (62.04584pt too wide) in paragraph at lines 913--913
+Overfull \hbox (62.04584pt too wide) in paragraph at lines 947--947
  [] 
  []
 
-<fig/Distrib.png, id=1042, 578.16pt x 433.62pt>
+<fig/Distrib.png, id=3966, 578.16pt x 433.62pt>
 File: fig/Distrib.png Graphic file (type png)
  <use fig/Distrib.png>
-Package pdftex.def Info: fig/Distrib.png used on input line 913.
+Package pdftex.def Info: fig/Distrib.png used on input line 947.
 (pdftex.def)             Requested size: 156.48462pt x 128.03589pt.
 
-Overfull \hbox (33.57056pt too wide) in paragraph at lines 913--913
+Overfull \hbox (33.57056pt too wide) in paragraph at lines 947--947
 [][] 
  []
 
-[39
+[134
 
  <./fig/BrownSphere.png> <./fig/Distrib.png>]
 \openout4 = `presentationPython.vrb'.
 
  (./presentationPython.vrb
-<./fig/ipython-logo.png, id=1069, 736.87059pt x 94.94295pt>
+<./fig/ipython-logo.png, id=3995, 736.87059pt x 94.94295pt>
 File: ./fig/ipython-logo.png Graphic file (type png)
 
 <use ./fig/ipython-logo.png>
 Package pdftex.def Info: ./fig/ipython-logo.png used on input line 4.
 (pdftex.def)             Requested size: 110.41338pt x 14.22636pt.
+) [135
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
+ <./fig/ipython-logo.png>]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb
+<./fig/ipython_notebook_server.png, id=4027, 995.72pt x 857.2025pt>
+File: ./fig/ipython_notebook_server.png Graphic file (type png)
+
+<use ./fig/ipython_notebook_server.png>
+Package pdftex.def Info: ./fig/ipython_notebook_server.png used on input line 8
+.
+(pdftex.def)             Requested size: 227.62204pt x 195.94908pt.
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-)) [40
-
- <./fig/ipython-logo.png>] <./fig/Mayavi.png, id=1096, 930.47626pt x 817.0525pt
->
-File: ./fig/Mayavi.png Graphic file (type png)
-
-<use ./fig/Mayavi.png>
-Package pdftex.def Info: ./fig/Mayavi.png used on input line 957.
-(pdftex.def)             Requested size: 256.0748pt x 224.85844pt.
-
-Overfull \vbox (13.61522pt too high) detected at line 957
+Overfull \vbox (7.41412pt too high) detected at line 1002
  []
 
-[41
+[136
+
+ <./fig/ipython_notebook_server.png>]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb
+<./fig/ipython_notebook_p1.png, id=4057, 995.72pt x 857.2025pt>
+File: ./fig/ipython_notebook_p1.png Graphic file (type png)
+
+<use ./fig/ipython_notebook_p1.png>
+Package pdftex.def Info: ./fig/ipython_notebook_p1.png used on input line 8.
+(pdftex.def)             Requested size: 227.62204pt x 195.94908pt.
+)
+Overfull \vbox (34.00587pt too high) detected at line 1015
+ []
+
+[137
+
+ <./fig/ipython_notebook_p1.png>]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb
+<./fig/ipython_notebook_p2.png, id=4086, 995.72pt x 857.2025pt>
+File: ./fig/ipython_notebook_p2.png Graphic file (type png)
+
+<use ./fig/ipython_notebook_p2.png>
+Package pdftex.def Info: ./fig/ipython_notebook_p2.png used on input line 7.
+(pdftex.def)             Requested size: 227.62204pt x 195.94908pt.
+)
+Overfull \vbox (7.41412pt too high) detected at line 1027
+ []
+
+[138
+
+ <./fig/ipython_notebook_p2.png>]
+<./fig/Mayavi.png, id=4115, 930.47626pt x 817.0525pt>
+File: ./fig/Mayavi.png Graphic file (type png)
+ <use ./fig/Mayavi.png>
+Package pdftex.def Info: ./fig/Mayavi.png used on input line 1044.
+(pdftex.def)             Requested size: 227.62204pt x 199.87416pt.
+
+Overfull \vbox (13.70232pt too high) detected at line 1044
+ []
+
+[139
 
  <./fig/Mayavi.png>]
 \openout4 = `presentationPython.vrb'.
 
- (./presentationPython.vrb) [42
+ (./presentationPython.vrb) [140
+
+] [141
 
 ]
 \openout4 = `presentationPython.vrb'.
 
 
-(./presentationPython.vrb) [43
-
-] [44
+(./presentationPython.vrb) [142
 
 ])
+\openout2 = `sec_environment.aux'.
+
+ (./sec_environment.tex
+(./presentationPython.toc) [143
+
+
+
+]
+<./fig/interpreter.png, id=4259, 580.1675pt x 285.065pt>
+File: ./fig/interpreter.png Graphic file (type png)
+
+<use ./fig/interpreter.png>
+Package pdftex.def Info: ./fig/interpreter.png used on input line 19.
+(pdftex.def)             Requested size: 199.16928pt x 97.86035pt.
+ [144
+
+ <./fig/interpreter.png>]
+<./fig/Idle.png, id=4290, 800.9925pt x 523.9575pt>
+File: ./fig/Idle.png Graphic file (type png)
+ <use ./fig/Idle.png>
+Package pdftex.def Info: ./fig/Idle.png used on input line 36.
+(pdftex.def)             Requested size: 227.62204pt x 148.88971pt.
+
+[145
+
+ <./fig/Idle.png>]
+<./fig/IPy_header.png, id=4319, 736.87059pt x 94.94295pt>
+File: ./fig/IPy_header.png Graphic file (type png)
+
+<use ./fig/IPy_header.png>
+Package pdftex.def Info: ./fig/IPy_header.png used on input line 52.
+(pdftex.def)             Requested size: 110.41338pt x 14.22636pt.
+ <./fig/IPython.png, id=4321, 644.4075pt x 489.83pt>
+File: ./fig/IPython.png Graphic file (type png)
+
+<use ./fig/IPython.png>
+Package pdftex.def Info: ./fig/IPython.png used on input line 52.
+(pdftex.def)             Requested size: 199.16928pt x 151.3898pt.
+
+Overfull \vbox (8.17296pt too high) detected at line 52
+ []
+
+[146
+
+ <./fig/IPy_header.png> <./fig/IPython.png>]
+<./fig/IPythonQTConsole.png, id=4353, 1261.71375pt x 575.14874pt>
+File: ./fig/IPythonQTConsole.png Graphic file (type png)
+
+<use ./fig/IPythonQTConsole.png>
+Package pdftex.def Info: ./fig/IPythonQTConsole.png used on input line 65.
+(pdftex.def)             Requested size: 256.0748pt x 116.73026pt.
+ [147
+
+ <./fig/IPythonQTConsole.png>]
+<./fig/IPythonNotebook.png, id=4382, 1397.22pt x 879.285pt>
+File: ./fig/IPythonNotebook.png Graphic file (type png)
+
+<use ./fig/IPythonNotebook.png>
+Package pdftex.def Info: ./fig/IPythonNotebook.png used on input line 78.
+(pdftex.def)             Requested size: 270.30118pt x 170.09808pt.
+ [148
+
+ <./fig/IPythonNotebook.png>]
+File: ./fig/IPythonNotebook.png Graphic file (type png)
+
+<use ./fig/IPythonNotebook.png>
+Package pdftex.def Info: ./fig/IPythonNotebook.png used on input line 91.
+(pdftex.def)             Requested size: 270.30118pt x 170.09808pt.
+ [149
+
+]
+<./fig/IPythonNotebookInline.png, id=4438, 860.21375pt x 463.7325pt>
+File: ./fig/IPythonNotebookInline.png Graphic file (type png)
+
+<use ./fig/IPythonNotebookInline.png>
+Package pdftex.def Info: ./fig/IPythonNotebookInline.png used on input line 103
+.
+(pdftex.def)             Requested size: 227.62204pt x 122.70454pt.
+ [150
+
+ <./fig/IPythonNotebookInline.png>]
+<./fig/enthought-logo.png, id=4466, 216.81pt x 32.12pt>
+File: ./fig/enthought-logo.png Graphic file (type png)
+
+<use ./fig/enthought-logo.png>
+Package pdftex.def Info: ./fig/enthought-logo.png used on input line 117.
+(pdftex.def)             Requested size: 96.02856pt x 14.22636pt.
+ [151
+
+ <./fig/enthought-logo.png>]
+<./fig/enthought-canopy.jpg, id=4499, 1164.35pt x 819.06pt>
+File: ./fig/enthought-canopy.jpg Graphic file (type jpg)
+
+<use ./fig/enthought-canopy.jpg>
+Package pdftex.def Info: ./fig/enthought-canopy.jpg used on input line 125.
+(pdftex.def)             Requested size: 284.52756pt x 200.14029pt.
+ [152
+
+ <./fig/enthought-canopy.jpg>]
+<./fig/PythonXYLogo.png, id=4526, 48.18pt x 48.18pt>
+File: ./fig/PythonXYLogo.png Graphic file (type png)
+
+<use ./fig/PythonXYLogo.png>
+Package pdftex.def Info: ./fig/PythonXYLogo.png used on input line 142.
+(pdftex.def)             Requested size: 14.2262pt x 14.22636pt.
+
+<./fig/pythonxy_home.png, id=4528, 808.01875pt x 438.63875pt>
+File: ./fig/pythonxy_home.png Graphic file (type png)
+
+<use ./fig/pythonxy_home.png>
+Package pdftex.def Info: ./fig/pythonxy_home.png used on input line 142.
+(pdftex.def)             Requested size: 199.16928pt x 108.12pt.
+
+Overfull \vbox (7.91144pt too high) detected at line 142
+ []
+
+[153
+
+ <./fig/PythonXYLogo.png> <./fig/pythonxy_home.png>]
+<./fig/Spyder.png, id=4559, 927.465pt x 640.3925pt>
+File: ./fig/Spyder.png Graphic file (type png)
+ <use ./fig/Spyder.png>
+Package pdftex.def Info: ./fig/Spyder.png used on input line 154.
+(pdftex.def)             Requested size: 227.62204pt x 157.16624pt.
+
+[154
+
+ <./fig/Spyder.png>]
+<./fig/continuum_analytics_logo.png, id=4586, 718.685pt x 347.2975pt>
+File: ./fig/continuum_analytics_logo.png Graphic file (type png)
+
+<use ./fig/continuum_analytics_logo.png>
+Package pdftex.def Info: ./fig/continuum_analytics_logo.png used on input line 
+169.
+(pdftex.def)             Requested size: 29.43336pt x 14.22636pt.
+
+<./fig/anaconda_logo_web.png, id=4588, 256.96pt x 179.67125pt>
+File: ./fig/anaconda_logo_web.png Graphic file (type png)
+
+<use ./fig/anaconda_logo_web.png>
+Package pdftex.def Info: ./fig/anaconda_logo_web.png used on input line 169.
+(pdftex.def)             Requested size: 20.34549pt x 14.22636pt.
+ [155
+
+ <./fig/continuum_analytics_logo.png> <./fig/anaconda_logo_web.png>]
+<./fig/jEdit.png, id=4618, 1262.7175pt x 777.90625pt>
+File: ./fig/jEdit.png Graphic file (type png)
+ <use ./fig/jEdit.png>
+Package pdftex.def Info: ./fig/jEdit.png used on input line 181.
+(pdftex.def)             Requested size: 256.0748pt x 157.75067pt.
+
+[156
+
+ <./fig/jEdit.png>])
+\openout2 = `sec_conclusion.aux'.
+
+ (./sec_conclusion.tex (./presentationPython.toc)
+[157
+
+
+
+] <./fig/matlabLicenseManagerError4.png, id=4678, 421.575pt x 395.4775pt>
+File: ./fig/matlabLicenseManagerError4.png Graphic file (type png)
+
+<use ./fig/matlabLicenseManagerError4.png>
+Package pdftex.def Info: ./fig/matlabLicenseManagerError4.png used on input lin
+e 22.
+(pdftex.def)             Requested size: 113.81102pt x 106.76224pt.
+ [158
+
+ <./fig/matlabLicenseManagerError4.png>])
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 63.
+(hyperref)                removing `\translate ' on input line 64.
 
+\openout2 = `sec_appendix.aux'.
+
+(./sec_appendix.tex (./presentationPython.toc) [159
+
+
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [160
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [161
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [162
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [163
+
+])
 \tf@nav=\write6
 \openout6 = `presentationPython.nav'.
 
@@ -1531,53 +2555,55 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 \tf@snm=\write8
 \openout8 = `presentationPython.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 65.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 65.
-(./presentationPython.aux (./sec_introduction.aux) (./sec_language.aux)
-(./sec_scientific.aux) (./sec_environment.aux) (./sec_conclusion.aux)
-(./sec_appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 65.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 65.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 66.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 66.
+ (./presentationPython.aux
+(./sec_introduction.aux) (./sec_language.aux) (./sec_scientific.aux)
+(./sec_environment.aux) (./sec_conclusion.aux) (./sec_appendix.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 66.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 66.
 Package rerunfilecheck Info: File `presentationPython.out' has not changed.
-(rerunfilecheck)             Checksum: 55DF0AA6173C9F80E78284FCFA198858;323.
+(rerunfilecheck)             Checksum: B0DF2758547B94D719F348264B40DB00;2151.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 65.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 66.
  ) 
 Here is how much of TeX's memory you used:
- 18419 strings out of 493488
- 326809 string characters out of 3141327
- 525552 words of memory out of 3000000
- 21086 multiletter control sequences out of 15000+200000
- 17194 words of font info for 50 fonts, out of 3000000 for 9000
+ 20817 strings out of 493488
+ 358589 string characters out of 3141327
+ 549900 words of memory out of 3000000
+ 22907 multiletter control sequences out of 15000+200000
+ 23228 words of font info for 64 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 49i,14n,59p,434b,1318s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Navigation45} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Navigation49} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Navigation3} has been referenced but does not exist
-, replaced by a fixed one
-
-{/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</
-usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
-sr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
-r/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></
-usr/local/texlive/2012/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></us
-r/local/texlive/2012/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/
-local/texlive/2012/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/lo
-cal/texlive/2012/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/loca
-l/texlive/2012/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on presentationPython.pdf (43 pages, 933681 bytes).
+ 49i,14n,64p,427b,1323s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></
+usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></
+usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
+sr/local/texlive/2012/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu4f.pfb></usr/loc
+al/texlive/2012/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu59.pfb></usr/local/tex
+live/2012/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local
+/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/lo
+cal/texlive/2012/texmf-dist/fonts/type1/public/cm-super/sfsi0900.pfb></usr/loca
+l/texlive/2012/texmf-dist/fonts/type1/public/cm-super/sfsi1000.pfb></usr/local/
+texlive/2012/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></usr/local/te
+xlive/2012/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr/local/texl
+ive/2012/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/local/texliv
+e/2012/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local/texlive/
+2012/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/20
+12/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2012
+/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2012/t
+exmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2012/tex
+mf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2012/texmf
+-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on presentationPython.pdf (163 pages, 4811713 bytes).
 PDF statistics:
- 1254 PDF objects out of 1440 (max. 8388607)
- 1144 compressed objects within 12 object streams
- 95 named destinations out of 1000 (max. 500000)
- 138 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4992 PDF objects out of 5155 (max. 8388607)
+ 4641 compressed objects within 47 object streams
+ 371 named destinations out of 1000 (max. 500000)
+ 568 words of extra memory for PDF output out of 10000 (max. 10000000)
 

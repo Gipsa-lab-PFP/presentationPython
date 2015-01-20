@@ -1,0 +1,163 @@
+%===============================================================================
+\section{Distributions et Environnements de travail}
+%===============================================================================
+%_______________________________________________________________________________
+\subsection{Python Software Foundation}
+%...............................................................................
+\begin{frame}
+\frametitle{Python.org}
+\framesubtitle{Official}
+\frameCC{%
+\begin{itemize}
+ \item Python 2.7 ou 3.x téléchargeable sur \urlPython.
+ \item Livré uniquemenent avec la bibliothèque standard. 
+ \item Inclus l'interpréteur Python natif accessible à partir de l'environnement système. 
+ \item Parfait pour tester des petits bouts de codes. 
+\end{itemize}
+}%
+{\myFig{width=7cm}{./fig/interpreter.png}}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{Python IDLE}
+\framesubtitle{official}
+\frameCC{%
+\begin{itemize}
+ \item Python livré avec un Integrated DeveLopment Environment (IDLE) : 
+ \begin{itemize}
+ \footnotesize
+  \item Une console Python : coloration automatique, autocomplétion \dots 
+  \item Un éditeur de texte : indentation automatique, coloration syntaxique, debuggueur, \dots
+ \end{itemize}
+\end{itemize}
+}%
+{\myFig{width=9cm}{./fig/Idle.png}}
+\end{frame}
+%...............................................................................
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsection{IPython}
+%...............................................................................
+\begin{frame}
+\frametitle{IPython}
+\framesubtitle{Intro}
+\frameCC{%
+\begin{itemize}
+ \item \myFig{height=0.5cm}{./fig/IPy_header.png}\ IPy: \url{http://ipython.org}
+ \item Console interactive accessible via le shell : coloration syntaxique, fonctions magiques, mémorisation des commandes, débuggueur, profileur, calculs parallèles \dots  
+ \item Plusieurs options cf. 'man ipython' ou 'ipython -help'. 
+\end{itemize}}
+{\myFig{width=7cm}{./fig/IPython.png}}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{IPython}
+\framesubtitle{Qtconsole}
+\frameCC{%
+\begin{itemize}
+ \item Commande dans le shell : ipython qtconsole  
+ \item Environnement graphique Qt qui permet de tracer des figures via matplotlib ou pylab.
+ \item Commande directe : ipython qtconsole --pylab
+\end{itemize}}
+{\myFig{width=9cm}{./fig/IPythonQTConsole.png}}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{IPython}
+\framesubtitle{notebook}
+\frameCC{%
+\begin{itemize}
+ \small
+ \item Commande dans le shell : ipython notebook  
+ \item Editeur dans le navigateur HTML, \emph{Web-based interactive computational environment}. 
+\end{itemize}}
+{\myFig{width=9.5cm}{./fig/IPythonNotebook.png}}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{IPython}
+\framesubtitle{notebook}
+\frameCC{%
+\begin{itemize}
+ \small
+ \item Cellules de codes ou de documentation : \emph{Cell Mode} à la Matlab, \emph{Document-Based Workflow} à la Mathematica. 
+ \item Balisage du texte en LaTeX, HTML ou Markdown. 
+\end{itemize}}
+{\myFig{width=9.5cm}{./fig/IPythonNotebook.png}}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{IPython}
+\framesubtitle{notebook}
+\frameCC{%
+\begin{itemize}
+ \item Commande pour importer pylab et graphique dans l'interface html : 'ipython notebook --pylab inline'
+ \item Génération de rapports dans le menu 'notebook > action > print' puis impression en pdf pour le navigateur HTML. 
+\end{itemize}}
+{\myFig{width=8cm}{./fig/IPythonNotebookInline.png}}
+\end{frame}
+%...............................................................................
+%_______________________________________________________________________________
+\subsection{Enthought}
+%...............................................................................
+\begin{frame}
+\frametitle{Enthought Canopy}
+\begin{itemize}
+ \item \myFig{height=0.5cm}{./fig/enthought-logo.png}\ : \url{https://www.enthought.com/products/canopy/}
+ \item Contient Python et +100 librairies orientées applications scientifiques. 
+ \item Multi-plateformes, \emph{Easy installation and update}.
+ \item Gratuit pour les étudiants et les universitaires. 
+ \item Anciennement Enthought Python Distribution EPD. 
+ \item QtConsole, iPython. 
+\end{itemize}
+\end{frame}
+%...............................................................................
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsection{Python(x,y)}
+%...............................................................................
+\begin{frame}
+\frametitle{Python(x,y)}
+\frameCC{%
+\begin{itemize}
+\item \myFig{height=0.5cm}{./fig/PythonXYLogo.png}\ Python(x,y) : \url{https://code.google.com/p/pythonxy/}
+\item \emph{\footnotesize Python(x,y) is a free scientific and engineering development software for numerical computations, data analysis and data visualization based on \emph{Python} programming language, \emph{Qt} graphical user interfaces and \emph{Spyder} interactive scientific development environment.}
+\item Un grand nombre de librairies scientifiques, entre autres. 
+\item Interface avec Eclipse (IDE principalement pour Java mais aussi Python). 
+\end{itemize}
+}
+{\myFig{width=7cm}{./fig/pythonxy_home.png} \\ {\tiny source web}}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{Python(x,y)}
+\framesubtitle{Spyder}
+\frameCC{%
+\begin{itemize}
+\item Spyder (multiplateforme) : environnement de type Matlab pour Python. 
+\end{itemize}
+}
+{\myFig{width=8cm}{./fig/Spyder.png} \\ {\tiny source web}}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}
+\frametitle{Autres Integrated Development Environment}
+\framesubtitle{}
+\frameCC{%
+\begin{itemize}
+\item Tout éditeur de texte avec coloration syntaxique : Emacs, Vim, jEdit, gedit, Textpad... 
+\end{itemize}
+}
+{\myFig{width=9cm}{./fig/jEdit.png}}
+\end{frame}
+%...............................................................................
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+%===============================================================================
