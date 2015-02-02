@@ -273,7 +273,9 @@ find(...)
 \framesubtitle{PEPs}
 \frameCC{% 
 Propositions et conseils pour l'utilisation et l'amélioration du langage.}
-{\myFig{width=9cm}{./fig/sitePythonPEPs.png}}
+{%
+\myFig{width=8cm}{./fig/sitePythonPEPs.png}
+}
 \end{frame}
 %...............................................................................
 %_______________________________________________________________________________
