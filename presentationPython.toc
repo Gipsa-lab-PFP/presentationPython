@@ -32,13 +32,13 @@
 \beamer@subsubsectionintoc {3}{5}{1}{ipython notebook}{137}{0}{3}
 \beamer@subsectionintoc {3}{6}{Mayavi}{140}{0}{3}
 \beamer@subsectionintoc {3}{7}{scikit-learn}{143}{0}{3}
-\beamer@subsectionintoc {3}{8}{Autres ressources : exemple C}{145}{0}{3}
-\beamer@sectionintoc {4}{Distributions et Environnements de travail}{146}{0}{4}
-\beamer@subsectionintoc {4}{1}{Python Software Foundation}{147}{0}{4}
-\beamer@subsectionintoc {4}{2}{IPython}{149}{0}{4}
-\beamer@subsectionintoc {4}{3}{Enthought}{154}{0}{4}
-\beamer@subsectionintoc {4}{4}{Python(x,y)}{156}{0}{4}
-\beamer@subsectionintoc {4}{5}{Anaconda}{158}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{160}{0}{5}
-\beamer@subsectionintoc {5}{1}{Python vs Matlab ?}{161}{0}{5}
-\beamer@sectionintoc {6}{classe et variable 'self'}{162}{1}{6}
+\beamer@subsectionintoc {3}{8}{Autres ressources : exemple C}{147}{0}{3}
+\beamer@sectionintoc {4}{Distributions et Environnements de travail}{148}{0}{4}
+\beamer@subsectionintoc {4}{1}{Python Software Foundation}{149}{0}{4}
+\beamer@subsectionintoc {4}{2}{IPython}{151}{0}{4}
+\beamer@subsectionintoc {4}{3}{Enthought}{156}{0}{4}
+\beamer@subsectionintoc {4}{4}{Python(x,y)}{158}{0}{4}
+\beamer@subsectionintoc {4}{5}{Anaconda}{160}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{162}{0}{5}
+\beamer@subsectionintoc {5}{1}{Python vs Matlab ?}{163}{0}{5}
+\beamer@sectionintoc {6}{classe et variable 'self'}{164}{1}{6}

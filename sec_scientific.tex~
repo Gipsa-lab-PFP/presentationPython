@@ -79,7 +79,9 @@ DESCRIPTION
 \begin{itemize}
  \item N-dimensional array : ndarray
  \item Création d'un tableau vide et réservation de l'espace (empty)
- \item Accès aux éléments : A[i, j, \dots]
+ \item Accès aux éléments : A[i, j, \dots] 
+ \item indices de {\color{red}{0 à $n-1$}}
+ \item indices négatifs de $-n$ à $-1$
 \end{itemize}
 \begin{pythonConsole}
 
@@ -96,6 +98,7 @@ DESCRIPTION
  [ 11.  12.]]
 >>> type(A)
 <type 'numpy.ndarray'>
+>>> A[-1, -2] = 11
 \end{pythonConsole}
 \end{frame}
 %_______________________________________________________________________________
@@ -505,10 +508,8 @@ array(['abc', 'def'],
 \begin{itemize}
  \item Enregistrement d'un tableau (save) dans un fichier ".npy"
  \item Enregistrement compressé de plusieurs tableaux (savez) au format ".npz"
- \item Eneregistrement (savetxt) et lecture (loadtxt) de fichier texte ".txt"
- \item Lecture (load) des fichiers ".npy", ".npz", ou ".txt"
+ \item Lecture (load) des fichiers ".npy", ".npz"
 \end{itemize}
-\begin{minipage}{6cm}
 \begin{pythonConsole}
 >>> A = numpy.array([[1, 2], [11, 12]])
 >>> numpy.save("save_A", A)
@@ -529,8 +530,16 @@ array(['abc', 'def'],
 [[21 22]
  [31 32]]
 \end{pythonConsole}
-\end{minipage}
-\begin{minipage}{4cm}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Sauvegarde et lecture de données txt}
+\framesubtitle{}
+\begin{itemize}
+ \item Lecture de fichier texte ".txt" (load ou loadtxt) 
+ \item Enregistrement (savetxt) 
+\end{itemize}
 \begin{pythonConsole}
 >>> A = numpy.loadtxt("data.txt")
 >>> A
@@ -539,7 +548,6 @@ array([[  1.,   2.,   3.,   4.,   5.],
        [ 21.,  22.,  23.,  24.,  25.]])
 >>> numpy.savetxt("data.txt", A)
 \end{pythonConsole}
-\end{minipage}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -550,7 +558,7 @@ array([[  1.,   2.,   3.,   4.,   5.],
 \frametitle{Matrix}
 \framesubtitle{Définition}
 \begin{itemize}
- \item classe héritée de ndarray avec ndim = 2.  
+ \item Classe héritée de ndarray avec ndim = 2.  
 \end{itemize}
 \begin{pythonConsole}
 >>> help(numpy.matrix)
@@ -643,8 +651,8 @@ print(A.I)
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 \begin{frame}[fragile]
-\frametitle{Sous paquet linalg}
-\framesubtitle{Algèbre Linéaire}
+\frametitle{Autres opérations d'algèbre linéaire}
+\framesubtitle{Sous paquet linalg}
 \begin{itemize}
  \item Interface vers Lapack (numpy.linalg)
 \end{itemize}
@@ -717,7 +725,7 @@ print(A.I)
  \item Sous paquet random : générateurs de nombres aléatoires. 
 \end{itemize}
 \begin{pythonConsole}
->>> A = numpy.random.seed(0)
+>>> numpy.random.seed(0)
 >>> A = numpy.random.randn(2, 3, 4)
 >>> print(A)
 [[[ 1.76405235  0.40015721  0.97873798  2.2408932 ]
@@ -824,7 +832,8 @@ print(A.I)
 \begin{itemize}
  \item \myFig{height=0.5cm}{./fig/matplotlib-logo.png} : \url{http://www.matplotlib.org}
  \item \emph{matplotlib is a python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms. }
- \item Programmation orientée objets avec différents backends pour différentes interfaces graphiques, graphical user interfaces (GUI) : agg, gtk, qt, svg, ps, pdf\dots
+ \item Contient des classes : programmation orientée objets avec différents backends pour différentes interfaces graphiques, graphical user interfaces (GUI) : agg, gtk, qt, svg, ps, pdf\dots
+ \item Contient des procédures pour faciliter l'accès à ces classes : matlab style. 
 \end{itemize}
 \end{frame}
 %_______________________________________________________________________________
@@ -895,9 +904,14 @@ print(A.I)
 
 >>> from pylab import *
 >>> t = arange(0, 10, 0.01)
->>> f = arange(0, 20, 0.02)
+>>> f = arange(0, 5, 0.005)
 >>> x = sin(2 * pi * f * t)
->>> res = specgram(x, NFFT=16, Fs=100, noverlap=8)
+>>> subplot(2, 1, 1)
+>>> plot(t, x * 5)
+>>> plot(t, f)
+>>> subplot(2, 1, 2)
+>>> res = specgram(x, NFFT=64, 
+... Fs=100, noverlap=8)
 >>> show()
 \end{pythonConsole}
 \end{minipage}
@@ -910,24 +924,21 @@ print(A.I)
 \begin{frame}[fragile]
 \frametitle{Matplotlib}
 \framesubtitle{Pylab}
-\begin{minipage}{0.58\linewidth}
+\begin{minipage}{5cm}
 \begin{pythonConsole}
->>> (X, Y) = meshgrid(linspace(-2, 2, 500), \
-... linspace(-2, 2, 500))
+>>> (X, Y) = meshgrid(linspace(-2, 2, \
+... 500), linspace(-2, 2, 500))
 >>> Z = X + Y * 1j
->>> k = 1
->>> while (k <= 75):
-...    Z -= (Z / 3 - 1) / (3 * Z ** 2)
-...	   k += 1
+>>> for k in range(76): 
+...  Z -= (Z / 3 - 1) / (3 * Z ** 2)
 >>> close("all")	
 >>> imshow(angle(Z))
 >>> # savefig('/MonChemin/Lenom.pdf')
 >>> show()
 \end{pythonConsole}
 \end{minipage}
-%\hspace{0.5cm}
-\begin{minipage}{0.4\linewidth}
-\includegraphics[width=5.5cm,height=4.5cm]{fig/fractal.png}
+\begin{minipage}{5cm}
+\includegraphics[width=5cm]{fig/fractal.png}
 \end{minipage}
 \end{frame}
 %_______________________________________________________________________________
@@ -1006,7 +1017,7 @@ In [2]:
 \frametitle{IPython}
 \framesubtitle{ipython notebook}
 \begin{itemize}
- \item Cellules exécute du code ou formatent du texte (HTML, LaTeX, etc.)
+ \item Les cellules exécutent du code ou formatent du texte
  \item Chargement des fonctions pylab avec affichage dans le notebook : \%pylab inline 
 \end{itemize}
 \begin{center}
@@ -1019,7 +1030,7 @@ In [2]:
 \frametitle{IPython}
 \framesubtitle{ipython notebook}
 \begin{itemize}
- \item Les cellules exécutent du code ou formatent du texte (HTML, LaTeX, etc.)
+ \item Saisie et affichage en HTML et LaTeX, entre autres.   
 \end{itemize}
 \begin{center}
  \myFig{width=8cm}{./fig/ipython_notebook_p2.png}
@@ -1035,12 +1046,19 @@ In [2]:
 \framesubtitle{}
 \frameCC{%
 \begin{itemize}
+ \item \url{http://docs.enthought.com/mayavi/mayavi}
  \item \url{https://github.com/enthought/mayavi}
- \item Manipulation des objets 3D améliorée. 
- \item need vtk
+ \item Manipulation des objets 3D améliorée (objet vtk). 
 \end{itemize}
 }
-{\myFig{width=8cm}{./fig/Mayavi.png}}
+{\myFig{width=8cm}{./fig/Mayavi_site.png}}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}
+\frametitle{Mayavi}
+\framesubtitle{}
+\myFig{width=8cm}{./fig/Mayavi.png}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -1069,10 +1087,83 @@ In [2]:
 \subsection{scikit-learn}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle{Scikit-learn}
 \framesubtitle{}
-pas vu encore
+\begin{pythonConsole}
+>>> import sklearn
+>>> help(sklearn)
+
+DESCRIPTION
+    Machine learning module for Python
+    ==================================
+    
+    sklearn is a Python module integrating classical machine
+    learning algorithms in the tightly-knit world of scientific Python
+    packages (numpy, scipy, matplotlib).
+    
+    It aims to provide simple and efficient solutions to learning problems
+    that are accessible to everybody and reusable in various contexts:
+    machine-learning as a versatile tool for science and engineering.
+    
+    See http://scikit-learn.org for complete documentation.
+
+PACKAGE CONTENTS
+    __check_build (package)
+    _build_utils
+    _hmmc
+    _isotonic
+    base
+    cluster (package)
+    covariance (package)
+    cross_decomposition (package)
+    cross_validation
+    datasets (package)
+    decomposition (package)
+    dummy
+    ensemble (package)
+    externals (package)
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Scikit-learn}
+\framesubtitle{}
+\begin{pythonConsole}
+    feature_extraction (package)
+    feature_selection (package)
+    gaussian_process (package)
+    grid_search
+    hmm
+    isotonic
+    kernel_approximation
+    lda
+    learning_curve
+    linear_model (package)
+    kernel_approximation
+    lda
+    learning_curve
+    linear_model (package)
+    manifold (package)
+    metrics (package)
+    mixture (package)
+    multiclass
+    naive_bayes
+    neighbors (package)
+    neural_network (package)
+    pipeline
+    pls
+    preprocessing (package)
+    qda
+    random_projection
+    semi_supervised (package)
+    setup
+    svm (package)
+    tests (package)
+    tree (package)
+    utils (package)
+\end{pythonConsole}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________

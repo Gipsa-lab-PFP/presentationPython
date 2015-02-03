@@ -1058,7 +1058,7 @@ In [2]:
 \begin{frame}
 \frametitle{Mayavi}
 \framesubtitle{}
-\myFig{width=8cm}{./fig/Mayavi.png}
+\myFigCentered{width=8cm}{./fig/Mayavi.png}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -1090,6 +1090,17 @@ In [2]:
 \begin{frame}[fragile]
 \frametitle{Scikit-learn}
 \framesubtitle{}
+\begin{itemize}
+ \item \url{http://scikit-learn.org/} 
+ \item \url{https://github.com/scikit-learn/scikit-learn} 
+\end{itemize}
+\myFigCentered{width=8cm}{./fig/scikit-learn.png}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Scikit-learn}
+\framesubtitle{Help content}
 \begin{pythonConsole}
 >>> import sklearn
 >>> help(sklearn)
@@ -1098,15 +1109,15 @@ DESCRIPTION
     Machine learning module for Python
     ==================================
     
-    sklearn is a Python module integrating classical machine
-    learning algorithms in the tightly-knit world of scientific Python
+    sklearn £is£ a Python module integrating classical machine
+    learning algorithms £in£ the tightly-knit world of scientific Python
     packages (numpy, scipy, matplotlib).
     
-    It aims to provide simple and efficient solutions to learning problems
-    that are accessible to everybody and reusable in various contexts:
-    machine-learning as a versatile tool for science and engineering.
+    It aims to provide simple £and£ efficient solutions to learning problems
+    that are accessible to everybody £and£ reusable £in£ various contexts:
+    machine-learning as a versatile tool £for£ science and engineering.
     
-    See http://scikit-learn.org for complete documentation.
+    See http://scikit-learn.org £for£ complete documentation.
 
 PACKAGE CONTENTS
     __check_build (package)
@@ -1129,7 +1140,7 @@ PACKAGE CONTENTS
 %_______________________________________________________________________________
 \begin{frame}[fragile]
 \frametitle{Scikit-learn}
-\framesubtitle{}
+\framesubtitle{Help content}
 \begin{pythonConsole}
     feature_extraction (package)
     feature_selection (package)
@@ -1164,6 +1175,31 @@ PACKAGE CONTENTS
     tree (package)
     utils (package)
 \end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Scikit-learn}
+\framesubtitle{Exemple de Classifieur : Linear Discriminant Analysis}
+\begin{pythonConsole}
+>>> from sklearn.datasets import load_iris
+>>> from sklearn.lda import LDA
+>>> dic = load_iris()
+>>> x = dic["data"]
+>>> y = dic["target"]
+>>> nClasses = unique(y).size
+>>> clf = LDA()
+>>> clf.fit(x[:, :2], y)
+>>> (mx1, mx2) = = meshgrid(linspace(4, 8, 100), linspace(2, 5, 100))
+>>> Z = clf.predict(vstack((mx1.flatten().T, mx2.flatten())).T)
+>>> pcolor(mx1, mx2, Z.reshape(mx1.shape), alpha=0.1)
+>>> colors = ["b", "g", "r"]
+>>> for i in range(nClasses): 
+>>>   scatter(x[y==i, 0], x[y==i, 1], c=colors[i])
+>>> axis(xmin=4, xmax=8, ymin=2, ymax=5)
+>>> show()
+\end{pythonConsole}
+\myFigCentered{width=3cm}{./fig/sklearn_lda.png}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________

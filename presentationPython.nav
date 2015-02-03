@@ -320,73 +320,77 @@
 \headcommand {\beamer@framepages {143}{143}}
 \headcommand {\slideentry {3}{7}{2}{144/144}{scikit-learn}{0}}
 \headcommand {\beamer@framepages {144}{144}}
-\headcommand {\beamer@subsectionentry {0}{3}{8}{145}{Autres ressources : exemple C}}\headcommand {\beamer@subsectionpages {143}{144}}
-\headcommand {\slideentry {3}{8}{1}{145/145}{Autres ressources : exemple C}{0}}
+\headcommand {\slideentry {3}{7}{3}{145/145}{scikit-learn}{0}}
 \headcommand {\beamer@framepages {145}{145}}
-\headcommand {\sectionentry {4}{Distributions et Environnements de travail}{146}{Distributions et Environnements de travail}{0}}
-\headcommand {\beamer@sectionpages {99}{145}}
-\headcommand {\beamer@subsectionpages {145}{145}}
-\headcommand {\slideentry {4}{0}{2}{146/146}{}{0}}
+\headcommand {\slideentry {3}{7}{4}{146/146}{scikit-learn}{0}}
 \headcommand {\beamer@framepages {146}{146}}
-\headcommand {\beamer@subsectionentry {0}{4}{1}{147}{Python Software Foundation}}\headcommand {\beamer@subsectionpages {146}{146}}
-\headcommand {\slideentry {4}{1}{1}{147/147}{Python Software Foundation}{0}}
+\headcommand {\beamer@subsectionentry {0}{3}{8}{147}{Autres ressources : exemple C}}\headcommand {\beamer@subsectionpages {143}{146}}
+\headcommand {\slideentry {3}{8}{1}{147/147}{Autres ressources : exemple C}{0}}
 \headcommand {\beamer@framepages {147}{147}}
-\headcommand {\slideentry {4}{1}{2}{148/148}{Python Software Foundation}{0}}
+\headcommand {\sectionentry {4}{Distributions et Environnements de travail}{148}{Distributions et Environnements de travail}{0}}
+\headcommand {\beamer@sectionpages {99}{147}}
+\headcommand {\beamer@subsectionpages {147}{147}}
+\headcommand {\slideentry {4}{0}{2}{148/148}{}{0}}
 \headcommand {\beamer@framepages {148}{148}}
-\headcommand {\beamer@subsectionentry {0}{4}{2}{149}{IPython}}\headcommand {\beamer@subsectionpages {147}{148}}
-\headcommand {\slideentry {4}{2}{1}{149/149}{IPython}{0}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{149}{Python Software Foundation}}\headcommand {\beamer@subsectionpages {148}{148}}
+\headcommand {\slideentry {4}{1}{1}{149/149}{Python Software Foundation}{0}}
 \headcommand {\beamer@framepages {149}{149}}
-\headcommand {\slideentry {4}{2}{2}{150/150}{IPython}{0}}
+\headcommand {\slideentry {4}{1}{2}{150/150}{Python Software Foundation}{0}}
 \headcommand {\beamer@framepages {150}{150}}
-\headcommand {\slideentry {4}{2}{3}{151/151}{IPython}{0}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{151}{IPython}}\headcommand {\beamer@subsectionpages {149}{150}}
+\headcommand {\slideentry {4}{2}{1}{151/151}{IPython}{0}}
 \headcommand {\beamer@framepages {151}{151}}
-\headcommand {\slideentry {4}{2}{4}{152/152}{IPython}{0}}
+\headcommand {\slideentry {4}{2}{2}{152/152}{IPython}{0}}
 \headcommand {\beamer@framepages {152}{152}}
-\headcommand {\slideentry {4}{2}{5}{153/153}{IPython}{0}}
+\headcommand {\slideentry {4}{2}{3}{153/153}{IPython}{0}}
 \headcommand {\beamer@framepages {153}{153}}
-\headcommand {\beamer@subsectionentry {0}{4}{3}{154}{Enthought}}\headcommand {\beamer@subsectionpages {149}{153}}
-\headcommand {\slideentry {4}{3}{1}{154/154}{Enthought}{0}}
+\headcommand {\slideentry {4}{2}{4}{154/154}{IPython}{0}}
 \headcommand {\beamer@framepages {154}{154}}
-\headcommand {\slideentry {4}{3}{2}{155/155}{Enthought}{0}}
+\headcommand {\slideentry {4}{2}{5}{155/155}{IPython}{0}}
 \headcommand {\beamer@framepages {155}{155}}
-\headcommand {\beamer@subsectionentry {0}{4}{4}{156}{Python(x,y)}}\headcommand {\beamer@subsectionpages {154}{155}}
-\headcommand {\slideentry {4}{4}{1}{156/156}{Python(x,y)}{0}}
+\headcommand {\beamer@subsectionentry {0}{4}{3}{156}{Enthought}}\headcommand {\beamer@subsectionpages {151}{155}}
+\headcommand {\slideentry {4}{3}{1}{156/156}{Enthought}{0}}
 \headcommand {\beamer@framepages {156}{156}}
-\headcommand {\slideentry {4}{4}{2}{157/157}{Python(x,y)}{0}}
+\headcommand {\slideentry {4}{3}{2}{157/157}{Enthought}{0}}
 \headcommand {\beamer@framepages {157}{157}}
-\headcommand {\beamer@subsectionentry {0}{4}{5}{158}{Anaconda}}\headcommand {\beamer@subsectionpages {156}{157}}
-\headcommand {\slideentry {4}{5}{1}{158/158}{Anaconda}{0}}
+\headcommand {\beamer@subsectionentry {0}{4}{4}{158}{Python(x,y)}}\headcommand {\beamer@subsectionpages {156}{157}}
+\headcommand {\slideentry {4}{4}{1}{158/158}{Python(x,y)}{0}}
 \headcommand {\beamer@framepages {158}{158}}
-\headcommand {\slideentry {4}{5}{2}{159/159}{Anaconda}{0}}
+\headcommand {\slideentry {4}{4}{2}{159/159}{Python(x,y)}{0}}
 \headcommand {\beamer@framepages {159}{159}}
-\headcommand {\sectionentry {5}{Conclusion}{160}{Conclusion}{0}}
-\headcommand {\beamer@sectionpages {146}{159}}
-\headcommand {\beamer@subsectionpages {158}{159}}
-\headcommand {\slideentry {5}{0}{3}{160/160}{}{0}}
+\headcommand {\beamer@subsectionentry {0}{4}{5}{160}{Anaconda}}\headcommand {\beamer@subsectionpages {158}{159}}
+\headcommand {\slideentry {4}{5}{1}{160/160}{Anaconda}{0}}
 \headcommand {\beamer@framepages {160}{160}}
-\headcommand {\beamer@subsectionentry {0}{5}{1}{161}{Python vs Matlab ?}}\headcommand {\beamer@subsectionpages {160}{160}}
-\headcommand {\slideentry {5}{1}{1}{161/161}{Python vs Matlab ?}{0}}
+\headcommand {\slideentry {4}{5}{2}{161/161}{Anaconda}{0}}
 \headcommand {\beamer@framepages {161}{161}}
-\headcommand {\sectionentry {6}{classe et variable 'self'}{162}{classe et variable 'self'}{1}}
-\headcommand {\beamer@sectionpages {162}{161}}
-\headcommand {\beamer@subsectionpages {162}{161}}
-\headcommand {\slideentry {6}{0}{2}{162/162}{}{1}}
+\headcommand {\sectionentry {5}{Conclusion}{162}{Conclusion}{0}}
+\headcommand {\beamer@sectionpages {148}{161}}
+\headcommand {\beamer@subsectionpages {160}{161}}
+\headcommand {\slideentry {5}{0}{3}{162/162}{}{0}}
 \headcommand {\beamer@framepages {162}{162}}
-\headcommand {\slideentry {6}{0}{3}{163/163}{}{1}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{163}{Python vs Matlab ?}}\headcommand {\beamer@subsectionpages {162}{162}}
+\headcommand {\slideentry {5}{1}{1}{163/163}{Python vs Matlab ?}{0}}
 \headcommand {\beamer@framepages {163}{163}}
-\headcommand {\slideentry {6}{0}{4}{164/164}{}{1}}
+\headcommand {\sectionentry {6}{classe et variable 'self'}{164}{classe et variable 'self'}{1}}
+\headcommand {\beamer@sectionpages {164}{163}}
+\headcommand {\beamer@subsectionpages {164}{163}}
+\headcommand {\slideentry {6}{0}{2}{164/164}{}{1}}
 \headcommand {\beamer@framepages {164}{164}}
-\headcommand {\slideentry {6}{0}{5}{165/165}{}{1}}
+\headcommand {\slideentry {6}{0}{3}{165/165}{}{1}}
 \headcommand {\beamer@framepages {165}{165}}
-\headcommand {\slideentry {6}{0}{6}{166/166}{}{1}}
+\headcommand {\slideentry {6}{0}{4}{166/166}{}{1}}
 \headcommand {\beamer@framepages {166}{166}}
+\headcommand {\slideentry {6}{0}{5}{167/167}{}{1}}
+\headcommand {\beamer@framepages {167}{167}}
+\headcommand {\slideentry {6}{0}{6}{168/168}{}{1}}
+\headcommand {\beamer@framepages {168}{168}}
 \headcommand {\partentry {\translate {Appendix}}{1}}
-\headcommand {\beamer@partpages {1}{161}}
-\headcommand {\beamer@sectionpages {160}{161}}
-\headcommand {\beamer@subsectionpages {161}{161}}
-\headcommand {\beamer@appendixpages {162}}
-\headcommand {\beamer@partpages {162}{166}}
-\headcommand {\beamer@subsectionpages {162}{166}}
-\headcommand {\beamer@sectionpages {162}{166}}
-\headcommand {\beamer@documentpages {166}}
-\headcommand {\def \inserttotalframenumber {163}}
+\headcommand {\beamer@partpages {1}{163}}
+\headcommand {\beamer@sectionpages {162}{163}}
+\headcommand {\beamer@subsectionpages {163}{163}}
+\headcommand {\beamer@appendixpages {164}}
+\headcommand {\beamer@partpages {164}{168}}
+\headcommand {\beamer@subsectionpages {164}{168}}
+\headcommand {\beamer@sectionpages {164}{168}}
+\headcommand {\beamer@documentpages {168}}
+\headcommand {\def \inserttotalframenumber {165}}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.4.4)  2 FEB 2015 17:12
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.4.4)  3 FEB 2015 17:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2315,17 +2315,21 @@ Package pdftex.def Info: ./fig/Mayavi.png used on input line 1062.
 \openout4 = `presentationPython.vrb'.
 
 
-(./presentationPython.vrb)
-Overfull \vbox (58.12816pt too high) detected at line 1137
- []
+(./presentationPython.vrb
+<./fig/scikit-learn.png, id=4232, 1101.11375pt x 790.955pt>
+File: ./fig/scikit-learn.png Graphic file (type png)
 
-[143
+<use ./fig/scikit-learn.png>
+Package pdftex.def Info: ./fig/scikit-learn.png used on input line 7.
+(pdftex.def)             Requested size: 227.62204pt x 163.49855pt.
+) [143
 
-]
+ <./fig/scikit-learn.png>]
 \openout4 = `presentationPython.vrb'.
 
- (./presentationPython.vrb)
-Overfull \vbox (37.12816pt too high) detected at line 1185
+
+(./presentationPython.vrb)
+Overfull \vbox (0.12816pt too high) detected at line 1138
  []
 
 [144
@@ -2333,42 +2337,64 @@ Overfull \vbox (37.12816pt too high) detected at line 1185
 ]
 \openout4 = `presentationPython.vrb'.
 
- (./presentationPython.vrb) [145
+ (./presentationPython.vrb)
+Overfull \vbox (0.12816pt too high) detected at line 1178
+ []
+
+[145
+
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb
+<./fig/sklearn_lda.png, id=4317, 578.16pt x 433.62pt>
+File: ./fig/sklearn_lda.png Graphic file (type png)
+
+<use ./fig/sklearn_lda.png>
+Package pdftex.def Info: ./fig/sklearn_lda.png used on input line 21.
+(pdftex.def)             Requested size: 85.35826pt x 64.01463pt.
+) [146
+
+ <./fig/sklearn_lda.png>]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [147
 
 ])
 \openout2 = `sec_environment.aux'.
 
  (./sec_environment.tex
-(./presentationPython.toc) [146
+(./presentationPython.toc) [148
 
 
 
 ]
-<./fig/interpreter.png, id=4345, 580.1675pt x 285.065pt>
+<./fig/interpreter.png, id=4406, 580.1675pt x 285.065pt>
 File: ./fig/interpreter.png Graphic file (type png)
 
 <use ./fig/interpreter.png>
 Package pdftex.def Info: ./fig/interpreter.png used on input line 19.
 (pdftex.def)             Requested size: 199.16928pt x 97.86035pt.
- [147
+ [149
 
  <./fig/interpreter.png>]
-<./fig/Idle.png, id=4375, 800.9925pt x 523.9575pt>
+<./fig/Idle.png, id=4436, 800.9925pt x 523.9575pt>
 File: ./fig/Idle.png Graphic file (type png)
  <use ./fig/Idle.png>
 Package pdftex.def Info: ./fig/Idle.png used on input line 36.
 (pdftex.def)             Requested size: 227.62204pt x 148.88971pt.
 
-[148
+[150
 
  <./fig/Idle.png>]
-<./fig/IPy_header.png, id=4404, 736.87059pt x 94.94295pt>
+<./fig/IPy_header.png, id=4464, 736.87059pt x 94.94295pt>
 File: ./fig/IPy_header.png Graphic file (type png)
 
 <use ./fig/IPy_header.png>
 Package pdftex.def Info: ./fig/IPy_header.png used on input line 52.
 (pdftex.def)             Requested size: 110.41338pt x 14.22636pt.
- <./fig/IPython.png, id=4406, 644.4075pt x 489.83pt>
+ <./fig/IPython.png, id=4466, 644.4075pt x 489.83pt>
 File: ./fig/IPython.png Graphic file (type png)
 
 <use ./fig/IPython.png>
@@ -2378,25 +2404,25 @@ Package pdftex.def Info: ./fig/IPython.png used on input line 52.
 Overfull \vbox (8.17296pt too high) detected at line 52
  []
 
-[149
+[151
 
  <./fig/IPy_header.png> <./fig/IPython.png>]
-<./fig/IPythonQTConsole.png, id=4438, 1261.71375pt x 575.14874pt>
+<./fig/IPythonQTConsole.png, id=4500, 1261.71375pt x 575.14874pt>
 File: ./fig/IPythonQTConsole.png Graphic file (type png)
 
 <use ./fig/IPythonQTConsole.png>
 Package pdftex.def Info: ./fig/IPythonQTConsole.png used on input line 65.
 (pdftex.def)             Requested size: 256.0748pt x 116.73026pt.
- [150
+ [152
 
  <./fig/IPythonQTConsole.png>]
-<./fig/IPythonNotebook.png, id=4467, 1397.22pt x 879.285pt>
+<./fig/IPythonNotebook.png, id=4529, 1397.22pt x 879.285pt>
 File: ./fig/IPythonNotebook.png Graphic file (type png)
 
 <use ./fig/IPythonNotebook.png>
 Package pdftex.def Info: ./fig/IPythonNotebook.png used on input line 78.
 (pdftex.def)             Requested size: 270.30118pt x 170.09808pt.
- [151
+ [153
 
  <./fig/IPythonNotebook.png>]
 File: ./fig/IPythonNotebook.png Graphic file (type png)
@@ -2404,45 +2430,45 @@ File: ./fig/IPythonNotebook.png Graphic file (type png)
 <use ./fig/IPythonNotebook.png>
 Package pdftex.def Info: ./fig/IPythonNotebook.png used on input line 91.
 (pdftex.def)             Requested size: 270.30118pt x 170.09808pt.
- [152
+ [154
 
 ]
-<./fig/IPythonNotebookInline.png, id=4524, 860.21375pt x 463.7325pt>
+<./fig/IPythonNotebookInline.png, id=4584, 860.21375pt x 463.7325pt>
 File: ./fig/IPythonNotebookInline.png Graphic file (type png)
 
 <use ./fig/IPythonNotebookInline.png>
 Package pdftex.def Info: ./fig/IPythonNotebookInline.png used on input line 103
 .
 (pdftex.def)             Requested size: 227.62204pt x 122.70454pt.
- [153
+ [155
 
  <./fig/IPythonNotebookInline.png>]
-<./fig/enthought-logo.png, id=4552, 216.81pt x 32.12pt>
+<./fig/enthought-logo.png, id=4613, 216.81pt x 32.12pt>
 File: ./fig/enthought-logo.png Graphic file (type png)
 
 <use ./fig/enthought-logo.png>
 Package pdftex.def Info: ./fig/enthought-logo.png used on input line 117.
 (pdftex.def)             Requested size: 96.02856pt x 14.22636pt.
- [154
+ [156
 
  <./fig/enthought-logo.png>]
-<./fig/enthought-canopy.jpg, id=4583, 1164.35pt x 819.06pt>
+<./fig/enthought-canopy.jpg, id=4644, 1164.35pt x 819.06pt>
 File: ./fig/enthought-canopy.jpg Graphic file (type jpg)
 
 <use ./fig/enthought-canopy.jpg>
 Package pdftex.def Info: ./fig/enthought-canopy.jpg used on input line 125.
 (pdftex.def)             Requested size: 284.52756pt x 200.14029pt.
- [155
+ [157
 
  <./fig/enthought-canopy.jpg>]
-<./fig/PythonXYLogo.png, id=4611, 48.18pt x 48.18pt>
+<./fig/PythonXYLogo.png, id=4672, 48.18pt x 48.18pt>
 File: ./fig/PythonXYLogo.png Graphic file (type png)
 
 <use ./fig/PythonXYLogo.png>
 Package pdftex.def Info: ./fig/PythonXYLogo.png used on input line 142.
 (pdftex.def)             Requested size: 14.2262pt x 14.22636pt.
 
-<./fig/pythonxy_home.png, id=4613, 808.01875pt x 438.63875pt>
+<./fig/pythonxy_home.png, id=4674, 808.01875pt x 438.63875pt>
 File: ./fig/pythonxy_home.png Graphic file (type png)
 
 <use ./fig/pythonxy_home.png>
@@ -2452,19 +2478,19 @@ Package pdftex.def Info: ./fig/pythonxy_home.png used on input line 142.
 Overfull \vbox (7.91144pt too high) detected at line 142
  []
 
-[156
+[158
 
  <./fig/PythonXYLogo.png> <./fig/pythonxy_home.png>]
-<./fig/Spyder.png, id=4644, 927.465pt x 640.3925pt>
+<./fig/Spyder.png, id=4705, 927.465pt x 640.3925pt>
 File: ./fig/Spyder.png Graphic file (type png)
  <use ./fig/Spyder.png>
 Package pdftex.def Info: ./fig/Spyder.png used on input line 154.
 (pdftex.def)             Requested size: 227.62204pt x 157.16624pt.
 
-[157
+[159
 
  <./fig/Spyder.png>]
-<./fig/continuum_analytics_logo.png, id=4672, 718.685pt x 347.2975pt>
+<./fig/continuum_analytics_logo.png, id=4733, 718.685pt x 347.2975pt>
 File: ./fig/continuum_analytics_logo.png Graphic file (type png)
 
 <use ./fig/continuum_analytics_logo.png>
@@ -2472,39 +2498,39 @@ Package pdftex.def Info: ./fig/continuum_analytics_logo.png used on input line
 169.
 (pdftex.def)             Requested size: 29.43336pt x 14.22636pt.
 
-<./fig/anaconda_logo_web.png, id=4674, 256.96pt x 179.67125pt>
+<./fig/anaconda_logo_web.png, id=4735, 256.96pt x 179.67125pt>
 File: ./fig/anaconda_logo_web.png Graphic file (type png)
 
 <use ./fig/anaconda_logo_web.png>
 Package pdftex.def Info: ./fig/anaconda_logo_web.png used on input line 169.
 (pdftex.def)             Requested size: 20.34549pt x 14.22636pt.
- [158
+ [160
 
  <./fig/continuum_analytics_logo.png> <./fig/anaconda_logo_web.png>]
-<./fig/jEdit.png, id=4703, 1262.7175pt x 777.90625pt>
+<./fig/jEdit.png, id=4764, 1262.7175pt x 777.90625pt>
 File: ./fig/jEdit.png Graphic file (type png)
  <use ./fig/jEdit.png>
 Package pdftex.def Info: ./fig/jEdit.png used on input line 181.
 (pdftex.def)             Requested size: 256.0748pt x 157.75067pt.
 
-[159
+[161
 
  <./fig/jEdit.png>])
 \openout2 = `sec_conclusion.aux'.
 
  (./sec_conclusion.tex (./presentationPython.toc)
-[160
+[162
 
 
 
-] <./fig/matlabLicenseManagerError4.png, id=4763, 421.575pt x 395.4775pt>
+] <./fig/matlabLicenseManagerError4.png, id=4824, 421.575pt x 395.4775pt>
 File: ./fig/matlabLicenseManagerError4.png Graphic file (type png)
 
 <use ./fig/matlabLicenseManagerError4.png>
 Package pdftex.def Info: ./fig/matlabLicenseManagerError4.png used on input lin
 e 22.
 (pdftex.def)             Requested size: 113.81102pt x 106.76224pt.
- [161
+ [163
 
  <./fig/matlabLicenseManagerError4.png>])
 
@@ -2513,19 +2539,9 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 \openout2 = `sec_appendix.aux'.
 
-(./sec_appendix.tex (./presentationPython.toc) [162
+(./sec_appendix.tex (./presentationPython.toc) [164
 
 
-
-]
-\openout4 = `presentationPython.vrb'.
-
- (./presentationPython.vrb) [163
-
-]
-\openout4 = `presentationPython.vrb'.
-
- (./presentationPython.vrb) [164
 
 ]
 \openout4 = `presentationPython.vrb'.
@@ -2535,8 +2551,18 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 ]
 \openout4 = `presentationPython.vrb'.
 
+ (./presentationPython.vrb) [166
 
-(./presentationPython.vrb) [166
+]
+\openout4 = `presentationPython.vrb'.
+
+ (./presentationPython.vrb) [167
+
+]
+\openout4 = `presentationPython.vrb'.
+
+
+(./presentationPython.vrb) [168
 
 ])
 \tf@nav=\write6
@@ -2556,7 +2582,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 66.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 66.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 66.
 Package rerunfilecheck Info: File `presentationPython.out' has not changed.
-(rerunfilecheck)             Checksum: BA0FA67A3605DFE7E4459278B0572CD0;2151.
+(rerunfilecheck)             Checksum: 78529D564E9FC214F5B2776C93A270B8;2151.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -2565,10 +2591,10 @@ LaTeX Font Warning: Size substitutions with differences
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 66.
  ) 
 Here is how much of TeX's memory you used:
- 20943 strings out of 493488
- 360280 string characters out of 3141327
- 550041 words of memory out of 3000000
- 23020 multiletter control sequences out of 15000+200000
+ 20954 strings out of 493488
+ 360554 string characters out of 3141327
+ 550172 words of memory out of 3000000
+ 23021 multiletter control sequences out of 15000+200000
  23228 words of font info for 64 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,14n,64p,427b,1305s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2593,10 +2619,10 @@ e/2012/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local/texlive/
 exmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2012/tex
 mf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2012/texmf
 -dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on presentationPython.pdf (166 pages, 5044051 bytes).
+Output written on presentationPython.pdf (168 pages, 5292569 bytes).
 PDF statistics:
- 5078 PDF objects out of 5155 (max. 8388607)
- 4721 compressed objects within 48 object streams
- 377 named destinations out of 1000 (max. 500000)
- 573 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5139 PDF objects out of 5155 (max. 8388607)
+ 4776 compressed objects within 48 object streams
+ 381 named destinations out of 1000 (max. 500000)
+ 583 words of extra memory for PDF output out of 10000 (max. 10000000)
 
