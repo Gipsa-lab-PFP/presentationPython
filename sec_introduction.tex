@@ -155,7 +155,7 @@ Exemple : "python hello.py"
 \begin{python}
 Enthought Canopy Python 2.7.3 | 64-bit | (default, Jun 14 2013, 18:17:36) 
 [GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+Type "help", "copyright", "credits" £or£ "license" £for£ more information.
 >>> 
 \end{python}
 
@@ -205,14 +205,14 @@ abc
 \begin{pythonConsole}
 >>> help(a.find)
 
-Help on built-in function find:
+Help on built-£in£ function find:
 
 find(...)
     S.find(sub [,start [,end]]) -> int
     
-    Return the lowest index in S where substring sub is found,
-    such that sub is contained within S[start:end].  Optional
-    arguments start and end are interpreted as in slice notation.
+    Return the lowest index £in£ S where substring sub £is£ found,
+    such that sub £is£ contained within S[start:end].  Optional
+    arguments start £and£ end are interpreted as £in£ slice notation.
     
     Return -1 on failure.
 (END) 
@@ -264,7 +264,9 @@ find(...)
 \begin{frame}
 \frametitle{Documentation}
 \framesubtitle{Lire la documentation - Language reference}
-\frameC{\myFig{width=10cm}{./fig/PDFReference.png}}
+\frameC{\myFig{width=10cm}{./fig/PDFReference.png}%
+
+{\scriptsize\textit{p. ex. grammaire sous forme de Backus-Naur (BNF)}}}
 \end{frame}
 %...............................................................................
 %...............................................................................
@@ -292,9 +294,8 @@ Propositions et conseils pour l'utilisation et l'amélioration du langage.}
    \small
    \item Performances vs compatibilités bibliothèques (paquets) 
    \item Problèmes de configuration des compilateurs (gcc).
-   \item Actuellement, peut générer des problèmes. 
   \end{itemize}
- \item Autres distributions : Enthought Canopy, pythonXY, WinPython, \dots 
+ \item Autres distributions : Enthought Canopy, pythonXY, Anaconda, WinPython, \dots 
  \item Implémentations alternatives : 
  \begin{itemize}
   \small

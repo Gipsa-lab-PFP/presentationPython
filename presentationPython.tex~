@@ -1,64 +1,45 @@
 \documentclass[]{beamer}
+\usepackage{CJKutf8}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 %\usepackage{lmodern}
 \usepackage{listings}
 
 %============================================================================
-\author{G.~Becq, N.~Le Bihan}
+\author{G.~Becq}
 \title{Une pas si courte introduction au langage de programmation Python comme alternative à Matlab pour réaliser des calculs scientifiques ou d'autres applications.}
-\date{\today}
+\date{%
+\begin{tabular}{c}
+\myFig{height=1cm}{./fig/logoCNRS.png} \myFig{height=1cm}{./fig/logoGipsaLab.png} \\
+\\
+\today 
+\end{tabular}
+}
 %============================================================================
 \input{command}
 \AtBeginSection{\framePlanCurrentSection}
 %============================================================================
 %============================================================================
 \includeonly{%
-%sec_introduction, 
-%sec_language, 
-sec_scientific, 
-%sec_environment, 
-%sec_conclusion, 
-%sec_appendix, 
+sec_introduction, 
+sec_language, 
+% sec_scientific, 
+% sec_environment, 
+% sec_conclusion, 
+% sec_appendix, 
 }
 
-% \includeonlylecture{day1}
-%\includeonlylecture{day2}
-
-\comment{%
-\AtBeginLecture{
-\begin{itemize}
-\item S1: 
-\begin{itemize}
-	\item Introduction
-	\item Description du langage
-	\item Packaging
-\end{itemize}
-\item S2: 
-\begin{itemize}
-	\item Python scientifique
-	\item Distibution, environnements, 
-	\item Conclusion
-\end{itemize}
-\end{itemize}
-}
-}% end Comment
 %============================================================================
 \begin{document}
 %____________________________________________________________________________
-
-
 \maketitle
-
 \framePlan
-\lecture[Python base]{Introduction au langage Python}{day1}
 \include{sec_introduction}
 \include{sec_language}
-
-\lecture[Python scientifique]{Paquets, Python Scientifique et Distributions}{day2}
 \include{sec_scientific}
 \include{sec_environment}
 \include{sec_conclusion}
+\frame{}
 \appendix
 \include{sec_appendix}
 %____________________________________________________________________________

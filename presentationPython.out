@@ -7,28 +7,29 @@
 \BOOKMARK [3][]{Outline0.1.6.22}{Installation}{Outline0.1}% 7
 \BOOKMARK [2][]{Outline0.2}{Description du Langage}{}% 8
 \BOOKMARK [3][]{Outline0.2.1.25}{Type de donn\351es}{Outline0.2}% 9
-\BOOKMARK [3][]{Outline0.2.2.49}{Syntaxe}{Outline0.2}% 10
-\BOOKMARK [3][]{Outline0.2.3.78}{Port\351es, modules et paquets}{Outline0.2}% 11
-\BOOKMARK [3][]{Outline0.2.4.84}{Librairies}{Outline0.2}% 12
-\BOOKMARK [3][]{Outline0.2.5.85}{Exemple}{Outline0.2}% 13
-\BOOKMARK [3][]{Outline0.2.6.89}{Documentation du code}{Outline0.2}% 14
-\BOOKMARK [3][]{Outline0.2.7.94}{Distribution des paquets}{Outline0.2}% 15
+\BOOKMARK [3][]{Outline0.2.2.50}{Syntaxe}{Outline0.2}% 10
+\BOOKMARK [3][]{Outline0.2.3.79}{Port\351es, modules et paquets}{Outline0.2}% 11
+\BOOKMARK [3][]{Outline0.2.4.85}{Librairies}{Outline0.2}% 12
+\BOOKMARK [3][]{Outline0.2.5.86}{Exemple}{Outline0.2}% 13
+\BOOKMARK [3][]{Outline0.2.6.90}{Documentation du code}{Outline0.2}% 14
+\BOOKMARK [3][]{Outline0.2.7.95}{Distribution des paquets}{Outline0.2}% 15
 \BOOKMARK [2][]{Outline0.3}{Description des paquets scientifiques}{}% 16
-\BOOKMARK [3][]{Outline0.3.1.101}{SciPy}{Outline0.3}% 17
-\BOOKMARK [3][]{Outline0.3.2.102}{Numpy}{Outline0.3}% 18
-\BOOKMARK [3][]{Outline0.3.3.127}{SciPy library}{Outline0.3}% 19
-\BOOKMARK [3][]{Outline0.3.4.130}{Matplotlib}{Outline0.3}% 20
-\BOOKMARK [3][]{Outline0.3.5.136}{IPython}{Outline0.3}% 21
-\BOOKMARK [3][]{Outline0.3.6.140}{Mayavi}{Outline0.3}% 22
-\BOOKMARK [3][]{Outline0.3.7.143}{scikit-learn}{Outline0.3}% 23
-\BOOKMARK [3][]{Outline0.3.8.147}{Autres ressources : exemple C}{Outline0.3}% 24
+\BOOKMARK [3][]{Outline0.3.1.102}{SciPy}{Outline0.3}% 17
+\BOOKMARK [3][]{Outline0.3.2.103}{Numpy}{Outline0.3}% 18
+\BOOKMARK [3][]{Outline0.3.3.128}{SciPy library}{Outline0.3}% 19
+\BOOKMARK [3][]{Outline0.3.4.131}{Matplotlib}{Outline0.3}% 20
+\BOOKMARK [3][]{Outline0.3.5.137}{IPython}{Outline0.3}% 21
+\BOOKMARK [3][]{Outline0.3.6.141}{Mayavi}{Outline0.3}% 22
+\BOOKMARK [3][]{Outline0.3.7.144}{scikit-learn}{Outline0.3}% 23
+\BOOKMARK [3][]{Outline0.3.8.148}{Autres ressources : exemple C}{Outline0.3}% 24
 \BOOKMARK [2][]{Outline0.4}{Distributions et Environnements de travail}{}% 25
-\BOOKMARK [3][]{Outline0.4.1.149}{Python Software Foundation}{Outline0.4}% 26
-\BOOKMARK [3][]{Outline0.4.2.151}{IPython}{Outline0.4}% 27
-\BOOKMARK [3][]{Outline0.4.3.156}{Enthought}{Outline0.4}% 28
-\BOOKMARK [3][]{Outline0.4.4.158}{Python\(x,y\)}{Outline0.4}% 29
-\BOOKMARK [3][]{Outline0.4.5.160}{Anaconda}{Outline0.4}% 30
-\BOOKMARK [2][]{Outline0.5}{Conclusion}{}% 31
-\BOOKMARK [3][]{Outline0.5.1.163}{Python vs Matlab ?}{Outline0.5}% 32
-\BOOKMARK [1][]{Outline1}{Appendix}{}% 33
-\BOOKMARK [2][]{Outline1.6}{classe et variable 'self'}{Outline1}% 34
+\BOOKMARK [3][]{Outline0.4.1.150}{Python Software Foundation}{Outline0.4}% 26
+\BOOKMARK [3][]{Outline0.4.2.152}{IPython}{Outline0.4}% 27
+\BOOKMARK [3][]{Outline0.4.3.157}{Enthought}{Outline0.4}% 28
+\BOOKMARK [3][]{Outline0.4.4.159}{Python\(x,y\)}{Outline0.4}% 29
+\BOOKMARK [3][]{Outline0.4.5.161}{Anaconda}{Outline0.4}% 30
+\BOOKMARK [3][]{Outline0.4.6.162}{SageMath}{Outline0.4}% 31
+\BOOKMARK [2][]{Outline0.5}{Conclusion}{}% 32
+\BOOKMARK [3][]{Outline0.5.1.165}{Python vs Matlab ?}{Outline0.5}% 33
+\BOOKMARK [1][]{Outline1}{Appendix}{}% 34
+\BOOKMARK [2][]{Outline1.6}{classe et variable 'self'}{Outline1}% 35

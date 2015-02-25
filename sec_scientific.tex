@@ -262,7 +262,7 @@ float64
 \frametitle{N-dimensional array Object}
 \framesubtitle{Additions, soustractions, multiplications sur les tableaux}
 \begin{itemize}
- \item Addition, soustraction de matrices ou d'un scalaire (+, -)
+ \item Addition, soustraction de tableaux ou d'un scalaire (+, -)
  \item Multiplication par un scalaire (*)
  \item Produit élément par élément (*) 
 \end{itemize}
@@ -1182,6 +1182,7 @@ PACKAGE CONTENTS
 \frametitle{Scikit-learn}
 \framesubtitle{Exemple de Classifieur : Linear Discriminant Analysis}
 \begin{pythonConsole}
+>>> from pylab import *
 >>> from sklearn.datasets import load_iris
 >>> from sklearn.lda import LDA
 >>> dic = load_iris()
@@ -1190,7 +1191,7 @@ PACKAGE CONTENTS
 >>> nClasses = unique(y).size
 >>> clf = LDA()
 >>> clf.fit(x[:, :2], y)
->>> (mx1, mx2) = = meshgrid(linspace(4, 8, 100), linspace(2, 5, 100))
+>>> (mx1, mx2) = meshgrid(linspace(4, 8, 100), linspace(2, 5, 100))
 >>> Z = clf.predict(vstack((mx1.flatten().T, mx2.flatten())).T)
 >>> pcolor(mx1, mx2, Z.reshape(mx1.shape), alpha=0.1)
 >>> colors = ["b", "g", "r"]
@@ -1199,7 +1200,7 @@ PACKAGE CONTENTS
 >>> axis(xmin=4, xmax=8, ymin=2, ymax=5)
 >>> show()
 \end{pythonConsole}
-\myFigCentered{width=3cm}{./fig/sklearn_lda.png}
+\myFigCentered{width=4cm}{./fig/sklearn_lda.png}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________

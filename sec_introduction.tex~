@@ -73,7 +73,7 @@
 \begin{itemize}
  \item Guido van Rossum : 
  \begin{itemize}
-  \item 31 janvier 1956 (57 ans)
+  \item 31 janvier 1956 (59 ans)
   \item Développeur néerlandais
   \item 1982 : M. Sc  
   \item Développeur ABC. 
@@ -264,7 +264,9 @@ find(...)
 \begin{frame}
 \frametitle{Documentation}
 \framesubtitle{Lire la documentation - Language reference}
-\frameC{\myFig{width=10cm}{./fig/PDFReference.png}}
+\frameC{\myFig{width=10cm}{./fig/PDFReference.png}%
+
+{\scriptsize\textit{p. ex. grammaire sous forme de Backus-Naur (BNF)}}}
 \end{frame}
 %...............................................................................
 %...............................................................................
@@ -292,9 +294,8 @@ Propositions et conseils pour l'utilisation et l'amélioration du langage.}
    \small
    \item Performances vs compatibilités bibliothèques (paquets) 
    \item Problèmes de configuration des compilateurs (gcc).
-   \item Actuellement, peut générer des problèmes. 
   \end{itemize}
- \item Autres distributions : Enthought Canopy, pythonXY, WinPython, \dots 
+ \item Autres distributions : Enthought Canopy, pythonXY, Anaconda, WinPython, \dots 
  \item Implémentations alternatives : 
  \begin{itemize}
   \small

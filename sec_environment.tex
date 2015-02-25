@@ -96,10 +96,12 @@
 \framesubtitle{notebook}
 \frameCC{%
 \begin{itemize}
- \item Commande pour importer pylab et graphique dans l'interface html : 'ipython notebook --pylab inline'
- \item Génération de rapports dans le menu 'notebook > action > print' puis impression en pdf pour le navigateur HTML. 
+ \item Commande pour importer pylab et graphique dans l'interface html : 'ipython notebook' '\%pylab inline'
+ \item Génération de rapports dans le menu 'notebook > action > print' puis impression en pdf pour le navigateur HTML ou commande 'convert' 
+ \item ou via nbconvert en HTML : 'ipython nbconvert notebook.ipynb'
+ \item ou via nbconvert en PDF via LaTeX : 'ipython nbconvert notebook.ipynb --to latex --post PDF'
 \end{itemize}}
-{\myFig{width=8cm}{./fig/IPythonNotebookInline.png}}
+{\myFig{width=6cm}{./fig/IPythonNotebookInline.png}}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -161,11 +163,22 @@
 \frameCC{%
 \begin{itemize}
  \item \myFig{height=0.5cm}{./fig/continuum_analytics_logo.png} \, \url{http://continuum.io/downloads}
- \item \myFig{height=0.5cm}{./fig/anaconda_logo_web.png}
+ \item \myFig{height=0.5cm}{./fig/anaconda_logo_web.png} propose Spyder. 
 \end{itemize}
 }
-{%\myFig{width=8cm}{./fig/anaconda.png}
+{\myFig{width=8cm}{./fig/anaconda_launcher.png}
 }
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsection{SageMath}
+\begin{frame}
+\frametitle{SageMath}
+\framesubtitle{}
+\begin{itemize}
+ \item \myFig{height=0.5cm}{./fig/sage_logo.png} \, \url{http://www.sagemath.org}
+\end{itemize}
+\myFigCentered{width=9cm}{./fig/SageMath_home.png}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________

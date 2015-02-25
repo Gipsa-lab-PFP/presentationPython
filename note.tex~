@@ -1,0 +1,347 @@
+% Historique
+
+CWI: 1989-1995 
+Centrum voor Wiskunde en Informatica (CWI)
+Guido von Rossum Fan Monty Python
+OS amoeba accès difficile en shell
+langage ABC (langage de script)
+< ABC (syntaxe et indentation)
+< Modula-3 (gestion des exceptions), 
+< langage C 
+< UNIX 5.
+02/1991: 0.9.06 déposé sur Usenet alt.sources
+python 1.2
+
+CNRI: 1995-1999
+CNRI, Reston, E.U.
+Grail7 : navigateur internet utilisant Tk. 
+1999 : projet Computer Programming for Everybody (CP4E) (CNRI, DARPA). 
+Python comme langage d'enseignement de la programmation. 
+Création de l'IDLE (Integrated Development Language En)
+python 1.6 en 1999
+
+BeOpen.com: 1999 - 2000
+compatibilité GPL (General Public Licence)
+création de la branche pythonLabs
+
+Python Software Foundation Digital Creations: 2000
+python2.1 changement licence PSF dérivé Apache Software Foundation (oo, svn, commons plutôt java) (http://www.apache.org). 
+Python 3.0 en 2008 (modif librairie standard, classes d'objets)
+
+Source (wikipedia)
+Au CWI[modifier]
+A la fin des années 1980, le programmeur Guido van Rossum participe au développement du langage de programmation ABC au Centrum voor Wiskunde en Informatica (CWI) d'Amsterdam, aux Pays-Bas. Il travaillait alors dans l’équipe du système d’exploitation Amoeba dont les appels systèmes étaient difficilement interfaçables avec le bourne shell utilisé comme interface utilisateur. Il estime alors qu’un langage de script inspiré d’ABC pourrait être intéressant comme interpréteur de commandes pour Amoeba3.
+En 1989, profitant d’une semaine de vacances durant les fêtes de Noël, il utilise son ordinateur personnel4 pour écrire la première version du langage. Fan de la série télévisée des Monty Python, il décide de baptiser ce projet Python. Il s’est principalement inspiré d’ABC, par exemple pour l’indentation comme syntaxe ou les types de haut niveau mais aussi de Modula-3 pour la gestion des exceptions, du langage C et des outils UNIX5.
+Durant l’année suivante, le langage commence à être adopté par l’équipe du projet Amoeba, Guido poursuivant son développement principalement pendant son temps libre. En février 1991, la première version publique, numérotée 0.9.06, est postée sur le forum Usenet alt.sources. La dernière version sortie au CWI fut Python 1.2
+Au CNRI[modifier]
+En 1995, Van Rossum continua son travail sur Python au CNRI (en) à Reston, aux États-Unis, où il sortit plusieurs versions du logiciel.
+À partir d'août 1995, l'équipe Python travaille au CNRI sur Grail7 un navigateur web utilisant Tk. Il est l'équivalent pour Python du navigateur HotJava, permettant d'exécuter des applets dans un environnement sécurisé. La première version publique, disponible en novembre, est la 0.28. Il a entraîné le développement de modules pour la bibliothèque standard comme rexec9, htmllib ou urllib10. La version 0.6 sera la dernière de Grail; elle est publiée en avril 199911.
+En 1999, le projet Computer Programming for Everybody (CP4E) est lancé avec collaboration entre le CNRI et la DARPA. Il s'agit d'utiliser Python comme langage d'enseignement de la programmation. Cette initiative conduira à la création de l'environnement de développement IDLE. Les subventions fournies par la DARPA ne suffisant pas à pérenniser le projet, Guido doit quitter le CNRI12. Python 1.6 fut la dernière version sortie au CNRI.
+À BeOpen[modifier]
+Après la sortie de Python 1.6, et après que Van Rossum eut quitté le CNRI pour travailler avec des développeurs de logiciels commerciaux, le CNRI et la Free Software Foundation collaborèrent pour modifier la licence de Python afin de la rendre compatible avec la GPL. Python 1.6.1 est essentiellement le même que Python 1.6 avec quelques correctifs mineurs et la nouvelle licence compatible GPL.
+En 2000, l'équipe principale de développement de Python déménagea à BeOpen.com pour former l'équipe PythonLabs de BeOpen. Python 2.0 fut la seule version sortie à BeOpen.com. Après cette version, Guido Van Rossum et les autres développeurs de PythonLabs rejoignirent Digital Creations.
+Andrew M. Kuchling a publié en décembre 199913 un texte nommé python warts14 qui synthétise les griefs les plus fréquents exprimés à l'encontre du langage. Ce document aura une influence certaine sur les développements futurs du langage15.
+La Python Software Foundation[modifier]
+Python 2.1 fut une version dérivée de Python 1.6.1, ainsi que de Python 2.0. Sa licence fut renommée Python Software Foundation License. Tout code, documentation et spécification ajouté, depuis la sortie de Python 2.1 alpha, est détenu par la Python Software Foundation (PSF), une association sans but lucratif fondée en 2001, modelée d'après l'Apache Software Foundation.
+Afin de réparer certains défauts du langage (ex: orientation objet avec deux types de classes), et pour nettoyer la bibliothèque standard de ses éléments obsolètes et redondants, Python a choisi de casser la compatibilité ascendante dans la nouvelle version majeure : Python 3.0, publié en décembre 2008. Cette version a été suivie rapidement par une version 3.1 qui corrige les erreurs de jeunesse de la version 3.0 en la rendant directement obsolète.
+
+
+Amoeba: a distributed operating system for the 1990s, 
+G Van Rossum et al. 1990
+A description is given of the Amoeba distributed operating system, which appears to users as a centralized system but has the speed, fault tolerance, security safeguards, and flexibility required for the 1990s. The Amoeba software is based on objects. Objects are managed by server processes and named using capabilities chosen randomly from a sparse name space. Amoeba has a unique, fast file system split into two parts: the bullet service stores immutable files contiguously on the disk; the directory service gives capabilities symbolic names and handles replication and atomicity, eliminating the need for a separate transaction management system. To bridge the gap with existing systems, Amoeba has a Unix emulation facility consisting of a library of Unix system call routines that make calls to the various Amoeba server processes
+
+python tutorial, G. van Rossum, F.L. Drake 1995
+python library reference, G. van Rossum, F.L. Drake, 1995
+python programming language, G. van Rossum, 1994
+The ABC structure editor. Structure-based editing for the ABC programming environment, L.G.L.T. Meertens, S. Pemberton, G. van Rossum, 1992
+
+exemple ABC : 
+PUT 0 IN count
+FOR di, dj IN neighbours:
+    IF (i+di, j+dj) in keys c:
+        PUT count+c[i+di, j+dj] IN count
+SELECT:
+    count = 3 OR count+c[i, j] = 3:
+        PUT 1 IN n[i, j]
+    ELSE:
+        PUT 0 IN n[i, j]
+
+
+Guido van Rossum 
+31 janvier 1956 (57 ans)
+Développeur néerlandais 
+Créateur Python 
+Benevolent Dictator for Life (« dictateur bienveillant à vie »)
+1982 : M. Sc  
+Développeurs ABC
+1991 : Python 0.9.06
+1999 : Grail 
+2002 : Prix pour le développement du logiciel libre 2001 décerné par la Free Software Foundation (FSF)
+2005-2012 : Google (python) 
+2013 : Dropbox
+
+Guido van Rossum (31 janvier 1956 (57 ans)) est un développeur néerlandais, connu pour être le créateur et leader du projet du langage de programmation Python. 
+Au sein de la communauté pythonienne, il est considéré comme un Benevolent Dictator for Life (« dictateur bienveillant à vie »), ce qui signifie qu'il continue à suivre le développement de Python et qu'il prend des décisions lorsque c'est nécessaire.
+Il est également l'auteur du navigateur web programmé entièrement en Python nommé Grail (qui n'a pas été actualisé depuis 1999), en référence au film Monty Python and the Holy Grail.
+Il a fait ses études au Centre de Mathématiques de l’Université d'Amsterdam, obtenant son master en 1982. 
+Il fit partie des développeurs du langage ABC. 
+En 2002, il a reçu le Prix pour le développement du logiciel libre 2001 décerné par la FSF, lors de la FOSDEM de Bruxelles, pour récompenser son travail.
+Fin 2005, il a été engagé par Google pour travailler sur Python.
+En décembre 2012, il quitte Google pour rejoindre Dropbox à partir du 1er janvier 20131.
+
+
+% duck typing
+
+% decorators
+
+% url syntaxe
+
+% configuration locale et server. 
+
+svn checkout svn+ssh://gbecq@scm.forge.imag.fr/var/lib/gforge/chroot/scmrepos/svn/pycics/trunk
+
+svn add --depth=empty presentationPython/
+svn add presentationPython/presentationPython.tex
+svn add presentationPython/command.tex
+svn add presentationPython/main.tex
+svn add presentationPython/fig/
+svn add presentationPython/frame.tex
+svn add --depth=infinity presentationPython/example/
+commit -m "ajout présentationPython" 
+svn status
+svn update
+svn commit -m "message"
+
+to avoid problem relative to 
+svnserve: warning: cannot set LC_CTYPE locale
+svnserve: warning: environment variable LANG is fr_FR.UTF-8
+svnserve: warning: please check that your locale name is correct
+put in console: 
+export LC_ALL=C 
+
+svn checkout svn+ssh://lebihan@scm.forge.imag.fr/var/lib/gforge/chroot/scmrepos/svn/pycics/trunk
+
+se mettre dans le répertoire contenant le /trunk /branches /tags 
+
+svn update
+
+1. Mettre à jour votre copie de travail.
+• svn update
+2. Faire des changements.
+• svn add
+• svn delete
+• svn copy
+• svn move
+3. Examiner les changements effectués.
+• svn status
+• svn diff
+4. Éventuellement annuler des changements.
+• svn revert
+5. Résoudre les conflits (fusionner les modifications).
+• svn update
+• svn resolve
+6. Propager les changements.
+• svn commit
+
+%_______________________________________________________________________________
+\section{test LSTLISTING}
+\begin{frame}[fragile]
+\begin{pythonConsole}
+\\ 'a'bc def
+% 'a'bc def
+# 'a'bc def
+""" abc def """
+abc def
+£'a'£
+// 'a'
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+Faire une comparaison array versus matrix and vector. 
+matlab multiplication versus numpy multiplication. 
+%_______________________________________________________________________________
+package et module
+passage des fonctions lors de l'import du package __init__.py
+documentation du paquet dans le __init__.py
+
+help("keywords")
+
+Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+and                 elif                if                  print
+as                  else                import              raise
+assert              except              in                  return
+break               exec                is                  try
+class               finally             lambda              while
+continue            for                 not                 with
+def                 from                or                  yield
+del                 global              pass                
+
+Here is a list of available topics.  Enter any topic name to get more help.
+
+ASSERTION           DEBUGGING           LITERALS            SEQUENCEMETHODS2
+ASSIGNMENT          DELETION            LOOPING             SEQUENCES
+ATTRIBUTEMETHODS    DICTIONARIES        MAPPINGMETHODS      SHIFTING
+ATTRIBUTES          DICTIONARYLITERALS  MAPPINGS            SLICINGS
+AUGMENTEDASSIGNMENT DYNAMICFEATURES     METHODS             SPECIALATTRIBUTES
+BACKQUOTES          ELLIPSIS            MODULES             SPECIALIDENTIFIERS
+BASICMETHODS        EXCEPTIONS          NAMESPACES          SPECIALMETHODS
+BINARY              EXECUTION           NONE                STRINGMETHODS
+BITWISE             EXPRESSIONS         NUMBERMETHODS       STRINGS
+BOOLEAN             FILES               NUMBERS             SUBSCRIPTS
+CALLABLEMETHODS     FLOAT               OBJECTS             TRACEBACKS
+CALLS               FORMATTING          OPERATORS           TRUTHVALUE
+CLASSES             FRAMEOBJECTS        PACKAGES            TUPLELITERALS
+CODEOBJECTS         FRAMES              POWER               TUPLES
+COERCIONS           FUNCTIONS           PRECEDENCE          TYPEOBJECTS
+COMPARISON          IDENTIFIERS         PRINTING            TYPES
+COMPLEX             IMPORTING           PRIVATENAMES        UNARY
+CONDITIONAL         INTEGER             RETURNING           UNICODE
+CONTEXTMANAGERS     LISTLITERALS        SCOPING             
+CONVERSIONS         LISTS               SEQUENCEMETHODS1    
+
+
+
+Integrated Development Environment for Python
+
+
+help(numpy)
+
+    Provides
+      1. An array object of arbitrary homogeneous items
+      2. Fast mathematical operations over arrays
+      3. Linear Algebra, Fourier Transforms, Random Number Generation
+      
+____________
+
+import imp     
+
+____________
+Passage de paramètres
+args, kargs
+
+_____
+NumPy (numerical python) is a module which was created allow efficient numerical calculations on multi-dimensional arrays of numbers from within Python. It is derived from the merger of two earlier modules named Numeric and Numarray. The actual work is done by calls to routines written in the Fortran and C languages.
+
+indexing
+slicing
+broadcasting
+________________
+produit de tableaux
+numpy.inner
+numpy.outer
+etc
+
+_______________
+Dimension, axis and reshaping
+x.ndim
+x.shape
+x.reshape
+x.mean(axis=0)
+
+________________
+passage de paramètres
+*args, **kwargs 
+
+
+_____________
+vérification des arguments 
+assert()
+
+____________
+debugging
+bon vieux print
+pdb
+pdb.set_trace()
+
+__________
+Documenting pydoc and docstrings
+
+pydoc
+pydoc -g
+
+docstring: 
+def f(x): 
+"""
+first line
+
+blahblah f()
+"""
+    # abc
+    y = 2 * x
+    """
+blah
+blah
+  """
+    return y
+help(f)
+
+___________________________
+portée, namespace et autres 
+
+x = numpy.array([1., 2., 3., 4., 5.])
+y = numpy.array([3., 2., 1., 0., 5.])
+a = numpy.array([[1., 1., 1., 1., 1.], [2., 2., 2., 2., 2.]])
+a = numpy.arange(0, 5)
+b = numpy.array([a, 2 * a, 3 * a, 4 * a])
+c = numpy.array([b, 2 * b, 3 * b, 4 * a])
+
+___________________________________
+forme entre parenthèse : 
+permet d'aller à la ligne. 
+()
+\begin{frame}
+\begin{pythonConsole}
+>> (1
+... +2
+... +3
+... +4)
+10
+>>> ('abc' + 
+... 'def' +
+... 'ghi')
+'abcdefghi'
+\end{pythonConsole}
+\end{frame}
+
+___________________________________
+Comprehension list
+liste itérateur
+générateur
+? 
+à développer ? 
+
+xrange object ? 
+
+return 
+yield
+
+___________________________________
+check logiciel indent
+avec tab ou 4(x) espaces
+
+
+___________________________________
+import imp
+imp.reload()
+
+
+__________________
+Dans la console
+dans matlab
+_ python
+
+__________________
+``a`` 
+*a*  
+* item 
+_title_ 
+''
+__________________
+Parler de ? 
+import doctest
+doctest.testmod()
+
+__________________
+
+

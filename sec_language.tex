@@ -590,6 +590,19 @@ set([1, 2, 3, -10])
 \end{pythonConsole}
 \end{frame}
 %...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Séquences}
+\framesubtitle{Résumé}
+\begin{itemize}
+ \item Chaîne de caractères " " ou ' '
+ \item Liste [\ ,\ ]
+ \item Tuple (\ ,\ )
+ \item Dictionnaire \{'':\ ,\ '':\ \}
+ \item Ensemble \{\ ,\ \} 
+\end{itemize}
+\end{frame}
+%...............................................................................
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 \subsection{Syntaxe}
@@ -845,7 +858,7 @@ Voulez-vous continuer ? (o, oui, O, OUI) 'non'
 \frametitle{Syntaxe}
 \framesubtitle{Structure de contrôle - for}
 \begin{itemize}
- \item une étendue (range) de ${[0, n]}$ : range(n) 
+ \item une étendue (range) de ${[0, n[}$ : range(n) 
  \item ${[i, i + k, \dots, j[}$ : range(i, j, k) 
 \end{itemize}
 \begin{pythonConsole}
@@ -983,6 +996,7 @@ Avec ou sans erreurs, on £continue£
 \end{pythonConsole}
 \end{frame}
 %...............................................................................
+\subsubsection{Fonctions}
 %...............................................................................
 \begin{frame}[fragile]
 \frametitle{Syntaxe}
@@ -1114,6 +1128,7 @@ True
 \end{pythonConsole}
 \end{frame}
 %...............................................................................
+\subsubsection{objet}
 %...............................................................................
 \begin{frame}[fragile]
 \frametitle{Syntaxe}
@@ -1463,7 +1478,7 @@ module -> (x, y1, y2) : (4, 40, 400)
 print("Affichage en import ou en ex£{\color{magenta}\'e}£cution")
 print("__name__ : " + str(__name__))
 
-if ("__name__" == "__main__"): 
+if (__name__ == "__main__"): 
     print("Que si execut£{\color{magenta}\'e}£ de l'ext£{\color{magenta}\'e}£rieur")
 \end{python}
 \begin{pythonConsole}
@@ -1513,8 +1528,8 @@ __name__ : __main__
 \begin{pythonConsole}
 >>> import paquet1
 >>> x = 10
->>> a1 = paquet1.module1.A
->>> a2 = paquet1.module1.A
+>>> a1 = paquet1.module1.A()
+>>> a2 = paquet1.module2.A()
 >>> a2.f()
 >>> resF1 = paquet1.module1.f1(x)
 >>> resF2 = paquet1.module2.f2(x)

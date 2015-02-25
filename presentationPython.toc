@@ -8,37 +8,40 @@
 \beamer@subsectionintoc {1}{6}{Installation}{22}{0}{1}
 \beamer@sectionintoc {2}{Description du Langage}{24}{0}{2}
 \beamer@subsectionintoc {2}{1}{Type de donn\IeC {\'e}es}{25}{0}{2}
-\beamer@subsectionintoc {2}{2}{Syntaxe}{49}{0}{2}
-\beamer@subsectionintoc {2}{3}{Port\IeC {\'e}es, modules et paquets}{78}{0}{2}
-\beamer@subsectionintoc {2}{4}{Librairies}{84}{0}{2}
-\beamer@subsectionintoc {2}{5}{Exemple}{85}{0}{2}
-\beamer@subsectionintoc {2}{6}{Documentation du code}{89}{0}{2}
-\beamer@subsectionintoc {2}{7}{Distribution des paquets}{94}{0}{2}
-\beamer@sectionintoc {3}{Description des paquets scientifiques}{99}{0}{3}
-\beamer@subsectionintoc {3}{1}{SciPy}{101}{0}{3}
-\beamer@subsectionintoc {3}{2}{Numpy}{102}{0}{3}
-\beamer@subsubsectionintoc {3}{2}{1}{ndarray}{103}{0}{3}
-\beamer@subsubsectionintoc {3}{2}{2}{save/load}{118}{0}{3}
-\beamer@subsubsectionintoc {3}{2}{3}{matrix}{120}{0}{3}
-\beamer@subsubsectionintoc {3}{2}{4}{subpackages}{124}{0}{3}
-\beamer@subsectionintoc {3}{3}{SciPy library}{127}{0}{3}
-\beamer@subsubsectionintoc {3}{3}{1}{subpackages}{127}{0}{3}
-\beamer@subsubsectionintoc {3}{3}{2}{load Matlab data}{129}{0}{3}
-\beamer@subsectionintoc {3}{4}{Matplotlib}{130}{0}{3}
-\beamer@subsubsectionintoc {3}{4}{1}{pyplot}{131}{0}{3}
-\beamer@subsubsectionintoc {3}{4}{2}{savefig}{132}{0}{3}
-\beamer@subsubsectionintoc {3}{4}{3}{pylab}{133}{0}{3}
-\beamer@subsectionintoc {3}{5}{IPython}{136}{0}{3}
-\beamer@subsubsectionintoc {3}{5}{1}{ipython notebook}{137}{0}{3}
-\beamer@subsectionintoc {3}{6}{Mayavi}{140}{0}{3}
-\beamer@subsectionintoc {3}{7}{scikit-learn}{143}{0}{3}
-\beamer@subsectionintoc {3}{8}{Autres ressources : exemple C}{147}{0}{3}
-\beamer@sectionintoc {4}{Distributions et Environnements de travail}{148}{0}{4}
-\beamer@subsectionintoc {4}{1}{Python Software Foundation}{149}{0}{4}
-\beamer@subsectionintoc {4}{2}{IPython}{151}{0}{4}
-\beamer@subsectionintoc {4}{3}{Enthought}{156}{0}{4}
-\beamer@subsectionintoc {4}{4}{Python(x,y)}{158}{0}{4}
-\beamer@subsectionintoc {4}{5}{Anaconda}{160}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{162}{0}{5}
-\beamer@subsectionintoc {5}{1}{Python vs Matlab ?}{163}{0}{5}
-\beamer@sectionintoc {6}{classe et variable 'self'}{164}{1}{6}
+\beamer@subsectionintoc {2}{2}{Syntaxe}{50}{0}{2}
+\beamer@subsubsectionintoc {2}{2}{1}{Fonctions}{66}{0}{2}
+\beamer@subsubsectionintoc {2}{2}{2}{objet}{71}{0}{2}
+\beamer@subsectionintoc {2}{3}{Port\IeC {\'e}es, modules et paquets}{79}{0}{2}
+\beamer@subsectionintoc {2}{4}{Librairies}{85}{0}{2}
+\beamer@subsectionintoc {2}{5}{Exemple}{86}{0}{2}
+\beamer@subsectionintoc {2}{6}{Documentation du code}{90}{0}{2}
+\beamer@subsectionintoc {2}{7}{Distribution des paquets}{95}{0}{2}
+\beamer@sectionintoc {3}{Description des paquets scientifiques}{100}{0}{3}
+\beamer@subsectionintoc {3}{1}{SciPy}{102}{0}{3}
+\beamer@subsectionintoc {3}{2}{Numpy}{103}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{1}{ndarray}{104}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{2}{save/load}{119}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{3}{matrix}{121}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{4}{subpackages}{125}{0}{3}
+\beamer@subsectionintoc {3}{3}{SciPy library}{128}{0}{3}
+\beamer@subsubsectionintoc {3}{3}{1}{subpackages}{128}{0}{3}
+\beamer@subsubsectionintoc {3}{3}{2}{load Matlab data}{130}{0}{3}
+\beamer@subsectionintoc {3}{4}{Matplotlib}{131}{0}{3}
+\beamer@subsubsectionintoc {3}{4}{1}{pyplot}{132}{0}{3}
+\beamer@subsubsectionintoc {3}{4}{2}{savefig}{133}{0}{3}
+\beamer@subsubsectionintoc {3}{4}{3}{pylab}{134}{0}{3}
+\beamer@subsectionintoc {3}{5}{IPython}{137}{0}{3}
+\beamer@subsubsectionintoc {3}{5}{1}{ipython notebook}{138}{0}{3}
+\beamer@subsectionintoc {3}{6}{Mayavi}{141}{0}{3}
+\beamer@subsectionintoc {3}{7}{scikit-learn}{144}{0}{3}
+\beamer@subsectionintoc {3}{8}{Autres ressources : exemple C}{148}{0}{3}
+\beamer@sectionintoc {4}{Distributions et Environnements de travail}{149}{0}{4}
+\beamer@subsectionintoc {4}{1}{Python Software Foundation}{150}{0}{4}
+\beamer@subsectionintoc {4}{2}{IPython}{152}{0}{4}
+\beamer@subsectionintoc {4}{3}{Enthought}{157}{0}{4}
+\beamer@subsectionintoc {4}{4}{Python(x,y)}{159}{0}{4}
+\beamer@subsectionintoc {4}{5}{Anaconda}{161}{0}{4}
+\beamer@subsectionintoc {4}{6}{SageMath}{162}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{164}{0}{5}
+\beamer@subsectionintoc {5}{1}{Python vs Matlab ?}{165}{0}{5}
+\beamer@sectionintoc {6}{classe et variable 'self'}{167}{1}{6}
