@@ -1,2 +1,14 @@
 # don't copy note.tex
 note.tex
+
+# don't copy tex additional files created on compilation. 
+*.aux
+*.log
+*.nav
+*.snm
+*.vrb
+*.toc
+*.out
+
+# don't copy jedit saves
+*.*~
