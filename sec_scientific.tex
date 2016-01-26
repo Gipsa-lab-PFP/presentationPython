@@ -958,6 +958,88 @@ print(A.I)
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
+\subsection{Pandas}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Pandas}
+\framesubtitle{}
+\begin{itemize}
+ \item \myFig{height=0.5cm}{./fig/pandas-logo.png} \, \url{http://www.scipy.org/scipylib/index.html}
+ \item \emph{data structure and analysis}
+ \item ressemble au traitement de données sous R (data.frame) 
+\end{itemize}
+
+\begin{pythonConsole}
+>>> import pandas as pd
+>>> a = [1., 2., 3., 2., 1., 2., 3., 2., 1]
+>>> data = pd.DataFrame(a)
+>>> print(a)
+   0
+0  1
+1  2
+2  3
+3  2
+4  1
+5  2
+6  3
+7  2
+8  1
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Pandas}
+\framesubtitle{}
+\begin{itemize}
+ \item facilité de traitement des données 
+\end{itemize}
+
+\begin{pythonConsole}
+>>> taille = 170 + 10 * np.random.randn(100)
+>>> masse = 70 + 10 * np.random.randn(100)
+>>> dico = {'taille': taille, 'masse': masse}
+>>> data = pd.DataFrame(dico)
+>>> data.describe()
+            masse      taille
+count  100.000000  100.000000
+mean    70.507943  169.915690
+std      9.999280   10.264489
+min     45.467455  144.149219
+25%     63.300037  162.736237
+50%     70.043825  171.168028
+75%     78.153612  176.164359
+max     94.118966  201.781565
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Pandas}
+\framesubtitle{}
+\begin{itemize}
+ \item Possibilité d'indexation spéciale.  
+\end{itemize}
+
+\begin{pythonConsole}
+>>> help(pd.Series)
+class Series(Series)
+ |  One-dimensional ndarray with axis labels (including time series).
+>>> t = np.arange(0, 3, 0.1)
+>>> x = np.cos(2 * np.pi * 2 * t)
+>>> s = pd.Series(x, t)
+>>> print(s[0:0.5])
+0.0    1.000000
+0.1    0.309017
+0.2   -0.809017
+0.3   -0.809017
+0.4    0.309017
+0.5    1.000000
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
 \subsection{IPython}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
