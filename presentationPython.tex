@@ -2,19 +2,14 @@
 \usepackage{CJKutf8}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-%\usepackage{lmodern}
 \usepackage{listings}
-
+\usetheme{Gipsalab}
+\setbeamertemplate{navigation symbols}{}
 %============================================================================
-\author{G.~Becq}
-\title{Une pas si courte introduction au langage de programmation Python comme alternative à Matlab pour réaliser des calculs scientifiques ou d'autres applications.}
-\date{%
-\begin{tabular}{c}
-\myFig{height=1cm}{./fig/logoCNRS.png} \myFig{height=1cm}{./fig/logoGipsaLab.png} \\
-\\
-\today 
-\end{tabular}
-}
+\author[G. Becq]{Guillaume Becq}
+\title[Introduction à Python]{Introduction au langage de programmation Python}
+\subtitle{{\footnotesize Une pas si courte introduction à Python comme alternative à Matlab pour réaliser des calculs scientifiques ou d'autres applications.}}
+\date{\today}
 %============================================================================
 \input{command}
 \AtBeginSection{\framePlanCurrentSection}
@@ -32,7 +27,9 @@ sec_appendix,
 %============================================================================
 \begin{document}
 %____________________________________________________________________________
+\begin{frame}[plain]
 \maketitle
+\end{frame}
 \framePlan
 \include{sec_introduction}
 \include{sec_language}

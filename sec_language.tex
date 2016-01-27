@@ -8,7 +8,7 @@
 \framesubtitle{}
 \begin{itemize}
 \item {\bfseries Nombres} : entiers (int, long), réels (float), complex (complex), booléens (bool). 
-\item {\bfseries Séquences} : Chaînes de caractères (str), listes (list), tuples (tuple), dictionnaires (dict), ensembles (set)
+\item {\bfseries Séquences} : Chaînes de caractères (str), bytes (bytes), listes (list), tuples (tuple), dictionnaires (dict), ensembles (set), 
 \end{itemize}
 \end{frame}
 %...............................................................................
@@ -34,6 +34,7 @@
 \framesubtitle{Réels}
 \begin{itemize}
  \item Utilisation du point pour passer en réels. 
+ \item 'type()' indique le type d'une variable. 
 \end{itemize}
 \begin{pythonConsole}
 >>> a = 1.0
@@ -41,16 +42,18 @@
 >>> c = a / b
 >>> print(c)
 0.5
+>>> print(type(c))
+<class 'float'>
 \end{pythonConsole}
 \end{frame}
 %...............................................................................
 %...............................................................................
 \begin{frame}[fragile]
 \frametitle{Nombres}
-\framesubtitle{Entiers long vs court}
+\framesubtitle{Entiers long vs court (python 2.7}
 \begin{itemize}
  \item Suffixe 'L' pour indiquer un passage en entier long. 
- \item 'type()' indique le type d'une variable. 
+ \item long n'existe plus en 3.x
 \end{itemize}
 \begin{pythonConsole}
 >>> a = 2 ** 30
@@ -84,7 +87,7 @@
 >>> a
 1.234e+100
 >>> type(a)
-<type 'float'>
+<class 'float'>
 \end{pythonConsole}
 \end{frame}
 %...............................................................................
@@ -101,7 +104,7 @@
 \begin{pythonConsole}
 >>> a = 1 + 2j
 >>> type(a)
-<type 'complex'>
+<class 'complex'>
 >>> a = 1 + j
 Traceback (most recent call last):
   File " <stdin>", line 1, £in£ <module>
@@ -109,7 +112,7 @@ NameError: name 'j' is £not£ defined
 >>> 123.456j
 123.456j
 >>> type(_)
-<type 'complex'>
+<class 'complex'>
 >>> a = 1 + 1j
 >>> b = 2 + 3j
 >>> c = a + b
@@ -131,13 +134,13 @@ NameError: name 'j' is £not£ defined
 \begin{pythonConsole}
 >>> a = True
 >>> type(a)
-<type 'bool'>
+<class 'bool'>
 >>> b = False
 >>> c = a + b
 >>> print(c)
 1
 >>> type(c)
-<type 'int'>
+<class 'int'>
 >>> c = a * b
 >>> print(c)
 0
@@ -211,7 +214,7 @@ True
 \begin{pythonConsole}
 >>> a = float(9)
 >>> type(a)
-<type 'float'>
+<class 'float'>
 >>> c = 1 / a
 >>> print(c)
 0.111111111111
@@ -233,7 +236,7 @@ True
 \framesubtitle{Binary, Hexadecimal, Octal, Character, Unicode Character}
 \begin{itemize}
  \item binary (0b) (bin), hexadecimal (0x) (hex), octal (0c) (oct) 
- \item character (chr) (< 0xFF) ou unicode (unichr) (< 0xFFFF)
+ \item character ascii + unicode (chr) (< 0x10FFFF) 
 \end{itemize}
 \begin{pythonConsole}
 >>> a = 0x597d
@@ -245,14 +248,14 @@ True
 >>> a = chr(42)
 >>> print(a)
 *
->>> b = unichr(0x597D)
+>>> b = chr(0x597D)
 >>> print(b)
 chinese symbol ni
->>> a = bin(65447)
+>>> a = bin(22909)
 >>> print(a)
 0b101100101111101
 >>> type(a)
-<type 'str'>
+<class 'str'>
 \end{pythonConsole}
 \end{frame}
 %...............................................................................
@@ -267,7 +270,7 @@ chinese symbol ni
 \begin{pythonConsole}
 >>> a = 'abc'
 >>> type(a)
-<type 'str'>
+<class 'str'>
 >>> b = "def"
 >>> c = a + b
 >>> c
@@ -302,7 +305,7 @@ seront bien nettoyez\n\t&'Troussez', faites les blanchir, \n\t& Les " +
 \frametitle{Séquences}
 \framesubtitle{Chaînes de caractères}
 \begin{itemize}
- \item forme mutliligne """ """ ou '\,'\,' '\,'\,' (! caractères spéciaux).  
+ \item forme multiligne """ """ ou '\,'\,' '\,'\,' (! caractères spéciaux).  
  \item Représentation (repr) différente de (str). 
 \end{itemize}
 \begin{pythonConsole}
@@ -335,7 +338,7 @@ un petit brun de fines herbes"
 \framesubtitle{Chaînes de caractères}
 \begin{itemize}
  \item forme brute (r" " ou r' ' ou r""" """ ou r'\,'\,' '\,'\,')
- \item forme unicode (u" " ou u' ' ou u""" """ ou u'\,'\,' '\,'\,')
+ \item forme unicode (" " ou u" " ou u' ' ou u""" """ ou u'\,'\,' '\,'\,')
 \end{itemize}
 \begin{pythonConsole}
 >>> a = r"Potage de sant£\color{magenta}{é}£\n\tLe potage de sant£\color{magenta}{é}£ se fait de chapons..."
@@ -349,16 +352,37 @@ de chapons...'"
 Potage de sant£é£
     Le potage de sant£é£ se fait de chapons...
 >>> repr(a)
-"u'Potage de sant\\xe9\\n\\tLe potage de sant\\xe9 se fait de chapons...
+"'Potage de sant\\xe9\\n\\tLe potage de sant\\xe9 se fait de chapons...
 '"
->>> print(u"\u4F60\u597D")
+>>> print("\u4F60\u597D")
 \end{pythonConsole}
 \begin{CJK*}{UTF8}{gbsn}
 你 好
 \end{CJK*}
 \end{frame}
 %...............................................................................
-
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Séquences}
+\framesubtitle{Chaînes de bytes}
+\begin{itemize}
+ \item Distinction entre chaîne de charactère et chaîne de bytes. (Python3.x) 
+\end{itemize}
+\begin{pythonConsole}
+>>> a = 'abcd'
+>>> a.encode('utf8')
+b'abcd'
+>>> a.encode('ascii')
+b'abcd'
+>>> b = a.encode('utf32')
+>>> print(b)
+b'\xff\xfe\x00\x00a\x00\x00\x00b\x00\x00\x00c\x00\x00\x00d\x00\x00'
+>>> c = b.decode('utf32')
+>>> print(c)
+abcdef
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
 %...............................................................................
 \begin{frame}[fragile]
 \frametitle{Séquences}
@@ -371,7 +395,7 @@ Potage de sant£é£
 \begin{pythonConsole}
 >>> a = [1, 2, 3]
 >>> type(a)
-<type £'£list£'£>
+<class £'£list£'£>
 >>> len(a)
 3
 >>> b = ['abc', 'de', 'fghij']
@@ -423,7 +447,7 @@ Potage de sant£é£
 \framesubtitle{Listes}
 \begin{itemize}
  \item Imbrications, nested.
- \item Attention aux erreurs d'indexation, les listes Python ne sont pas de matrices à la Matlab. 
+ \item Attention aux erreurs d'indexation, les listes Python ne sont pas des matrices à la Matlab. 
 \end{itemize}
 \begin{pythonConsole}
 >>> a = [[1, 2, 3], [4, 5, 6]]
@@ -448,12 +472,12 @@ TypeError: list indices must be integers, £not£ tuple
 \framesubtitle{Tuples}
 \begin{itemize}
  \item Couple, triplet, n-uplet, plus généralement tuple ((\ , \ ), tuple)
- \item Ce sont des séquences (de même que les types str, unicode, list, tuple, buffer, xrange) : même indexation que les listes.
+ \item Ce sont des séquences (de même que les types str, bytes, list, tuple, buffer, xrange) : même indexation que les listes.
 \end{itemize}
 \begin{pythonConsole}
 >>> couple = ('papa', 'maman')
 >>> type(couple)
-<type 'tuple'>
+<class 'tuple'>
 >>> couple[0]
 'papa'
 >>> a = ('bob', 'alice')
@@ -540,7 +564,7 @@ TypeError: 'tuple' object does £not£ support item assignment
 \begin{pythonConsole}
 >>> d = {'abc': 123, 'def': 234}
 >>> type(d)
-<type 'dict'>
+<class 'dict'>
 >>> print(d)
 {'abc': 123, 'def': 234}
 >>> d['abc']
@@ -565,13 +589,11 @@ TypeError: 'tuple' object does £not£ support item assignment
 \begin{pythonConsole}
 >>> E = {1, 2, 3}
 >>> type(E)
-<type 'set'>
+<class 'set'>
 >>> print(E)
 set([1, 2, 3])
 >>> E[0]
-Traceback (most recent call last):
-  File £"£<stdin>£"£, line 1, £in£ <module>
-TypeError: £'set'£ object does £not£ support indexing
+... TypeError: £'set'£ object does £not£ support indexing
 >>> F = {1, 2, 3, 2, 1, 4, 1, -1}
 >>> F
 set([1, 2, 3, 4, -1])
@@ -579,9 +601,7 @@ set([1, 2, 3, 4, -1])
 >>> a in F
 True
 >>> G = E + F
-Traceback (most recent call last):
-  File £"£<stdin>£"£, line 1, £in£ <module>
-TypeError: unsupported operand type(s) £for£ +: £'set'£ £and£ £'set'£
+... TypeError: unsupported operand type(s) £for£ +: £'set'£ £and£ £'set'£
 >>> E.intersection(F)
 set([1, 2, 3]) 
 >>> E.add(-10)
@@ -618,6 +638,21 @@ set([1, 2, 3, -10])
 \end{itemize}
 \end{frame}
 %...............................................................................
+\comment{abs', 'all', 'any', 'ascii', 'bin', 
+'bool', 'bytearray', 'bytes', 'callable', 'chr', 
+'classmethod', 'compile', 'complex', 'copyright', 'credits', 
+'delattr', 'dict', 'dir', 'divmod', 'enumerate', 
+'eval', 'exec', 'exit', 'filter', 'float', 
+'format', 'frozenset', 'getattr', 'globals', 'hasattr', 
+'hash', 'help', 'hex', 'id', 'input', 
+'int', 'isinstance', 'issubclass', 'iter', 'len', 
+'license', 'list', 'locals', 'map', 'max', 
+'memoryview', 'min', 'next', 'object', 'oct', 
+'open', 'ord', 'pow', 'print', 'property', 
+'quit', 'range', 'repr', 'reversed', 'round', 
+'set', 'setattr', 'slice', 'sorted', 'staticmethod', 
+'str', 'sum', 'super', 'tuple', 'type', 
+'vars', 'zip'}
 %...............................................................................
 \begin{frame}
 \frametitle{Syntaxe}
@@ -746,7 +781,7 @@ a vaut 1
 \framesubtitle{Indentation}
 \begin{itemize}
 \item Pour l'indentation dans un fichier, il est conseillé d'utiliser 4 espaces plutôt qu'une tabulation. 
-\item Possibilité de régler ce paramètres dans les éditeurs de texte : tabulation souple émulée avec des espaces ('soft tab' with 4 spaces vs 'hard tab'). 
+\item Possibilité de régler ces paramètres dans les éditeurs de texte : tabulation souple émulée avec des espaces ('soft tab' with 4 spaces vs 'hard tab'). 
 \end{itemize}
 \begin{python}
 if (a == 1): 
@@ -974,7 +1009,6 @@ problem
 ...     print("problem de types : " + str(e))
 ... finally:
 ...     print("Avec ou sans erreurs, on continue")
-... 
 problem de types : cannot concatenate £'str'£ £and£ £'int'£ objects
 Avec ou sans erreurs, on £continue£
 \end{pythonConsole}
@@ -990,17 +1024,16 @@ Avec ou sans erreurs, on £continue£
 ...     print("a = " + str(a))
 ... finally:
 ...     print("Avec ou sans erreurs, on continue")
-...
 a = 2
 Avec ou sans erreurs, on £continue£
 \end{pythonConsole}
 \end{frame}
 %...............................................................................
-\subsubsection{Fonctions}
+%\subsubsection{Fonctions}
 %...............................................................................
 \begin{frame}[fragile]
 \frametitle{Syntaxe}
-\framesubtitle{Fonctions - Définition de la fonction}
+\framesubtitle{Fonctions - Définition d'une fonction}
 \begin{itemize}
 \item définition d'une fonction : "def" funcname "(" [parameter\_list] ")" ":" suite
 \item indentation nécessaire pour le bloc d'instructions. 
@@ -1128,7 +1161,7 @@ True
 \end{pythonConsole}
 \end{frame}
 %...............................................................................
-\subsubsection{objet}
+%\subsubsection{objet}
 %...............................................................................
 \begin{frame}[fragile]
 \frametitle{Syntaxe}
@@ -1243,7 +1276,7 @@ miam
 >>> fifi.espere()
 0
 >>> dir(riri)
-['__doc__', '__module__', 'ailes', 'chante', 'espere', 'mange', 'pattes',
+[..., 'ailes', 'chante', 'espere', 'mange', 'pattes',
 'status']
 \end{pythonConsole}
 \end{frame}
@@ -1258,19 +1291,20 @@ miam
 \begin{pythonConsole}
 >>> a = 123
 >>> dir(a)
-['__abs__', '__add__', '__and__', '__class__', '__cmp__', '__coerce__',
-'__delattr__', '__div__', '__divmod__', '__doc__', '__float__', '__floordiv__',
-'__format__', '__getattribute__', '__getnewargs__', '__hash__', '__hex__',
-'__index__', '__init__', '__int__', '__invert__', '__long__', '__lshift__',
-'__mod__', '__mul__', '__neg__', '__new__', '__nonzero__', '__oct__', '__or__',
-'__pos__', '__pow__', '__radd__', '__rand__', '__rdiv__', '__rdivmod__',
-'__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__',
-'__rmod__', '__rmul__', '__ror__', '__rpow__', '__rrshift__', '__rshift__',
-'__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__',
-'__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__',
-'bit_length', 'conjugate', 'denominator', 'imag', 'numerator', 'real']
+['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', 
+'__delattr__', '__dir__', '__divmod__', '__doc__', '__eq__', '__float__', 
+'__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', 
+'__getnewargs__', '__gt__', '__hash__', '__index__', '__init__', '__int__', 
+'__invert__', '__le__', '__lshift__', '__lt__', '__mod__', '__mul__', '__ne__', 
+'__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', 
+'__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', 
+'__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__', 
+'__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', 
+'__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', 
+'__truediv__', '__trunc__', '__xor__', 'bit_length', 'conjugate', 'denominator', 
+'from_bytes', 'imag', 'numerator', 'real', 'to_bytes']
 >>> type(a)
-<type 'int'>
+<class 'int'>
 >>> a.real
 123
 >>> a.bit_length()
@@ -1285,10 +1319,10 @@ miam
 \begin{pythonConsole}
 >>> a = [1, 2, 3, 1, 2]
 >>> dir(a)
-[..., 'append', 'count', 'extend', 'index', 'insert', 'pop', 
+[..., 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 
 'remove', 'reverse', 'sort']
 >>> type(a)
-<type 'list'>
+<class 'list'>
 >>> a.append(3)
 >>> a 
 [1, 2, 3, 1, 2, 3]
@@ -1301,7 +1335,7 @@ miam
 >>> dir(a)
 [..., 'count', 'index']
 >>> type(a)
-<type 'tuple'>
+<class 'tuple'>
 >>> a.count(1)
 2
 >>> a.index(1)
@@ -1316,12 +1350,13 @@ miam
 \begin{pythonConsole}
 >>> a = "abc.def"
 >>> dir(a)
-[..., 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 
-'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit',
-'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip',
-'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit',
-'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title',
-'translate', 'upper', 'zfill']
+[..., 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 
+'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 
+'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable',
+'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip',
+'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition',
+'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase',
+'title', 'translate', 'upper', 'zfill']
 >>> a.upper()
 ABC.DEF
 >>> a.index('.')
@@ -1335,6 +1370,7 @@ ABC.DEF
 \end{frame}
 %...............................................................................
 %...............................................................................
+\comment{% Python 2.7 seulement
 \begin{frame}[fragile]
 \frametitle{Syntaxe}
 \framesubtitle{Fichiers}
@@ -1372,6 +1408,7 @@ sur les Tables des Grands que des
 particuliers. 
 \end{pythonConsole}
 \end{frame}
+}
 %...............................................................................
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -1417,19 +1454,20 @@ import module1
 x = 4
 y1 = module1.f1(x)
 y2 = module1.f2(x)
-print("module -> (x, y1, y2) : " + (x, y1, y2))
+print("from import -> (x, y1, y2) : " + (x, y1, y2))
 \end{python}
-\begin{python}
-import moduleQuiAUnNomBeaucoupTropLong as myFun
-x = 4
-y1 = myFun.f1(x)
-y2 = myFun.f2(x)
-print("module -> (x, y1, y2) : " + (x, y1, y2))
-\end{python}
+
 \begin{shell}
 (x, y1, y2) : (3, 30, 300)
-module -> (x, y1, y2) : (4, 40, 400)
+from import -> (x, y1, y2) : (4, 40, 400)
 \end{shell}
+
+\begin{python}
+import moduleQuiAUnNomBeaucoupTropLong as myMod
+x = 4
+y1 = myMod.f1(x)
+y2 = myMod.f2(x)
+\end{python}
 \end{frame}
 %...............................................................................
 %...............................................................................
@@ -1460,7 +1498,7 @@ module -> (x, y1, y2) : (4, 40, 400)
 >>> dir()
 [..., 'module1']
 >>> type(module1)
-<type 'module'>
+<class 'module'>
 >>> dir(module1)
 [..., 'f1', 'f2', 'x', 'y1', 'y2']
 \end{pythonConsole}
@@ -1503,7 +1541,6 @@ __name__ : __main__
   \item des modules
   \item un fichier '\_\_init\_\_.py', vide ou non.
  \end{itemize}
- \item exemple : packet1/subpacket1/module1.py ; packet1/subpacket2/module2.py 
  \item possibilité de faire des sous-paquet.  
 \end{itemize}
 \begin{pythonConsole}
@@ -1561,12 +1598,13 @@ __name__ : __main__
 \begin{pythonConsole}
 >>> import math
 >>> dir(math)
-['__doc__', '__file__', '__name__', '__package__', 'acos', 'acosh', 
-'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 'copysign', 'cos', 'cosh', 
-'degrees', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 
-'fmod', 'frexp', 'fsum', 'gamma', 'hypot', 'isinf', 'isnan', 'ldexp', 
-'lgamma', 'log', 'log10', 'log1p', 'modf', 'pi', 'pow', 'radians', 'sin', 
-'sinh', 'sqrt', 'tan', 'tanh', 'trunc'] 
+['__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 
+'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 'copysign',
+'cos', 'cosh', 'degrees', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs',
+'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma', 'gcd', 'hypot', 'inf',
+'isclose', 'isfinite', 'isinf', 'isnan', 'ldexp', 'lgamma', 'log', 'log10',
+'log1p', 'log2', 'modf', 'nan', 'pi', 'pow', 'radians', 'sin', 'sinh', 'sqrt',
+'tan', 'tanh', 'trunc']
 >>> math.cos(math.pi/3)
 0.5000000000000001
 \end{pythonConsole}
@@ -1577,23 +1615,23 @@ __name__ : __main__
 \frametitle{Exemple}
 \framesubtitle{Graphical User Interface / GUI}
 \begin{itemize}
-\item interface graphique pour Tk (Tkinter), GTK (PyGTK), wxWidgets (wxPython), Qt (PyQt).  
+\item interface graphique pour Tk (tkinter), GTK (PyGTK), wxWidgets (wxPython), Qt (PyQt).  
 \end{itemize}
 \begin{pythonConsole}
->>> import Tkinter
->>> from Tkconstants import *
->>> tk = Tkinter.Tk()
+>>> import tkinter
+>>> from tkinter.constants import *
+>>> tk = tkinter.Tk()
 >>> tk.title("My App - Hello World !")
->>> frame = Tkinter.Frame(tk, relief=RIDGE, borderwidth=2)
+>>> frame = tkinter.Frame(tk, relief=RIDGE, borderwidth=2)
 >>> frame.pack(fill=BOTH,expand=1)
->>> label = Tkinter.Label(frame, text="Hello, World")
+>>> label = tkinter.Label(frame, text="Hello, World")
 >>> label.pack(fill=X, expand=1)
->>> button = Tkinter.Button(frame,text="Exit",command=tk.destroy)
+>>> button = tkinter.Button(frame,text="Exit",command=tk.destroy)
 >>> button.pack(side=BOTTOM)
 >>> tk.mainloop()
 \end{pythonConsole}
 \begin{center}
-\myFig{width=5cm}{./fig/Tkinter.png}
+\myFig{width=4cm}{./fig/Tkinter.png}
 \end{center}
 \end{frame}
 %...............................................................................
@@ -1615,7 +1653,7 @@ __name__ : __main__
 ... 
 \end{pythonConsole}
 \begin{center}
-\myFig{width=5cm}{./fig/turtle.png}
+\myFig{width=4cm}{./fig/turtle.png}
 \end{center}
 \end{frame}
 %...............................................................................
