@@ -74,3 +74,32 @@ riri = Canard(patte=3)
 \end{pythonConsole}
 \end{frame}
 %...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Transposition NDaray exemple 3D}
+\begin{itemize}
+ \item A.shape (1, 2, 3, 4)
+ \item A.T.shape (4, 3, 2, 1) by default. 
+ \item can set the axes order. see help(numpy.matrix.transpose)
+\end{itemize}
+\begin{pythonConsole}
+>>> A = numpy.array([[[[1, 2, 3, 4], [11, 12, 13, 14], [21, 22, 23, 24]], [[101, 102, 103, 104], [111, 112, 113, 114], [121, 122, 123, 124]]]])
+
+>>> A
+array([[[[  1,   2,   3,   4],
+         [ 11,  12,  13,  14],
+         [ 21,  22,  23,  24]],
+
+        [[101, 102, 103, 104],
+         [111, 112, 113, 114],
+         [121, 122, 123, 124]]]])
+
+>>> A.T
+array([[[[  1],
+         [101]],
+         ...
+        [[ 24],
+         [124]]]])
+\end{pythonConsole}
+\end{frame}
+%...............................................................................

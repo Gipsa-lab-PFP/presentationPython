@@ -1,16 +1,17 @@
 %_______________________________________________________________________________
-\section{Description des paquets scientifiques}
+\section{Description des Paquets Scientifiques}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 \begin{frame}[fragile]
 \frametitle{Quelques Paquets et Outils Scientifiques}
 \begin{itemize}
- \item SciPy : scientific python 
+ \item SciPy : Scientific Python 
  \begin{itemize}
   \item Numpy
   \item SciPy library
   \item Matplotlib
   \item IPython
+  \item Pandas
  \end{itemize}
  \item Mayavi : objets 3D avancés
  \item Scikit-learn : machine learning.
@@ -29,7 +30,7 @@
  \item \url{http://www.scipy.org/}
 \end{itemize}
 \begin{center}
-\includegraphics[width=10cm]{./fig/scipy.png}
+\includegraphics[width=9cm]{./fig/scipy.png}
 \end{center}
 \end{frame}
 %_______________________________________________________________________________
@@ -52,10 +53,6 @@ Help on package numpy:
 NAME
     numpy
 
-FILE
-    /Users/becqg/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages
-    /numpy/__init__.py
-
 DESCRIPTION
     NumPy
     =====
@@ -64,7 +61,6 @@ DESCRIPTION
       1. An array object of arbitrary homogeneous items
       2. Fast mathematical operations over arrays
       3. Linear Algebra, Fourier Transforms, Random Number Generation
-    
 ...
 \end{pythonConsole}
 \end{frame}
@@ -97,7 +93,7 @@ DESCRIPTION
 [[  1.   2.]
  [ 11.  12.]]
 >>> type(A)
-<type 'numpy.ndarray'>
+<class 'numpy.ndarray'>
 >>> A[-1, -2] = 11
 \end{pythonConsole}
 \end{frame}
@@ -112,15 +108,15 @@ DESCRIPTION
 \begin{pythonConsole}
 
 >>> dir(A)
-'T', ..., 'all', 'any', 'argmax', 'argmin', 'argpartition', 'argsort', 'astype',
-'base', 'byteswap', 'choose', 'clip', 'compress', 'conj', 'conjugate', 'copy',
-'ctypes', 'cumprod', 'cumsum', 'data', 'diagonal', 'dot', 'dtype', 'dump',
-'dumps', 'fill', 'flags', 'flat', 'flatten', 'getfield', 'imag', 'item',
+['T', ..., 'all', 'any', 'argmax', 'argmin', 'argpartition', 'argsort', 
+'astype', 'base', 'byteswap', 'choose', 'clip', 'compress', 'conj', 'conjugate',
+'copy', 'ctypes', 'cumprod', 'cumsum', 'data', 'diagonal', 'dot', 'dtype',
+'dump', 'dumps', 'fill', 'flags', 'flat', 'flatten', 'getfield', 'imag', 'item',
 'itemset', 'itemsize', 'max', 'mean', 'min', 'nbytes', 'ndim', 'newbyteorder',
 'nonzero', 'partition', 'prod', 'ptp', 'put', 'ravel', 'real', 'repeat',
 'reshape', 'resize', 'round', 'searchsorted', 'setfield', 'setflags', 'shape',
 'size', 'sort', 'squeeze', 'std', 'strides', 'sum', 'swapaxes', 'take',
-'tofile', 'tolist', 'tostring', 'trace', 'transpose', 'var', 'view'
+'tobytes', 'tofile', 'tolist', 'tostring', 'trace', 'transpose', 'var', 'view']
 \end{pythonConsole}
 \end{frame}
 %_______________________________________________________________________________
@@ -177,7 +173,7 @@ array([[ 1.,   2.,  11.,  12.]])
 \frametitle{N-dimensional array Object}
 \framesubtitle{Copie de tableaux}
 \begin{itemize}
- \item Les éléments de B sont les mêmes que ceux de A, seule la forme change. 
+ \item Les éléments de B sont les mêmes que ceux de A, seule la forme change.  
  \item Si on veut une copie (copy)
 \end{itemize}
 \begin{pythonConsole}
@@ -198,12 +194,10 @@ array([[ 1.,   2.,  11.,  12.]])
 \frametitle{N-dimensional array Object}
 \framesubtitle{Création de tableaux}
 \begin{itemize}
- \item tableau vide et réservation de l'espace (empty)
- \item initialisation à zeros (zeros)
- \item initialisation avec des uns (ones)
- \item tableau identité (eye) avec la dimension. 
- \item à partir de listes (array)
- \item suivant une étendue (arange)
+ \item tableau vide et réservation de l'espace (empty).
+ \item initialisation à zeros (zeros) ou avec des uns (ones).
+ \item tableau identité (eye) avec la dimension.
+ \item à partir de listes (array) ou suivant une étendue (arange).
 \end{itemize}
 \begin{pythonConsole}
 >>> A = numpy.zeros((2, 4))
@@ -328,11 +322,13 @@ ValueError: matrices are not aligned
 >>> A = numpy.array([[1, 2], [11, 12]])
 >>> B = numpy.array([[3, 4], [13, 14]])
 >>> print(A / 2)
-[[0 1]
- [5 6]]
+python 3.x                      python 2.x
+[[ 0.5  1. ]				    [[0 1]
+ [ 5.5  6. ]] 				     [5 6]]
 >>> print(A / B)
-[[0 0]
- [0 0]]
+python 3.x                      python 2.x  
+[[ 0.33333333  0.5       ]      [[0 0]
+ [ 0.84615385  0.85714286]]      [0 0]]
 >>> print(A / B.astype("float"))
 [[ 0.33333333  0.5       ]
  [ 0.84615385  0.85714286]]
@@ -356,10 +352,9 @@ ValueError: matrices are not aligned
 
  [[ 1.  1.  1.  1.]
   [ 1.  1.  1.  1.]
-  [ 1.  1.  1.  1.]]]
+  [ 1.  1.  1.  1.]]]          
 >>> print(A.cumsum())
-[  1.   2.   3.   4.   5.   6.   7.   8.   9.  10.  11.  12.  13.  14.  15. 
-  16.  17.  18.  19.  20.  21.  22.  23.  24.]
+[  1.   2.   3.   4.   5.   6.   7.   8.   9.  10.  11.  12.  13.  14.  15. 16.  17.  18.  19.  20.  21.  22.  23.  24.]
 >>> print(A.cumsum(axis=0))
 [[[ 1.  1.  1.  1.]
   [ 1.  1.  1.  1.]
@@ -446,20 +441,20 @@ array([2, 3, 0, 1, 2, 3])
 \frametitle{N-dimensional array Object}
 \framesubtitle{Concaténations}
 \begin{itemize}
- \item Concaténation horizontale (hstack)
- \item Concaténation verticale (vstack)
- \item concatenate (concatenate, kwarg axis)
+ \item Concaténation verticale (vstack, r\_[])
+ \item Concaténation horizontale (hstack, c\_[])
+ \item Concatenate (concatenate, kwarg axis)
 \end{itemize}
 \begin{pythonConsole}
 >>> A = numpy.array([[1, 2], [11, 12]])
 >>> B = numpy.array([[3, 4], [13, 14]])
->>> C = numpy.vstack((A, B))
+>>> C = numpy.vstack((A, B)) # r\_[A, B]
 >>> print(C)
 [[ 1  2]
  [11 12]
  [ 3  4]
  [13 14]]
->>> D = numpy.hstack((A, B, A, A))
+>>> D = numpy.hstack((A, B, A, A)) # c\_[A, B, A, A]
 >>> print(D)
 [[ 1  2  3  4  1  2  1  2]
  [11 12 13 14 11 12 11 12]]
@@ -487,13 +482,13 @@ array([2, 3, 0, 1, 2, 3])
 object
 
 >>> A = numpy.array([(1, "abc"), (2, "def")], dtype=[("index", "int"), 
-	("name", "S8")])
->>> print(A)
-[(1, 'abc') (2, 'def')]
+	("name", "S8")])                       
+>>> print(A)              
+[(1, b'abc') (2, b'def')]
 >>> A["index"]
-array([1, 2])
->>> A["name"]
-array(['abc', 'def'], 
+array([1, 2])    
+>>> A["name"]                   
+array([b'abc', b'def'], 
       dtype='|S8')
 \end{pythonConsole}
 \end{frame}
@@ -562,10 +557,10 @@ array([[  1.,   2.,   3.,   4.,   5.],
 \end{itemize}
 \begin{pythonConsole}
 >>> help(numpy.matrix)
-class matrix(numpy.ndarray)
+class matrix(numpy.ndarray)         
  |  matrix(data, dtype=None, copy=True)
  |  
- |  Returns a matrix £from£ an array-like object, £or from£ a string of data.
+ |  Returns a matrix £from£ an array-like £object£, £or from£ a string of data.
  |  A matrix £is£ a specialized 2-D array that retains its 2-D nature
  |  through operations.  It has certain special operators, such as £`££`£*£`££`£
  |  (matrix multiplication) £and£ £`££`£**£`££`£ (matrix power).
@@ -654,13 +649,12 @@ print(A.I)
 \frametitle{Autres opérations d'algèbre linéaire}
 \framesubtitle{Sous paquet linalg}
 \begin{itemize}
- \item Interface vers Lapack (numpy.linalg)
+ \item Interface vers des bibliothèques d'algèbre linéaire (numpy.linalg). 
 \end{itemize}
 \begin{pythonConsole}
 >>> help(numpy.linalg)
 ...
     Linear algebra basics:
-    
     - norm            Vector £or£ matrix norm
     - inv             Inverse of a square matrix
     - solve           Solve a linear system of equations
@@ -668,9 +662,7 @@ print(A.I)
     - lstsq           Solve linear least-squares problem
     - pinv            Pseudo-inverse (Moore-Penrose)...
     - matrix_power    Integer power of a square matrix
-    
     Eigenvalues £and£ decompositions:
-    
     - eig             Eigenvalues £and£ vectors of a square matrix
     - eigh            Eigenvalues £and£ eigenvectors of a Hermitian matrix
     - eigvals         Eigenvalues of a square matrix
@@ -678,9 +670,7 @@ print(A.I)
     - qr              QR decomposition of a matrix
     - svd             Singular value decomposition of a matrix
     - cholesky        Cholesky decomposition of a matrix
-    
     Tensor operations:
-    
     - tensorsolve     Solve a linear tensor equation
     - tensorinv       Calculate an inverse of a tensor
 ...
@@ -857,7 +847,7 @@ print(A.I)
 >>> matplotlib.pyplot.show()
 \end{pythonConsole}
 \begin{center}
- \includegraphics[width=6cm]{./fig/matplotlibSinus.pdf}
+ \includegraphics[width=4.5cm]{./fig/matplotlibSinus.pdf}
 \end{center}
 \end{frame}
 %_______________________________________________________________________________
@@ -894,13 +884,13 @@ print(A.I)
 \framesubtitle{Pylab}
 \begin{itemize}
  \item Fonctions à la Matlab dans le sous-paquet pylab (matplotlib.pylab)
- \item Beaucoup de fonctions sous formes abrégées \dots
+ \item Beaucoup de fonctions ($\approx 973$) sous formes abrégées \dots
 \end{itemize}
 \begin{minipage}[c]{5cm}
 \begin{pythonConsole}
->>> import matplotlib.pylab as mpl
->>> len(dir(mpl))
-955
+>>> import matplotlib.pylab as pylab
+>>> len(dir(pylab))
+973
 
 >>> from pylab import *
 >>> t = arange(0, 10, 0.01)
@@ -972,9 +962,9 @@ print(A.I)
 
 \begin{pythonConsole}
 >>> import pandas as pd
->>> a = [1., 2., 3., 2., 1., 2., 3., 2., 1]
+>>> a = [1, 2, 3, 2, 1, 2, 3, 2, 1]
 >>> data = pd.DataFrame(a)
->>> print(a)
+>>> print(data)
    0
 0  1
 1  2
@@ -997,6 +987,7 @@ print(A.I)
 \end{itemize}
 
 \begin{pythonConsole}
+>>> import numpy as np
 >>> taille = 170 + 10 * np.random.randn(100)
 >>> masse = 70 + 10 * np.random.randn(100)
 >>> dico = {'taille': taille, 'masse': masse}
@@ -1006,11 +997,11 @@ print(A.I)
 count  100.000000  100.000000
 mean    70.507943  169.915690
 std      9.999280   10.264489
-min     45.467455  144.149219
+£min£     45.467455  144.149219
 25%     63.300037  162.736237
 50%     70.043825  171.168028
 75%     78.153612  176.164359
-max     94.118966  201.781565
+£max£     94.118966  201.781565
 \end{pythonConsole}
 \end{frame}
 %_______________________________________________________________________________
@@ -1047,12 +1038,11 @@ class Series(Series)
 \frametitle{IPython}
 \framesubtitle{}
 \begin{itemize}
- \item \myFig{height=0.5cm}{./fig/ipython-logo.png} \, \url{http://www.scipy.org/scipylib/index.html}
+ \item \myFig{height=0.5cm}{./fig/ipython-logo.png} \, \url{http://ipython.org}
  \item \emph{Enhanced python console}
  \item Attention, ce n'est pas un paquet mais une console améliorée !
  \item Accessible à partir d'un terminal (ipython) 
- \item Complétion automatique avec la touche tab
- \item Fonctions magiques (magic)
+ \item aide simplifiée
 \end{itemize}
 
 \begin{shell}
@@ -1060,21 +1050,35 @@ $ ipython /* $ */
 \end{shell} 
 
 \begin{pythonConsole}
-Python 2.7.3 | 64-bit | (default, Jun 14 2013, 18:17:36) 
-Type "copyright", "credits" £or£ "license" £for£ more information.
+Python 3.5.1 (v3.5.1:37a07cee5969, Dec  5 2015, 21:12:44) 
+Type "copyright", "credits" or "license" for more information.
 
-IPython 2.2.0 -- An enhanced Interactive Python.
-?         -> Introduction £and£ overview of IPython£'£s features.
+IPython 4.0.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
 %quickref -> Quick reference.
-help      -> Python£'£s own help system.
-object?   -> Details about 'object', use 'object??' £for£ extra details.
+£help£      -> Python's own £help£ system.
+£object£?   -> Details about 'object', use 'object??' for extra details.
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{IPython}
+\framesubtitle{}
+\begin{itemize}
+ \item Complétion automatique avec la touche tab
+ \item Fonctions magiques (magic)
+\end{itemize}
 
+\begin{pythonConsole}
 In [1]: %pylab
 Using matplotlib backend: MacOSX
-Populating the interactive namespace £from£ numpy £and£ matplotlib
-
-
-In [2]: 
+Populating the interactive namespace from numpy and matplotlib
+In [1]: g = lambda x: cos(x ** 2)
+In [2]: %timeit g(10)
+The slowest run took 12.59 times longer than the fastest. 
+This could mean that an intermediate result is being cached 
+100000 loops, best of 3: 2.77 $\mu$s per loop
 \end{pythonConsole}
 \end{frame}
 %_______________________________________________________________________________
@@ -1084,13 +1088,13 @@ In [2]:
 %_______________________________________________________________________________
 \begin{frame}[fragile]
 \frametitle{IPython}
-\framesubtitle{ipython notebook}
+\framesubtitle{notebook}
 \begin{itemize}
- \item Accessible à partir d'un terminal (ipython notebook) 
- \item Ouverture et création de notebooks (*.pynb)
+ \item Accessible à partir d'un terminal (ipython notebook, jupyter notebook) 
+ \item Ouverture et création de notebooks (*.ipynb)
 \end{itemize}
 \begin{center}
- \myFig{width=8cm}{./fig/ipython_notebook_server.png}
+ \myFig{width=10cm}{./fig/ipython_notebook_server.png}
 \end{center}
 \end{frame}
 %_______________________________________________________________________________
@@ -1120,6 +1124,20 @@ In [2]:
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{IPython}
+\framesubtitle{ipython notebook}
+\begin{itemize}
+ \item the future : \url{https://jupyter.org}   
+\end{itemize}
+\begin{center}
+ \myFig{width=8cm}{./fig/jupyter-site.png}
+\end{center}
+\end{frame}
+%_______________________________________________________________________________
+
+
+%_______________________________________________________________________________
 \subsection{Mayavi}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -1128,12 +1146,12 @@ In [2]:
 \framesubtitle{}
 \frameCC{%
 \begin{itemize}
- \item \url{http://docs.enthought.com/mayavi/mayavi}
+ \item \url{http://code.enthought.com/projects/mayavi/}
  \item \url{https://github.com/enthought/mayavi}
  \item Manipulation des objets 3D améliorée (objet vtk). 
 \end{itemize}
 }
-{\myFig{width=8cm}{./fig/Mayavi_site.png}}
+{\myFig{width=8cm}{./fig/Mayavi_site_2.png}}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -1266,13 +1284,21 @@ PACKAGE CONTENTS
 \begin{pythonConsole}
 >>> from pylab import *
 >>> from sklearn.datasets import load_iris
->>> from sklearn.lda import LDA
+>>> from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 >>> dic = load_iris()
 >>> x = dic["data"]
 >>> y = dic["target"]
 >>> nClasses = unique(y).size
 >>> clf = LDA()
 >>> clf.fit(x[:, :2], y)
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Scikit-learn}
+\framesubtitle{Exemple de Classifieur : Linear Discriminant Analysis}
+\begin{pythonConsole}
 >>> (mx1, mx2) = meshgrid(linspace(4, 8, 100), linspace(2, 5, 100))
 >>> Z = clf.predict(vstack((mx1.flatten().T, mx2.flatten())).T)
 >>> pcolor(mx1, mx2, Z.reshape(mx1.shape), alpha=0.1)
@@ -1282,10 +1308,9 @@ PACKAGE CONTENTS
 >>> axis(xmin=4, xmax=8, ymin=2, ymax=5)
 >>> show()
 \end{pythonConsole}
-\myFigCentered{width=4cm}{./fig/sklearn_lda.png}
+\myFigCentered{width=6cm}{./fig/sklearn_lda.png}
 \end{frame}
-%_______________________________________________________________________________
-%_______________________________________________________________________________
+%_______________________________________________________________________________%_______________________________________________________________________________
 \subsection{Autres ressources : exemple C}
 %_______________________________________________________________________________
 \begin{frame}[fragile]
