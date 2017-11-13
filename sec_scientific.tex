@@ -171,16 +171,15 @@ array([[ 1.,   2.,  11.,  12.]])
 %_______________________________________________________________________________
 \begin{frame}[fragile]
 \frametitle{N-dimensional array Object}
-\framesubtitle{Copie de tableaux}
+\framesubtitle{Vues et copies de tableaux}
 \begin{itemize}
- \item Les éléments de B sont les mêmes que ceux de A, seule la forme change.  
- \item Si on veut une copie (copy)
+ \item Les éléments de B sont les mêmes que ceux de A, seule la forme change. On a une vue de l'objet (view).   
+ \item Si on veut une copie : méthode copy(), numpy.copy().
 \end{itemize}
 \begin{pythonConsole}
 >>> B[0, 0] = 21
->>> print(A)
-[[ 21.   2.]
- [ 11.  12.]]
+>>> print(A[0, 0], B[0, 0])
+21.0 21.0
 >>> B[1, 0]
 >>> C = A.copy()
 >>> C[0, 0] = 31

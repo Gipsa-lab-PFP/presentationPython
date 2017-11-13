@@ -17,31 +17,17 @@
 \frametitle{Nombres}
 \framesubtitle{Entiers}
 \begin{itemize}
- \item Attention à la division entière en 2.7. 
+ \item Division non entière en 3.x, conversion de type non implicite. 
+ \item 'type()' indique le type d'une variable.
 \end{itemize}
 \begin{pythonConsole}
 >>> a = 1  
 >>> b = 2
 >>> c = a / b
 >>> print(c)
-0
-\end{pythonConsole}
-\end{frame}
-%...............................................................................
-%...............................................................................
-\begin{frame}[fragile]
-\frametitle{Nombres}
-\framesubtitle{Réels}
-\begin{itemize}
- \item Utilisation du point pour passer en réels. 
- \item 'type()' indique le type d'une variable. 
-\end{itemize}
-\begin{pythonConsole}
->>> a = 1.0
->>> b = 2.
->>> c = a / b
->>> print(c)
-0.5
+0.5 
+>>> print(type(a))
+<class 'int'>
 >>> print(type(c))
 <class 'float'>
 \end{pythonConsole}
@@ -50,29 +36,17 @@
 %...............................................................................
 \begin{frame}[fragile]
 \frametitle{Nombres}
-\framesubtitle{Entiers long vs court (python 2.7}
+\framesubtitle{Réels}
 \begin{itemize}
- \item Suffixe 'L' pour indiquer un passage en entier long. 
- \item long n'existe plus en 3.x
+ \item Utilisation du point pour passer en réels.  
 \end{itemize}
 \begin{pythonConsole}
->>> a = 2 ** 30
->>> b = 2 ** 31
->>> a
-1073741824
->>> b
-2147483648L
->>> print(b)
-2147483648
->>> type(a)
-<type 'int'>
->>> type(b)
-<type 'long'>
->>> c = 12345L
->>> type(c)
-<type 'long'>
+>>> a = 1.0
+>>> b = 2.
+>>> c = a / b
+>>> print(c)
+0.5
 \end{pythonConsole}
-% \only<2>{\it remarque : représentation simplifiée (str(a)) vs representation brutes (repr(a)) dans la console.}  
 \end{frame}
 %...............................................................................
 %...............................................................................
@@ -128,7 +102,7 @@ NameError: name 'j' is £not£ defined
 \begin{itemize}
  \item True, False (bool)
  \item Attention aux résultats des opérations sur les booléens.
- \item + donne un int
+ \item + et * donne des entiers 'int'. 
  \item Opérateurs booléens spécifiques.   
 \end{itemize}
 \begin{pythonConsole}
@@ -286,7 +260,7 @@ chinese symbol ni
 \framesubtitle{Chaînes de caractères}
 \begin{itemize}
  \item Alternance des single/double quote. 
- \item Caractères spéciaux à la C.
+ \item Control code ($\backslash$n, $\backslash$t, etc. ) façon C.
 \end{itemize}
 \begin{pythonConsole}
 >>> a = "1. Bisque de pigeonneaux\n\t Prenez vos pigeonneaux apres qu'ils
@@ -366,7 +340,7 @@ Potage de sant£é£
 \frametitle{Séquences}
 \framesubtitle{Chaînes de bytes}
 \begin{itemize}
- \item Distinction entre chaîne de charactère et chaîne de bytes. (Python3.x) 
+ \item Distinction entre chaîne de charactère et chaîne de bytes.  
 \end{itemize}
 \begin{pythonConsole}
 >>> a = 'abcd'
@@ -823,11 +797,11 @@ cf matlab (if elseif else end, switch case otherwise end)
 \end{itemize}
 \begin{pythonConsole}
 >>> a = "green"
->>> if (a is "green"): 
+>>> if (a == "green"): 
 ...     print("00FF00")
 ... elif (a == "red"): 
 ...     print("FF0000")
-... elif (a is "blue"): 
+... elif (a == "blue"): 
 ...     print("0000FF")
 ... else: 
 ...     print("Unknown color")
@@ -1169,11 +1143,11 @@ True
 \begin{itemize}
 \item Un objet possède : 
  \begin{itemize}
-  \item des propriétés ou attributs, variables spécifiques à l'objet. 
-  \item des méthodes, fonctions qui permettent de communiquer entre objets ou avec l'extérieur. 
+ \footnotesize
+  \item des {\em propriétés} ou {\em attributs}, variables spécifiques à l'objet. 
+  \item des {\em méthodes}, fonctions qui permettent de communiquer entre objets ou avec l'extérieur. 
  \end{itemize}
-\item Un objet appartient à une classe: {\em Un objet est une instance de classe. }
-\item Les propriétés et méthodes sont définies dans la classe. 
+\item Un objet appartient à une classe, {\em un objet est une instance de classe. }
 \end{itemize}
 
 \begin{pythonConsole}
@@ -1186,7 +1160,7 @@ m£é£thodes : manger, chanter, ne rien faire.
 Canard : 
  £à£ 2 pattes
  £à£ 2 ailes
- status par d£é£faut : ne fais rien
+ statut par d£é£faut : ne fait rien
  
  mange(aliments)
   v£é£rification aliments : herbivore, carnivore occasionnel 
@@ -1224,7 +1198,7 @@ Canard :
 ...    def chante(self): 
 ...       self.status = "chante"
 ...       print("couin couin")
-...    def espere(self): 
+...    def expecte(self): 
 ...       self.status = "en attente"
 ...       return 0 
 ...
@@ -1234,9 +1208,10 @@ Canard :
 %...............................................................................
 \begin{frame}[fragile]
 \frametitle{Syntaxe}
-\framesubtitle{Objets : définition en Python}
+\framesubtitle{Objets : définition des attributs et méthodes spéciales}
 \begin{itemize}
  \item \_\_init\_\_ : création lors de l'instanciation. Il est conseillé d'initialiser les attributs dans ce bloc. 
+ \item \_\_??\_\_ : attributs spéciaux ou méthodes spéciales (special atributes, special méthods), reconnues par Python. 
 \end{itemize}
 \begin{pythonConsole}
 >>> class Canard: 
@@ -1244,6 +1219,12 @@ Canard :
 ...       self.pattes = 2
 ...       self.ailes = 2
 ...       self.status = "en attente"
+...    def __del__(self): 
+...       print('arrrggghhhh')
+...    def __add__(self, canard2): 
+...       canard_fils = Canard()
+...       canard_fils.pattes = int(self.pattes + canard2.pattes / 2)
+...		  return canard_fils
 ...
 \end{pythonConsole}
 \end{frame}
@@ -1254,8 +1235,8 @@ Canard :
 \framesubtitle{Objets : instanciation et usage}
 \begin{itemize}
  \item instanciation : objet = Classname()
- \item propriétés obtenues par : objet.property (cf structure en C)
- \item méthodes obtenues par : objet.method(argument)
+ \item propriétés obtenues par : object.property (cf structure en C)
+ \item méthodes obtenues par : object.method(argument)
 \end{itemize}
 \begin{pythonConsole}
 >>> riri = Canard()
@@ -1273,11 +1254,27 @@ couin couin
 miam
 >>> riri.status, loulou.status, fifi.status
 ('chante', 'mange', 'en attente')
->>> fifi.espere()
+>>> fifi.expecte()
 0
 >>> dir(riri)
 [..., 'ailes', 'chante', 'espere', 'mange', 'pattes',
 'status']
+\end{pythonConsole}
+\end{frame}
+%...............................................................................
+%...............................................................................
+\begin{frame}[fragile]
+\frametitle{Syntaxe}
+\framesubtitle{Objets : méthodes spéciales}
+\begin{itemize}
+ \item destruction : del(instance)
+\end{itemize}
+\begin{pythonConsole}
+>>> rilou = riri + loulou
+>>> rilou.pattes
+3
+>>> del(rilou)
+arrrggghhhh
 \end{pythonConsole}
 \end{frame}
 %...............................................................................
@@ -1508,9 +1505,9 @@ y2 = myMod.f2(x)
 %...............................................................................
 \begin{frame}[fragile]
 \frametitle{Module}
-\framesubtitle{Espace : \_\_name\_\_}
+\framesubtitle{Importation ou exécution de code}
 \begin{itemize}
-\item attribut système : '\_\_name\_\_'
+\item attribut special : '\_\_name\_\_'
 \end{itemize}
 \begin{python}
 print("Affichage en import ou en ex£{\color{magenta}\'e}£cution")
@@ -1541,7 +1538,7 @@ __name__ : __main__
   \item des modules
   \item un fichier '\_\_init\_\_.py', vide ou non.
  \end{itemize}
- \item possibilité de faire des sous-paquet.  
+ \item possibilité de faire des sous-paquets.  
 \end{itemize}
 \begin{pythonConsole}
 >>> from packet1.subpacket1 import module1 as mod1
@@ -1829,7 +1826,7 @@ setup(name="distrib1",
     version="1.0", 
     author="Guillaume Becq", 
     author_email="guillaume.becq@gipsa-lab.grenoble-inp.fr", 
-    url="http://example.iana.org",
+    url="http://example.org",
     py£\_£modules=["module1", "module2"], 
     )
 \end{python}
