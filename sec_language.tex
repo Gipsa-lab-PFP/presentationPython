@@ -1147,7 +1147,7 @@ True
   \item des {\em propriétés} ou {\em attributs}, variables spécifiques à l'objet. 
   \item des {\em méthodes}, fonctions qui permettent de communiquer entre objets ou avec l'extérieur. 
  \end{itemize}
-\item Un objet appartient à une classe, {\em un objet est une instance de classe. }
+\item \small Un objet appartient à une classe, {\em un objet est une instance de classe. }
 \end{itemize}
 
 \begin{pythonConsole}
@@ -1169,7 +1169,7 @@ Canard :
   g£é£n£è£re un son qui fait "couin couin"  
 
  ne fait rien()
-  
+ 
 \end{pythonConsole}
 \end{frame}
 %...............................................................................
@@ -1179,8 +1179,9 @@ Canard :
 \framesubtitle{Objets : définition en Python}
 \begin{itemize}
  \item Définition d'une nouvelle : "class" classname ":" suite
- \item propriétés : variables avec une valeur par défaut. 
- \item méthodes : fonctions avec le premier argument l'objet lui même par convention 'self'
+ \item \small par convention, majuscule pour la première lettre de classname : Canard
+ \item \small propriétés : variables avec une valeur par défaut. 
+ \item \small méthodes : fonctions avec le premier argument l'objet lui même par convention 'self'
 \end{itemize}
 \begin{pythonConsole}
 >>> class Canard: 
@@ -1211,10 +1212,10 @@ Canard :
 \framesubtitle{Objets : définition des attributs et méthodes spéciales}
 \begin{itemize}
  \item \_\_init\_\_ : création lors de l'instanciation. Il est conseillé d'initialiser les attributs dans ce bloc. 
- \item \_\_??\_\_ : attributs spéciaux ou méthodes spéciales (special atributes, special méthods), reconnues par Python. 
+ \item \_\_\dots \_\_ : attributs spéciaux ou méthodes spéciales (special atributes, special méthods), reconnues par Python. 
 \end{itemize}
 \begin{pythonConsole}
->>> class Canard: 
+...
 ...    def __init__(self): 
 ...       self.pattes = 2
 ...       self.ailes = 2

@@ -103,6 +103,36 @@ DESCRIPTION
 \frametitle{N-dimensional array Object}
 \framesubtitle{}
 \begin{itemize}
+ \item N-dimensional array : ndarray
+ \item Création d'un tableau vide et réservation de l'espace (empty)
+ \item Accès aux éléments : A[i, j, \dots] 
+ \item indices de {\color{red}{0 à $n-1$}}
+ \item indices négatifs de $-n$ à $-1$
+\end{itemize}
+\begin{pythonConsole}
+
+>>> A = numpy.empty((2, 2))
+>>> print(A)
+[[ -1.28822975e-231   2.68678092e+154]
+ [  2.24497156e-314   2.24499315e-314]]
+>>> A[0, 0] = 1
+>>> A[1, 0] = 2
+>>> A[0, 1] = 11
+>>> A[1, 1] = 12
+>>> print(A)
+[[  1.   2.]
+ [ 11.  12.]]
+>>> type(A)
+<class 'numpy.ndarray'>
+>>> A[-1, -2] = 11
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{N-dimensional array Object}
+\framesubtitle{}
+\begin{itemize}
  \item Rappel : accès aux propiétés et méthodes (dir) 
 \end{itemize}
 \begin{pythonConsole}
@@ -389,9 +419,33 @@ python 3.x                      python 2.x
 %_______________________________________________________________________________
 \begin{frame}[fragile]
 \frametitle{N-dimensional array Object}
+\framesubtitle{Fonctions universelles et constantes}
+\begin{itemize}
+ \item Fonction universelle (universal function, ufunc) : fonction qui opère sur tous les éléments du tableau, un par un. 
+ \item Quelques constantes : pi, e, euler\_gamma, inf, nan.
+\end{itemize}
+\begin{pythonConsole}
+
+>>> pi = numpy.pi
+>>> A = numpy.deg2rad(numpy.array([[30 / num, 60], [45, 90]]))
+>>> B = numpy.cos(A)
+>>> print(B)
+[[  8.66025404e-01   5.00000000e-01]
+ [  7.07106781e-01   6.12323400e-17]]
+>>> B[1, 1] = numpy.nan
+>>> print(numpy.isfinite(B))
+[[ True  True]
+ [ True False]]
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{N-dimensional array Object}
 \framesubtitle{Sélection de sous-tableaux}
 \begin{itemize}
  \item découpage, slicing, comme pour les séquences.
+ \item ellipse (ellipsis, \dots)
 \end{itemize}
 \begin{pythonConsole}
 >>> A = numpy.array([[1, 2, 3, 4], [11, 12, 13, 14]])
@@ -403,6 +457,11 @@ python 3.x                      python 2.x
 >>> print(A[:, 1:3])
 [[ 2  3]
  [12 13]]
+>>> A = numpy.arange(24).reshape((2, 3, 4))
+>>> print(A[0, ...])
+[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]]
 \end{pythonConsole}
 \end{frame}
 %_______________________________________________________________________________
@@ -412,7 +471,7 @@ python 3.x                      python 2.x
 \framesubtitle{Sélection de sous-tableaux}
 \begin{itemize}
  \item Comparaison et opérateurs logiques
- \item Opérations logiques pour sélectionner des éléments (masking)
+ \item Opérations logiques pour sélectionner des éléments (voir aussi advanced indexing)
  \item Récupérer les indices (where)
 \end{itemize}
 \begin{pythonConsole}
@@ -541,6 +600,7 @@ array([[  1.,   2.,   3.,   4.,   5.],
        [ 11.,  12.,  13.,  14.,  15.],
        [ 21.,  22.,  23.,  24.,  25.]])
 >>> numpy.savetxt("data.txt", A)
+>>> numpy.savetxt("data.csv", A, delimiter=",", header="A, B, C, D, E")
 \end{pythonConsole}
 \end{frame}
 %_______________________________________________________________________________
@@ -747,18 +807,16 @@ print(A.I)
      fftpack                      --- Discrete Fourier Transform algorithms
      integrate                    --- Integration routines
      interpolate                  --- Interpolation Tools
-     io                           --- Data input £and£ output
-     lib                          --- Python wrappers to external libraries
-     lib.lapack                   --- Wrappers to LAPACK library
+     io                           --- Data input and output
      linalg                       --- Linear algebra routines
+     linalg.blas                  --- Wrappers to BLAS library
+     linalg.lapack                --- Wrappers to LAPACK library
      misc                         --- Various utilities that don£'£t have
                                       another home.
      ndimage                      --- n-dimensional image package
      odr                          --- Orthogonal Distance Regression
      optimize                     --- Optimization Tools
      signal                       --- Signal Processing Tools
-     sparse                       --- Sparse Matrices
-     sparse.linalg                --- Sparse Linear Algebra
     ...
 \end{pythonConsole}
 \end{frame}
@@ -772,23 +830,16 @@ print(A.I)
 \end{itemize}
 \begin{pythonConsole}
     ...
+     sparse                       --- Sparse Matrices
+     sparse.linalg                --- Sparse Linear Algebra
      sparse.linalg.dsolve         --- Linear Solvers
      sparse.linalg.dsolve.umfpack --- :Interface to the UMFPACK library:
                                       Conjugate Gradient Method (LOBPCG)
+     sparse.linalg.eigen          --- Sparse Eigenvalue Solvers
      sparse.linalg.eigen.lobpcg   --- Locally Optimal Block Preconditioned
-                                      Conjugate Gradient Method (LOBPCG) [*]
-     special                      --- Airy Functions [*]
-     lib.blas                     --- Wrappers to BLAS library [*]
-     sparse.linalg.eigen          --- Sparse Eigenvalue Solvers [*]
-     stats                        --- Statistical Functions [*]
-     lib                          --- Python wrappers to external libraries
-                                      [*]
-     lib.lapack                   --- Wrappers to LAPACK library [*]
-     integrate                    --- Integration routines [*]
-     ndimage                      --- n-dimensional image package [*]
-     linalg                       --- Linear algebra routines [*]
-     spatial                      --- Spatial data structures £and£ algorithms
-     special                      --- Airy Functions
+                                      Conjugate Gradient Method (LOBPCG)
+     spatial                      --- Spatial data structures and algorithms
+     special                      --- Special functions
      stats                        --- Statistical Functions
     ...
 \end{pythonConsole}
@@ -808,6 +859,16 @@ print(A.I)
 \begin{pythonConsole}
 >>> import scipy.io
 >>> data = scipy.io.loadmat('file.mat')
+>>> data
+{'__header__': b'MATLAB 5.0 MAT-file, Platform: MACI64, 
+	Created on: Tue Nov 14 14:40:01 2017', '__version__': '1.0', 
+    'B': array([[ 1,  2],
+       [11, 21]], dtype=uint8), 'A': array([[ 1,  2,  3],
+       [11, 12, 13]], dtype=uint8), '__globals__': []}
+>>> data['A']
+array([[ 1,  2,  3],
+       [11, 12, 13]], dtype=uint8)
+
 \end{pythonConsole}
 \end{frame}
 %_______________________________________________________________________________
@@ -822,7 +883,7 @@ print(A.I)
  \item \myFig{height=0.5cm}{./fig/matplotlib-logo.png} : \url{http://www.matplotlib.org}
  \item \emph{matplotlib is a python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms. }
  \item Contient des classes : programmation orientée objets avec différents backends pour différentes interfaces graphiques, graphical user interfaces (GUI) : agg, gtk, qt, svg, ps, pdf\dots
- \item Contient des procédures pour faciliter l'accès à ces classes : matlab style. 
+ \item Contient des procédures pour faciliter l'accès à ces classes . 
 \end{itemize}
 \end{frame}
 %_______________________________________________________________________________
@@ -932,17 +993,38 @@ print(A.I)
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle{Matplotlib}
-\framesubtitle{Exemples de Nicolas Le Bihan}
-\begin{minipage}{0.4\linewidth}
-\begin{figure}
-\includegraphics[width=6.5cm,height=5.5cm]{fig/BrownSphere.png}
-\end{figure}
+\framesubtitle{Exemples en 3D}
+% \framesubtitle{Exemples de Nicolas Le Bihan}
+%\begin{minipage}{0.4\linewidth}
+%\begin{figure}
+%\includegraphics[width=6.5cm,height=5.5cm]{fig/BrownSphere.png}
+%\end{figure}
+%\end{minipage}
+%\hspace{1cm}
+% \includegraphics[width=5.5cm,height=4.5cm]{fig/Distrib.png}
+\begin{minipage}{5.2cm}
+\begin{pythonConsole}
+>>> import matplotlib.pyplot as plt
+>>> from mpl_toolkits.mplot3d import \ 
+... Axes3D
+>>> fig = plt.figure()
+>>> ax = fig.add_subplot(111, \ 
+...	projection='3d')
+>>> X = numpy.random.randn(100, 3)
+>>> ax.scatter(X[:,0], X[:,1], X[:,2])
+>>> ax.plot([X[0,0], X[0,0]+1], \ 
+...	[X[0,1], X[0,1]+1], [X[0,2], \
+... X[0,2]+1])
+>>> ax.text(X[0,0]+1.2, X[0,1]+1.2, \ 
+...	X[0,2]+1.2, 'you are here', \
+... fontsize=20)
+>>> pl.savefig('plot3D.pdf')
+\end{pythonConsole}
 \end{minipage}
-\hspace{1cm}
-\begin{minipage}{0.4\linewidth}
-\includegraphics[width=5.5cm,height=4.5cm]{fig/Distrib.png}
+\begin{minipage}{5.cm}
+\begin{center}\includegraphics[width=6.5cm]{fig/plot3D.pdf}\end{center}
 \end{minipage}
 \end{frame}
 %_______________________________________________________________________________
@@ -960,20 +1042,23 @@ print(A.I)
 \end{itemize}
 
 \begin{pythonConsole}
+>>> import numpy as np
 >>> import pandas as pd
->>> a = [1, 2, 3, 2, 1, 2, 3, 2, 1]
->>> data = pd.DataFrame(a)
->>> print(data)
-   0
-0  1
-1  2
-2  3
-3  2
-4  1
-5  2
-6  3
-7  2
-8  1
+>>> A = np.array([[141, 70, 'M'], [176, 75, 'F'], [164, 66, 'M']])
+>>> df = pd.DataFrame(A)
+>>> print(df)
+     0   1  2
+0  141  70  M
+1  176  75  F
+2  164  66  M
+>>> l_ind = ['riri', 'fifi', 'loulou']
+>>> l_col = ['taille', 'masse', 'genre']
+>>> df = pd.DataFrame(A, index=l_ind, columns=l_col)
+>>> print(df)
+       taille masse genre
+riri      141    70    M
+fifi      176    75    F
+loulou    164    66    M
 \end{pythonConsole}
 \end{frame}
 %_______________________________________________________________________________
@@ -982,16 +1067,66 @@ print(A.I)
 \frametitle{Pandas}
 \framesubtitle{}
 \begin{itemize}
- \item facilité de traitement des données 
+ \item Facilités pour traiter les données
+ \item sélection d'une colonne : df['\dots']
+ \item sélection d'une ligne : df.loc['\dots']
+ \item ou par indices, slicing etc : df.iloc[i, j], df.iloc[i:j,k:l]
 \end{itemize}
 
 \begin{pythonConsole}
->>> import numpy as np
+>>> df['masse']
+riri      70
+fifi      75
+loulou    66
+Name: masse, dtype: object
+>>> df.loc['riri']
+df.loc['riri']
+taille    141
+masse      70
+sexe        M
+Name: riri, dtype: object
+>>> df.iloc[0,0]
+'141'
+>>> df.iloc[0:2, 1:2]
+     masse
+riri    70
+fifi    75
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Pandas}
+\framesubtitle{}
+\begin{itemize}
+ \item Extraction de données
+\end{itemize}
+
+\begin{pythonConsole}
+>>> df.values
+array([['141', '70', 'M'],
+       ['176', '75', 'F'],
+       ['164', '66', 'M']], dtype=object)
+>>> df[df['masse'].astype('int')>67][['masse', 'taille']].values
+array([['70', '141'],
+       ['75', '176']], dtype=object)
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Pandas}
+\framesubtitle{}
+\begin{itemize}
+ \item Beaucoup de méthodes pour traiter les tableaux de données. 
+\end{itemize}
+
+\begin{pythonConsole}
 >>> taille = 170 + 10 * np.random.randn(100)
 >>> masse = 70 + 10 * np.random.randn(100)
 >>> dico = {'taille': taille, 'masse': masse}
->>> data = pd.DataFrame(dico)
->>> data.describe()
+>>> df = pd.DataFrame(dico)
+>>> df.describe()
             masse      taille
 count  100.000000  100.000000
 mean    70.507943  169.915690
@@ -1007,9 +1142,11 @@ std      9.999280   10.264489
 %_______________________________________________________________________________
 \begin{frame}[fragile]
 \frametitle{Pandas}
-\framesubtitle{}
+\framesubtitle{Series}
 \begin{itemize}
- \item Possibilité d'indexation spéciale.  
+ \item Séries (Series)
+ \item Possibilité d'indexation spéciale.
+ \item DataFrame : colonnes de series
 \end{itemize}
 
 \begin{pythonConsole}
@@ -1019,13 +1156,46 @@ class Series(Series)
 >>> t = np.arange(0, 3, 0.1)
 >>> x = np.cos(2 * np.pi * 2 * t)
 >>> s = pd.Series(x, t)
->>> print(s[0:0.5])
-0.0    1.000000
-0.1    0.309017
+>>> print(s[02:0.5])
 0.2   -0.809017
 0.3   -0.809017
 0.4    0.309017
 0.5    1.000000
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Pandas}
+\framesubtitle{Series}
+\begin{itemize}
+ \item Possibilité d'indexation spéciale.
+\end{itemize}
+
+\begin{pythonConsole}
+>>> t1 = np.arange(0, 3, 0.3)
+>>> t2 = np.arange(1, 2, 0.2)
+>>> x1 = np.cos(2 * np.pi * 0.01 * t1)
+>>> x2 = np.cos(2 * np.pi * 0.03 * t2)
+>>> s1 = pd.Series(x1, t1)
+>>> s2 = pd.Series(x2, t2)
+>>> df = pd.DataFrame({'x1':s1, 'x2':s2})
+>>> print(df)                              >>> print(df.fillna(method='ffill'))
+           x1        x2                               x1        x2
+0.0  1.000000       NaN                    0.0  1.000000       NaN
+0.3  0.999822       NaN                    0.3  0.999822       NaN
+0.6  0.999289       NaN                    0.6  0.999289       NaN
+0.9  0.998402       NaN                    0.9  0.998402       NaN
+1.0       NaN  0.982287                    1.0  0.998402  0.982287
+1.2  0.997159  0.974527                    1.2  0.997159  0.974527
+1.4       NaN  0.965382                    1.4  0.997159  0.965382
+1.5  0.995562       NaN                    1.5  0.995562  0.965382
+1.6       NaN  0.954865                    1.6  0.995562  0.954865
+1.8  0.993611  0.942991                    1.8  0.993611  0.942991
+2.1  0.991308       NaN                    2.1  0.991308  0.942991
+2.4  0.988652       NaN                    2.4  0.988652  0.942991
+2.7  0.985645       NaN                    2.7  0.985645  0.942991
+
 \end{pythonConsole}
 \end{frame}
 %_______________________________________________________________________________
@@ -1041,7 +1211,7 @@ class Series(Series)
  \item \emph{Enhanced python console}
  \item Attention, ce n'est pas un paquet mais une console améliorée !
  \item Accessible à partir d'un terminal (ipython) 
- \item aide simplifiée
+ \item Aide simplifiée
 \end{itemize}
 
 \begin{shell}
@@ -1053,9 +1223,9 @@ Python 3.5.1 (v3.5.1:37a07cee5969, Dec  5 2015, 21:12:44)
 Type "copyright", "credits" or "license" for more information.
 
 IPython 4.0.1 -- An enhanced Interactive Python.
-?         -> Introduction and overview of IPython's features.
+?         -> Introduction and overview of IPython£'£s features.
 %quickref -> Quick reference.
-£help£      -> Python's own £help£ system.
+£help£      -> Python£'£s own £help£ system.
 £object£?   -> Details about 'object', use 'object??' for extra details.
 \end{pythonConsole}
 \end{frame}
@@ -1065,19 +1235,94 @@ IPython 4.0.1 -- An enhanced Interactive Python.
 \frametitle{IPython}
 \framesubtitle{}
 \begin{itemize}
- \item Complétion automatique avec la touche tab
- \item Fonctions magiques (magic)
+ \item Complétion automatique avec la touche tab.
+ \item Accès rapide à l'historique avec $\uparrow$ et $\downarrow$.
+ \item Fonctions magiques (magic functions) : 
+ \begin{itemize}
+  \item \% line oriented
+  \item \%\% cell oriented
+ \end{itemize}
+\end{itemize}
+
+\begin{pythonConsole}
+In [1]: g = lambda x: cos(x ** 2)
+In [2]: In [21]: %time g(10)
+CPU times: user 41 £$\mu$£s, sys: 1 £$\mu$£s, total: 42 £$\mu$£s
+Wall time: 46 £$\mu$£s
+Out[2]: 0.862318872287684
+In [3]: %%time
+    ...: a = 10
+    ...: g(a)
+    ...: 
+CPU times: user 42 £$\mu$£s, sys: 1 £$\mu$£s, total: 43 £$\mu$£s
+Wall time: 47 £$\mu$£s
+
+In [4]: magic £\#£ or \%magic
+IPython£'£s £'£magic£'£ functions
+===========================
+
+The magic function system provides a series of functions which allow you to
+control the behavior of IPython itself, plus a lot of system-type
+features. There are two kinds of magics, line-oriented and cell-oriented.
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{IPython}
+\framesubtitle{}
+\begin{itemize}
+ \item exécution de modules Python (\%run) + debugger + profiler (see \%run? for details).  
+ \item accès aux fonctions du système. 
+ \item rechargement dynamique des modules changés à l'extérieur. 
+\end{itemize}
+
+\begin{pythonConsole}
+In [1]: %run mod1.py
+
+In [2]: %cd ./Documents/
+/Volumes/HD1/Users/becqg/Documents
+In [3]: %%system
+    ...: pwd
+    ...: 
+Out[3]: ['/Volumes/HD1/Users/becqg/Documents']
+
+In [4]: %load_ext autoreload           In [4]: £import£ importlib as imp
+In [5]: %aimport mod1                  In [5]: imp.£reload£(mod1) 
+In [6]: %autoreload 1  
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{IPython}
+\framesubtitle{}
+\begin{itemize}
+ \item import des fonctions pylab amélioré. 
 \end{itemize}
 
 \begin{pythonConsole}
 In [1]: %pylab
 Using matplotlib backend: MacOSX
 Populating the interactive namespace from numpy and matplotlib
-In [1]: g = lambda x: cos(x ** 2)
-In [2]: %timeit g(10)
-The slowest run took 12.59 times longer than the fastest. 
-This could mean that an intermediate result is being cached 
-100000 loops, best of 3: 2.77 $\mu$s per loop
+
+In [2]: A = empty((3,3))
+
+In [3]: %pylab? 
+...
+%pylab makes the following imports::
+
+    import numpy
+    import matplotlib
+    from matplotlib import pylab, mlab, pyplot
+    np = numpy
+    plt = pyplot
+
+    from IPython.display import display
+    from IPython.core.pylabtools import figsize, getfigs
+
+    from pylab import *
+    from numpy import *
 \end{pythonConsole}
 \end{frame}
 %_______________________________________________________________________________
@@ -1125,61 +1370,14 @@ This could mean that an intermediate result is being cached
 %_______________________________________________________________________________
 \begin{frame}[fragile]
 \frametitle{IPython}
-\framesubtitle{ipython notebook}
+\framesubtitle{Jupyter}
 \begin{itemize}
- \item the future : \url{https://jupyter.org}   
+ \item présent et futur : \url{https://jupyter.org} 
+ \item jupyter notebook
 \end{itemize}
 \begin{center}
- \myFig{width=8cm}{./fig/jupyter-site.png}
+ \myFig{width=10cm}{./fig/jupyter-site.png}
 \end{center}
-\end{frame}
-%_______________________________________________________________________________
-
-
-%_______________________________________________________________________________
-\subsection{Mayavi}
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-\begin{frame}
-\frametitle{Mayavi}
-\framesubtitle{}
-\frameCC{%
-\begin{itemize}
- \item \url{http://code.enthought.com/projects/mayavi/}
- \item \url{https://github.com/enthought/mayavi}
- \item Manipulation des objets 3D améliorée (objet vtk). 
-\end{itemize}
-}
-{\myFig{width=8cm}{./fig/Mayavi_site_2.png}}
-\end{frame}
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-\begin{frame}
-\frametitle{Mayavi}
-\framesubtitle{}
-\myFigCentered{width=8cm}{./fig/Mayavi.png}
-\end{frame}
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-\begin{frame}[fragile]
-\frametitle{Mayavi}
-\framesubtitle{import mayavi.engine}
-\begin{itemize}
- \item Dans une console Python : import mayavi. \dots
-\end{itemize}
-\begin{pythonConsole}
->>> from mayavi.api import Engine
->>> engine = Engine()
->>> engine.start()
->>> engine.new_scene()
->>> from mayavi.sources.parametric_surface import ParametricSurface
->>> parametric_surface1 = ParametricSurface()
->>> scene = engine.scenes[0]
->>> engine.add_source(parametric_surface1, scene)
->>> from mayavi.modules.surface import Surface
->>> surface1 = Surface()
->>> engine.add_filter(surface1,parametric_surface1)
-\end{pythonConsole}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -1309,7 +1507,54 @@ PACKAGE CONTENTS
 \end{pythonConsole}
 \myFigCentered{width=6cm}{./fig/sklearn_lda.png}
 \end{frame}
-%_______________________________________________________________________________%_______________________________________________________________________________
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsection{Mayavi}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}
+\frametitle{Mayavi}
+\framesubtitle{}
+\frameCC{%
+\begin{itemize}
+ \item \url{http://code.enthought.com/projects/mayavi/}
+ \item \url{https://github.com/enthought/mayavi}
+ \item Manipulation des objets 3D améliorée (objet VTK). 
+\end{itemize}
+}
+{\myFig{width=8cm}{./fig/Mayavi_site_2.png}}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}
+\frametitle{Mayavi}
+\framesubtitle{}
+\myFigCentered{width=8cm}{./fig/Mayavi.png}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Mayavi}
+\framesubtitle{import mayavi.engine}
+\begin{itemize}
+ \item Dans une console Python : import mayavi. \dots
+\end{itemize}
+\begin{pythonConsole}
+>>> from mayavi.api import Engine
+>>> engine = Engine()
+>>> engine.start()
+>>> engine.new_scene()
+>>> from mayavi.sources.parametric_surface import ParametricSurface
+>>> parametric_surface1 = ParametricSurface()
+>>> scene = engine.scenes[0]
+>>> engine.add_source(parametric_surface1, scene)
+>>> from mayavi.modules.surface import Surface
+>>> surface1 = Surface()
+>>> engine.add_filter(surface1,parametric_surface1)
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
 \subsection{Autres ressources : exemple C}
 %_______________________________________________________________________________
 \begin{frame}[fragile]
