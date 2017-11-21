@@ -10,11 +10,11 @@
   \item Numpy
   \item SciPy library
   \item Matplotlib
-  \item IPython
   \item Pandas
+  \item IPython -> Jupyter notebook
  \end{itemize}
- \item Mayavi : objets 3D avancés
  \item Scikit-learn : machine learning.
+ \item Mayavi : objets 3D avancés
  \item \dots
 \end{itemize}
 \end{frame}
@@ -1334,7 +1334,7 @@ In [3]: %pylab?
 \frametitle{IPython}
 \framesubtitle{notebook}
 \begin{itemize}
- \item Accessible à partir d'un terminal (ipython notebook, jupyter notebook) 
+ \item Accessible à partir d'un terminal (ipython notebook, \em{jupyter notebook}) 
  \item Ouverture et création de notebooks (*.ipynb)
 \end{itemize}
 \begin{center}
@@ -1344,8 +1344,8 @@ In [3]: %pylab?
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 \begin{frame}[fragile]
-\frametitle{IPython}
-\framesubtitle{ipython notebook}
+\frametitle{Jupyter}
+\framesubtitle{jupyter notebook}
 \begin{itemize}
  \item Les cellules exécutent du code ou formatent du texte
  \item Chargement des fonctions pylab avec affichage dans le notebook : \%pylab inline 
@@ -1357,8 +1357,8 @@ In [3]: %pylab?
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 \begin{frame}[fragile]
-\frametitle{IPython}
-\framesubtitle{ipython notebook}
+\frametitle{Jupyter}
+\framesubtitle{jupyter notebook}
 \begin{itemize}
  \item Saisie et affichage en HTML et LaTeX, entre autres.   
 \end{itemize}
@@ -1369,11 +1369,11 @@ In [3]: %pylab?
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 \begin{frame}[fragile]
-\frametitle{IPython}
-\framesubtitle{Jupyter}
+\frametitle{Jupyter}
+\framesubtitle{}
 \begin{itemize}
- \item présent et futur : \url{https://jupyter.org} 
- \item jupyter notebook
+ \item \url{https://jupyter.org}
+ \item Interface avec d'autres langages de programmation.  
 \end{itemize}
 \begin{center}
  \myFig{width=10cm}{./fig/jupyter-site.png}
@@ -1419,58 +1419,45 @@ DESCRIPTION
 PACKAGE CONTENTS
     __check_build (package)
     _build_utils
-    _hmmc
     _isotonic
     base
+    calibration
     cluster (package)
     covariance (package)
     cross_decomposition (package)
-    cross_validation
-    datasets (package)
-    decomposition (package)
-    dummy
-    ensemble (package)
-    externals (package)
+    cross_validation    
 \end{pythonConsole}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 \begin{frame}[fragile]
 \frametitle{Scikit-learn}
-\framesubtitle{Help content}
+\framesubtitle{Help content}                                                                  
 \begin{pythonConsole}
-    feature_extraction (package)
-    feature_selection (package)
-    gaussian_process (package)
-    grid_search
-    hmm
-    isotonic
-    kernel_approximation
-    lda
-    learning_curve
-    linear_model (package)
-    kernel_approximation
-    lda
-    learning_curve
-    linear_model (package)
-    manifold (package)
-    metrics (package)
-    mixture (package)
-    multiclass
-    naive_bayes
-    neighbors (package)
-    neural_network (package)
+    datasets (package)                       preprocessing (package)   
+    decomposition (package)                  qda                       
+    discriminant_analysis                    random_projection         
+    dummy                                    semi_supervised (package) 
+    ensemble (package)                       setup                     
+    externals (package)                      svm (package)             
+    feature_extraction (package)             tests (package)           
+    feature_selection (package)              tree (package)            
+    gaussian_process (package)               utils (package)           
+    grid_search                              
+    isotonic                                 
+    kernel_approximation                     
+    kernel_ridge                             
+    lda                                      
+    learning_curve                           
+    linear_model (package)                   
+    manifold (package)                       
+    metrics (package)                        
+    mixture (package)                        
+    multiclass                               
+    naive_bayes                              
+    neighbors (package)                      
+    neural_network (package)                 
     pipeline
-    pls
-    preprocessing (package)
-    qda
-    random_projection
-    semi_supervised (package)
-    setup
-    svm (package)
-    tests (package)
-    tree (package)
-    utils (package)
 \end{pythonConsole}
 \end{frame}
 %_______________________________________________________________________________
@@ -1488,6 +1475,8 @@ PACKAGE CONTENTS
 >>> nClasses = unique(y).size
 >>> clf = LDA()
 >>> clf.fit(x[:, :2], y)
+LinearDiscriminantAnalysis(n_components=None, priors=None, shrinkage=None,
+              solver='svd', store_covariance=False, tol=0.0001)
 \end{pythonConsole}
 \end{frame}
 %_______________________________________________________________________________
@@ -1496,16 +1485,20 @@ PACKAGE CONTENTS
 \frametitle{Scikit-learn}
 \framesubtitle{Exemple de Classifieur : Linear Discriminant Analysis}
 \begin{pythonConsole}
+>>> from matplotlib import colors
+>>> cmap = colors.LinearSegmentedColormap.from_list('3_classes', 
+[(1, 0.8, 0.8), (0.8, 1, 0.8), (0.8, 0.8, 1)], N=3)
+>>> cm.register_cmap(cmap=cmap)
 >>> (mx1, mx2) = meshgrid(linspace(4, 8, 100), linspace(2, 5, 100))
 >>> Z = clf.predict(vstack((mx1.flatten().T, mx2.flatten())).T)
->>> pcolor(mx1, mx2, Z.reshape(mx1.shape), alpha=0.1)
->>> colors = ["b", "g", "r"]
+>>> pcolor(mx1, mx2, Z.reshape(mx1.shape), cmap='3_classes')
+>>> colors = ["r", "g", "b"]
 >>> for i in range(nClasses): 
->>>   scatter(x[y==i, 0], x[y==i, 1], c=colors[i])
->>> axis(xmin=4, xmax=8, ymin=2, ymax=5)
->>> show()
+...   scatter(x[y==i, 0], x[y==i, 1], marker='o', edgecolor='k', linewidths=1, 
+c=colors[i], s=150)
+>>> axis(xmin=4, xmax=8, ymin=2, ymax=5); show()
 \end{pythonConsole}
-\myFigCentered{width=6cm}{./fig/sklearn_lda.png}
+\myFigCentered{width=4cm}{./fig/sklearn_lda.png}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -1517,12 +1510,12 @@ PACKAGE CONTENTS
 \framesubtitle{}
 \frameCC{%
 \begin{itemize}
- \item \url{http://code.enthought.com/projects/mayavi/}
+ \item \url{http://docs.enthought.com/mayavi/mayavi/}
  \item \url{https://github.com/enthought/mayavi}
  \item Manipulation des objets 3D améliorée (objet VTK). 
 \end{itemize}
 }
-{\myFig{width=8cm}{./fig/Mayavi_site_2.png}}
+{\myFig{width=8cm}{./fig/Mayavi_site.png}}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________

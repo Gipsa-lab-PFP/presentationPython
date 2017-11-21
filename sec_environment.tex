@@ -32,76 +32,7 @@
  \end{itemize}
 \end{itemize}
 }%
-{\myFig{width=8cm}{./fig/Idle.png}}
-\end{frame}
-%...............................................................................
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-\subsection{IPython}
-%...............................................................................
-\begin{frame}
-\frametitle{IPython}
-\framesubtitle{Intro}
-\frameCC{%
-\begin{itemize}
- \item \myFig{height=0.5cm}{./fig/IPy_header.png}\ IPy: \url{http://ipython.org}
- \item Console interactive accessible via le shell : coloration syntaxique, fonctions magiques, mémorisation des commandes, débuggueur, profileur, calculs parallèles \dots  
- \item Plusieurs options cf. 'man ipython' ou 'ipython -help'. 
-\end{itemize}}
-{\myFig{width=7cm}{./fig/IPython.png}}
-\end{frame}
-%...............................................................................
-%...............................................................................
-\begin{frame}
-\frametitle{IPython}
-\framesubtitle{Qtconsole}
-\frameCC{%
-\begin{itemize}
- \item Commande dans le shell : ipython qtconsole  
- \item Environnement graphique Qt qui permet de tracer des figures via matplotlib ou pylab.
- \item Commande directe : ipython qtconsole --pylab
-\end{itemize}}
-{\myFig{width=9cm}{./fig/IPythonQTConsole.png}}
-\end{frame}
-%...............................................................................
-%...............................................................................
-\begin{frame}
-\frametitle{IPython}
-\framesubtitle{notebook}
-\frameCC{%
-\begin{itemize}
- \small
- \item Commande dans le shell : ipython notebook  
- \item Editeur dans le navigateur HTML, \emph{Web-based interactive computational environment}. 
-\end{itemize}}
-{\myFig{width=9.5cm}{./fig/IPythonNotebook.png}}
-\end{frame}
-%...............................................................................
-%...............................................................................
-\begin{frame}
-\frametitle{IPython}
-\framesubtitle{notebook}
-\frameCC{%
-\begin{itemize}
- \small
- \item Cellules de codes ou de documentation : \emph{Cell Mode} à la Matlab, \emph{Document-Based Workflow} à la Mathematica. 
- \item Balisage du texte en LaTeX, HTML ou Markdown. 
-\end{itemize}}
-{\myFig{width=9.5cm}{./fig/IPythonNotebook.png}}
-\end{frame}
-%...............................................................................
-%...............................................................................
-\begin{frame}
-\frametitle{IPython}
-\framesubtitle{notebook}
-\frameCC{%
-\begin{itemize}
- \item Commande pour importer pylab et graphique dans l'interface html : 'ipython notebook' '\%pylab inline'
- \item Génération de rapports dans le menu 'notebook > action > print' puis impression en pdf pour le navigateur HTML ou commande 'convert' 
- \item ou via nbconvert en HTML : 'ipython nbconvert notebook.ipynb'
- \item ou via nbconvert en PDF via LaTeX : 'ipython nbconvert notebook.ipynb --to latex --post PDF'
-\end{itemize}}
-{\myFig{width=6cm}{./fig/IPythonNotebookInline.png}}
+{\myFig{width=7cm}{./fig/Idle.png}}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -109,92 +40,88 @@
 \begin{frame}
 \frametitle{Enthought Canopy}
 \begin{itemize}
- \item \myFig{height=0.5cm}{./fig/enthought-logo.png}\ : \url{https://www.enthought.com/products/canopy/}
+ \item \myFig{height=0.5cm}{./fig/enthought-logo.png}\ : \url{https://www.enthought.com/products/canopy/} 
  \item Contient Python et +100 librairies orientées applications scientifiques. 
- \item Multi-plateformes, \emph{Easy installation and update}.
- \item Gratuit pour les étudiants et les universitaires. 
- \item Anciennement Enthought Python Distribution EPD. 
- \item QtConsole, iPython. 
+ \item Canopy express \em{free license for all users}.
 \end{itemize}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
+\subsection{Enthought}
 \begin{frame}
 \frametitle{Enthought Canopy}
-\begin{center}
- \myFig{width=10cm}{./fig/enthought-canopy.jpg}
-\end{center}
-\end{frame}
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-\subsection{Python(x,y)}
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-\begin{frame}
-\frametitle{Python(x,y)}
-\frameCC{%
 \begin{itemize}
-\item \myFig{height=0.5cm}{./fig/PythonXYLogo.png}\ Python(x,y) : \url{https://code.google.com/p/pythonxy/}
-\item \emph{\footnotesize Python(x,y) is a free scientific and engineering development software for numerical computations, data analysis and data visualization based on \emph{Python} programming language, \emph{Qt} graphical user interfaces and \emph{Spyder} interactive scientific development environment.}
-\item Un grand nombre de librairies scientifiques, entre autres. 
-\item Interface avec Eclipse (IDE principalement pour Java mais aussi Python). 
+\footnotesize
+ \item \myFig{height=0.5cm}{./fig/enthought-logo.png}\ : \url{https://www.enthought.com/products/canopy/} 
+ \item \em{Easy installation and update}.
 \end{itemize}
-}
-{\myFig{width=7cm}{./fig/pythonxy_home.png} \\ {\tiny source web}}
+\centering\myFig{width=7cm}{./fig/enthought_canopy_manager.png}
 \end{frame}
-%...............................................................................
-%...............................................................................
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\subsection{Enthought}
 \begin{frame}
-\frametitle{Python(x,y)}
-\framesubtitle{Spyder}
-\frameCC{%
+\frametitle{Enthought Canopy}
 \begin{itemize}
-\item Spyder (multiplateforme) : environnement de type Matlab pour Python. 
+\footnotesize
+ \item \myFig{height=0.5cm}{./fig/enthought-logo.png}\ : \url{https://www.enthought.com/products/canopy/} 
+ \item + Jupyter notebook + Canopy editor. 
 \end{itemize}
-}
-{\myFig{width=8cm}{./fig/Spyder.png} \\ {\tiny source web}}
+\centering\myFig{width=7cm}{./fig/enthought_canopy_editor.png}
 \end{frame}
+%_______________________________________________________________________________
 %_______________________________________________________________________________
 \subsection{Anaconda}
+%_______________________________________________________________________________
 %_______________________________________________________________________________
 \begin{frame}
 \frametitle{Anaconda}
 \framesubtitle{}
-\frameCC{%
 \begin{itemize}
- \item \myFig{height=0.5cm}{./fig/continuum_analytics_logo.png} \, \url{http://continuum.io/downloads}
- \item \myFig{height=0.5cm}{./fig/anaconda_logo_web.png} propose Spyder. 
+ \item \myFig{height=0.5cm}{./fig/anaconda_logo_web.png}\, \url{https://www.anaconda.com}
 \end{itemize}
-}
-{\myFig{width=8cm}{./fig/anaconda_launcher.png}
-}
-\end{frame}
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-\subsection{SageMath}
-\begin{frame}
-\frametitle{SageMath}
-\framesubtitle{}
-\begin{itemize}
- \item \myFig{height=0.5cm}{./fig/sage_logo.png} \, \url{http://www.sagemath.org}
-\end{itemize}
-\myFigCentered{width=9cm}{./fig/SageMath_home.png}
+\only<1>{\centering\myFig{width=8cm}{./fig/anaconda_distribution.png}}
+\only<2>{\centering\myFig{width=8cm}{./fig/anaconda_launcher.png}}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 \begin{frame}
-\frametitle{Autres Integrated Development Environment}
+\frametitle{Spyder}
 \framesubtitle{}
 \frameCC{%
 \begin{itemize}
-\item Tout éditeur de texte avec coloration syntaxique : Emacs, Vim, jEdit, gedit, Textpad... 
+\footnotesize
+\item Spyder (multiplateforme) : environnement de type Matlab pour Python. 
+\item \url{https://github.com/spyder-ide/spyder}
 \end{itemize}
 }
-{\myFig{width=9cm}{./fig/jEdit.png}}
+{\myFig{width=8cm}{./fig/Spyder.png}}
 \end{frame}
 %_______________________________________________________________________________
 %_______________________________________________________________________________
-
+\subsection{Autres}
 %_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}
+\frametitle{Autres distributions}
+\begin{itemize}
+\item SageMath \myFig{height=0.5cm}{./fig/sage_logo.png} \, \url{http://www.sagemath.org}
+\item PythonXY \myFig{height=0.5cm}{./fig/PythonXYLogo.png}\ \url{https://code.google.com/p/pythonxy/}  
+\item ? 
+\end{itemize}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}
+\frametitle{Editeurs de texte et Integrated Development Environment (IDE)}
+\framesubtitle{}
+\frameCC{%
+\begin{itemize}
+\small
+\item Tout éditeur de texte avec coloration syntaxique : Emacs, Vim, jEdit, gedit, Textpad, Eclipse, Atom, Visual Studio... 
+\end{itemize}
+}
+{\myFig{width=7cm}{./fig/jEdit.png}}
+\end{frame}
 %_______________________________________________________________________________
 %===============================================================================
