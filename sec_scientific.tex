@@ -103,36 +103,6 @@ DESCRIPTION
 \frametitle{N-dimensional array Object}
 \framesubtitle{}
 \begin{itemize}
- \item N-dimensional array : ndarray
- \item Création d'un tableau vide et réservation de l'espace (empty)
- \item Accès aux éléments : A[i, j, \dots] 
- \item indices de {\color{red}{0 à $n-1$}}
- \item indices négatifs de $-n$ à $-1$
-\end{itemize}
-\begin{pythonConsole}
-
->>> A = numpy.empty((2, 2))
->>> print(A)
-[[ -1.28822975e-231   2.68678092e+154]
- [  2.24497156e-314   2.24499315e-314]]
->>> A[0, 0] = 1
->>> A[1, 0] = 2
->>> A[0, 1] = 11
->>> A[1, 1] = 12
->>> print(A)
-[[  1.   2.]
- [ 11.  12.]]
->>> type(A)
-<class 'numpy.ndarray'>
->>> A[-1, -2] = 11
-\end{pythonConsole}
-\end{frame}
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-\begin{frame}[fragile]
-\frametitle{N-dimensional array Object}
-\framesubtitle{}
-\begin{itemize}
  \item Rappel : accès aux propiétés et méthodes (dir) 
 \end{itemize}
 \begin{pythonConsole}
@@ -345,22 +315,16 @@ ValueError: matrices are not aligned
 \begin{itemize}
  \item Division par un scalaire (/)
  \item Division éléments par éléments (/) 
- \item Attention au type en Python 2.7 ! 
 \end{itemize}
 \begin{pythonConsole}
 >>> A = numpy.array([[1, 2], [11, 12]])
 >>> B = numpy.array([[3, 4], [13, 14]])
 >>> print(A / 2)
-python 3.x                      python 2.x
-[[ 0.5  1. ]				    [[0 1]
- [ 5.5  6. ]] 				     [5 6]]
+[[ 0.5  1. ]				    
+ [ 5.5  6. ]] 				    
 >>> print(A / B)
-python 3.x                      python 2.x  
-[[ 0.33333333  0.5       ]      [[0 0]
- [ 0.84615385  0.85714286]]      [0 0]]
->>> print(A / B.astype("float"))
-[[ 0.33333333  0.5       ]
- [ 0.84615385  0.85714286]]
+[[ 0.33333333  0.5       ]      
+ [ 0.84615385  0.85714286]]     
 \end{pythonConsole}
 \end{frame}
 %_______________________________________________________________________________
@@ -471,7 +435,7 @@ python 3.x                      python 2.x
 \framesubtitle{Sélection de sous-tableaux}
 \begin{itemize}
  \item Comparaison et opérateurs logiques
- \item Opérations logiques pour sélectionner des éléments (voir aussi advanced indexing)
+ \item Opérations logiques pour sélectionner des éléments (voir aussi advanced indexing + masking)
  \item Récupérer les indices (where)
 \end{itemize}
 \begin{pythonConsole}
@@ -1083,7 +1047,7 @@ Name: masse, dtype: object
 df.loc['riri']
 taille    141
 masse      70
-sexe        M
+genre       M
 Name: riri, dtype: object
 >>> df.iloc[0,0]
 '141'
@@ -1142,6 +1106,47 @@ std      9.999280   10.264489
 %_______________________________________________________________________________
 \begin{frame}[fragile]
 \frametitle{Pandas}
+\framesubtitle{}
+\begin{itemize}
+ \item Beaucoup de méthodes pour traiter les tableaux de données. 
+\end{itemize}
+
+\begin{pythonConsole}
+>>> df.sort('masse').head(5)
+        masse      taille
+7   38.125336  173.929789
+10  42.258867  168.138387
+73  52.573235  169.219885
+93  53.767518  179.082610
+70  54.847734  155.914292
+>>> df.sort('masse').tail(5)
+        masse      taille
+48  88.451660  152.918614
+89  89.600090  169.169344
+20  91.230047  195.892489
+83  92.329533  156.447108
+25  98.779502  173.894076
+\end{pythonConsole}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Pandas}
+\framesubtitle{Tracés}
+\begin{itemize}
+ \item Facilités pour afficher les données. 
+\end{itemize}
+\begin{pythonConsole}
+>>> df.boxplot()
+\end{pythonConsole}
+\begin{center}
+\myFig{width=6cm}{./fig/pandas_boxplot.png}
+\end{center}
+\end{frame}
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+\begin{frame}[fragile]
+\frametitle{Pandas}
 \framesubtitle{Series}
 \begin{itemize}
  \item Séries (Series)
@@ -1156,7 +1161,7 @@ class Series(Series)
 >>> t = np.arange(0, 3, 0.1)
 >>> x = np.cos(2 * np.pi * 2 * t)
 >>> s = pd.Series(x, t)
->>> print(s[02:0.5])
+>>> print(s[0.2:0.5])
 0.2   -0.809017
 0.3   -0.809017
 0.4    0.309017
